@@ -3,9 +3,9 @@ title: "ggplot"
 author: "Zachary Noel"
 date: "3/30/2021"
 output:
+  html_document: default
   md_document:
     variant: markdown_github
-  html_document: default
 ---
 
 # Load in packages you need
