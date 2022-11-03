@@ -2,7 +2,10 @@
 title: "Iterations and Functions"
 author: "Zachary Noel"
 date: "10/25/2022"
-output: html_document
+output:
+  md_document:
+    variant: markdown_github
+  html_document: default
 ---
 
 This exercise is based partially on the data and iterations presented here:
