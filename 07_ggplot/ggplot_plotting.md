@@ -157,7 +157,7 @@ should now have a plot with the x and y axes on an empty ggplot.
 ### Adding data or layers
 
 The second thing to know about `ggplot` is that it works in *layers*.
-Just like an onion and just like shrek. ![shrek](07_ggplot/shrek.jpg)
+Just like an onion and just like shrek. ![shrek](shrek.jpg)
 
 The layers are called `geoms` and you access them by calling the geoms
 separately and they will appear in order as layers on top of each other.
