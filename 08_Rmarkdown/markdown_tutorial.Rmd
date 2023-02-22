@@ -1,0 +1,188 @@
+---
+title: "Tutorial Rmarkdown"
+author: "Zachary Noel"
+date: "Feb. 22, 2023"
+output: 
+  html_document:
+    keep_md: yes
+  word_document: default
+---
+
+This tutorial will teach the basics of rmarkdown to teach how to 1) create R markdown documents, 2) some of the basic syntax for R markdown, 3) and include things like plots and pictures. 
+
+To start we need to know how to open an R markdown document. You do this in the same way you would open a new R script, but you should notice that when you open an R markdown it will not be blank. 
+
+It should look something like this: 
+![New Rmd file](RmdExample.jpg)
+In the top of the script it starts writing what is called a *yaml header*. This is an important concept because by default it will output an html file. This is useful for viewing on a webbrowser. However, it will not be useful for viewing on github. 
+
+We can change the *yaml header* to output into an html document and into other outputs like word file, pdfs, and github markdown files or .md files for viewing on github. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(ggplot2)
+library(markdown)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for 
+authoring HTML, PDF, and MS Word documents. For more details on using R Markdown 
+see <http://rmarkdown.rstudio.com>.
+
+It uses `knitr`, `rmarkdown` and [`pandoc`](http://pandoc.org/).  Pandoc is a 
+universal document converter, in our case, it goes from:
+
+**Rmarkdown** => **markdown** => **document**
+
+##Syntax
+###Emphasis
+
+`*italic*` => *italic*
+
+`_italic_` => _italic_
+
+`**bold**` => **bold**
+
+`__bold__` => __bold__
+
+###Headers
+```
+# Header 1
+
+## Header 2
+
+### Header 3
+```
+###Lists
+#### Unordered
+```
+* Item1
+  + Item 1a #double tab
+* Item 2
+```
+* Item1
+    + Item 1a
+* Item 2
+
+#### Ordered
+```
+1. Item1
+    + Item 1a
+2. Item 2
+```
+1. Item1
+    + Item 1a
+2. Item 2
+
+### Links
+Use plain address either as an actual link, within the text or linked to a word:
+```
+http://www.fieldcroppathology.msu.edu/
+<http://www.fieldcroppathology.msu.edu/>
+[Chilvers lab](http://www.fieldcroppathology.msu.edu/)
+
+```
+
+<http://www.fieldcroppathology.msu.edu/>
+
+[Chilvers lab](http://www.fieldcroppathology.msu.edu/)
+
+### Images
+```
+#If you forgot the exclamation mark (!), it will become just a link
+![Chilves lab photo](IMG_8889-Copy.jpg)
+```
+
+![Chilves lab photo](IMG_8889-Copy.jpg)
+
+
+###Tables
+```
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+```
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+You can make this process simpler using knitr with `kable`:
+```{r kable_example}
+kable(head(ggplot2::mpg, n = 15), digits = 3, format = "markdown")
+```
+
+When you click the **Knit**, it will render the document using the existing syntax.
+
+__________
+
+
+## R chunks
+
+You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+You can control the output of your chunks using different parameters:
+```{r example, fig.align='center'}
+#{r chunk_name, ...}
+
+#Global parameters
+#```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+#```
+
+```
+
+![Parameters](chunk_parameters.png)
+
+
+## Including Plots
+You can also embed plots, for example in this case using `echo=FALSE` only the 
+plot will be displayed:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Or if you have multiple plots:
+```
+## Sales Report {.tabset}
+ 
+### By Product
+ 
+(tab content)
+ 
+### By Region
+ 
+(tab content)
+```
+## Multiple plots {.tabset}
+ 
+### By class
+ 
+```{r}
+g <- ggplot(mpg, aes(class))
+# Number of cars in each class:
+g + geom_bar()
+```
+ 
+### Boxplot
+ 
+```{r}
+p <- ggplot(mpg, aes(class, hwy))
+p + geom_boxplot()
+```
+
+
+### Miscelaneous
+```{r other_tricks, eval=FALSE}
+# Extract r code
+knit("markdown_tutorial.Rmd", "R-code_markdown.R", tangle = TRUE)
+```
