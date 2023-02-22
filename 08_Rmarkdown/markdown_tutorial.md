@@ -60,27 +60,29 @@ To do this, select the insert code chunk button as shown in the picture below.
 
 When we do this we should see an empty chunk that looks something like this
 You can control the output of your chunks using different parameters:
-```{r example, fig.align='center'}
+
+```r
 #{r chunk_name, ...}
 
 #Global parameters
 #```{r setup, include=FALSE}
 #knitr::opts_chunk$set(echo = TRUE)
 #```
-
 ```
 
 ![Parameters](chunk_parameters.png)
 
 We can set chunks to show up in the resulting document by setting some options like `include=TRUE`
-```{r, include=TRUE}
+
+```r
 library(knitr)
 library(ggplot2)
 library(markdown)
 ```
 
 We can include code and plots. 
-```{r}
+
+```r
 data("mtcars")
 ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_smooth(method = lm, se = FALSE) +
@@ -89,6 +91,12 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   ylab("Miles per gallon") +
   scale_colour_gradient(low = "forestgreen", high = "black")
 ```
+
+```
+## `geom_smooth()` using formula = 'y ~ x'
+```
+
+![](markdown_tutorial_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 ## R Markdown formatting options
 
@@ -212,9 +220,20 @@ Content Cell  | Content Cell
 Content Cell  | Content Cell
 
 You can make this process simpler using knitr with `kable`:
-```{r kable_example}
+
+```r
 kable(head(mtcars, n = 5), digits = 3, format = "markdown")
 ```
+
+
+
+|                  |  mpg| cyl| disp|  hp| drat|    wt|  qsec| vs| am| gear| carb|
+|:-----------------|----:|---:|----:|---:|----:|-----:|-----:|--:|--:|----:|----:|
+|Mazda RX4         | 21.0|   6|  160| 110| 3.90| 2.620| 16.46|  0|  1|    4|    4|
+|Mazda RX4 Wag     | 21.0|   6|  160| 110| 3.90| 2.875| 17.02|  0|  1|    4|    4|
+|Datsun 710        | 22.8|   4|  108|  93| 3.85| 2.320| 18.61|  1|  1|    4|    1|
+|Hornet 4 Drive    | 21.4|   6|  258| 110| 3.08| 3.215| 19.44|  1|  0|    3|    1|
+|Hornet Sportabout | 18.7|   8|  360| 175| 3.15| 3.440| 17.02|  0|  0|    3|    2|
 
 When you click the **Knit**, it will render the document using the existing syntax.
 
