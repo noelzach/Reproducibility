@@ -3,7 +3,26 @@ ClassExample
 Zachary Noel
 2023-02-23
 
+# This is a first level header
+
+## This is a second level header
+
+### This is a third level header
+
+#### Fourth level
+
+*italics*
+
+*italics*
+
+**bold**
+
+**bold**
+
+> This is emphasized text
+
 ``` r
+# this is a comment
 data("mtcars")
 summary(mtcars)
 ```
@@ -29,3 +48,22 @@ summary(mtcars)
     ##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
     ##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
     ##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
+
+### Unordered lists
+
+- one item
+- second item
+- third item
+  - one more item
+
+1.  The first item
+2.  second
+    - second item under
+
+### Links
+
+[This is a hyperlink](https://github.com/noelzach/Reproducibility)
+
+This is the github repository
+
+<https://github.com/noelzach/Reproducibility>

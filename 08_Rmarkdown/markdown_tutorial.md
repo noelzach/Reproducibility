@@ -10,7 +10,12 @@ output:
 
 This tutorial will teach the basics of rmarkdown to teach how to 1) create R markdown documents, 2) some of the basic syntax for R markdown, 3) and include things like plots and pictures. 
 
-Take a quick look at the video shown ![here](https://rmarkdown.rstudio.com/authoring_quick_tour.html) to learn a little more about what Rmarkdown can do and how its useful for reproducibility.
+Take a quick look at the video shown in the link below to learn a little more about what Rmarkdown can do and how its useful for reproducibility.
+
+https://rmarkdown.rstudio.com/authoring_quick_tour.html
+
+
+### Conceptual understanding
 
 It uses `knitr`, `rmarkdown` and [`pandoc`](http://pandoc.org/).  Pandoc is a 
 universal document converter, in our case, it goes from:
@@ -113,14 +118,27 @@ Section headers can be written after a number of pound signs, e.g.,
 #### Style and emphasis
 
 ```markdown
-`*italic*` => *italic*
-
-`_italic_` => _italic_
-
-`**bold**` => **bold**
-
-`__bold__` => __bold__
+`*italic*`
 ```
+
+*italic*
+
+```markdown
+`_italic_` 
+```
+_italic_
+
+```markdown
+`**bold**` 
+```
+
+**bold**
+
+```markdown
+`__bold__`
+```
+
+__bold__
 
 Blockquotes are written after `>`, e.g.,
 
