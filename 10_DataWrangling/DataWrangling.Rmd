@@ -1,0 +1,307 @@
+---
+title: "Tidyverse"
+author: "Zachary Noel"
+date: "2023-03-14"
+output: github_document
+---
+
+## Seemless data wrangeling 
+
+The tidyverse is a bunch of packages and functions written by the same folks that manage Rstudio. The tidyverse builds upon base R to allow for easier use of large datasets. 
+
+If you do not have the tidyverse installed please install it and load it `install.pakcages("tidyverse")`
+
+```{r}
+library(tidyverse)
+```
+
+When you load in the tidyverse notice that it loads in 8 different packages. You will not have to load these individually. 
+
+More info and cheet sheets can be found here: https://tidyr.tidyverse.org/index.html 
+
+Lets demonstrate some of the most useful functionality of some tidyverse functions. **Note** that this tutorial does not cover everything and **self-learning** may be required for specific functionality. We will cover the following: 
+
+  - Data wrangling & manipulation
+    - mutate()
+    - select()
+    - filter()
+    - the pipe %>% 
+    - summarise() 
+    - group_by()
+  - Joining & pivotting 
+  - Integration with plotting & statistics 
+
+For this tutorial I will use the same microbiome dataset we used in previous classes for `ggplot`, except this dataset includes all fungi in the Phylum Ascomycota, not just one family. 
+```{r}
+microbiome.fungi <- read.csv("Microbiome.csv")
+```
+
+If we look at the structure of the data we can see that the dataset is 1,353,422 rows. This is too large for excel to handle. So we literally cannot use it in excel. 
+```{r}
+str(microbiome.fungi)
+```
+
+Lets start exploring the data. 
+
+the first thing we can do is select only the columns we need since it seems that there are lots of columns that we may not need. 
+
+#### `select()`
+```{r}
+microbiome.fungi2 <- select(microbiome.fungi, OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy)
+```
+
+Note the syntax. I listed all the column headers I wanted, but at the end I used `Kingdom:Taxonomy` because all these were in order and I can use the column to select them all. 
+
+#### `filter()`
+
+this is a convenient function that allows you to subset data fairly easily. However, I'm not sure how its much easier than other subset function
+```{r}
+filter(microbiome.fungi2, Class == "Sordariomycetes")
+```
+
+#### `mutate()`
+
+Mutate allows us to quickly create new columns. Say we wanted to transform the Abundance column into a percentage  by multiplying by 100.
+```{r}
+mutate(microbiome.fungi2, Percent = Abundance*100)
+```
+
+#### the pipe `%>%`
+
+We can also combine multiple functions together. This is an important concept and is very powerful. It helps to try to visualize what you are doing to your data at each step. 
+
+We will combine all previous steps into one large string of functions. 
+
+When we do this we do not have to specify the data in each function. The data from the previous step is transfered to the next step. 
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  mutate(Percent = Abundance*100)
+```
+
+#### `summarise()`
+We can use the `summarise()` function to find things like means and standard deviations/errors. 
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent))
+```
+So on average, Ascomycota makes up about 0.02% of the microbiome.
+
+We can also connect multiple summary statistics here. 
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent), 
+            n = n(), 
+            sd.dev = sd(Percent)) %>%
+  mutate(std.err = sd.dev/sqrt(n))
+```
+
+This is useful, but maybe we want to have summary statistics by group! We can also do this very easily using the `group_by()` function. 
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  group_by(Order) %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent), 
+            n = n(), 
+            sd.dev = sd(Percent)) %>%
+  mutate(std.err = sd.dev/sqrt(n))
+```
+
+We could also use the `arrange()` function to quickly sort our resultant data by a specific column
+```{r}
+# arrange from least to most
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  group_by(Order) %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent), 
+            n = n(), 
+            sd.dev = sd(Percent)) %>%
+  mutate(std.err = sd.dev/sqrt(n)) %>%
+  arrange(Mean)
+
+
+# arrange from most to least
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  group_by(Order) %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent), 
+            n = n(), 
+            sd.dev = sd(Percent)) %>%
+  mutate(std.err = sd.dev/sqrt(n)) %>%
+  arrange(-Mean)
+```
+
+#### Connecting to plotting
+
+These groups of functions and packages also all work together very nicely. For example, direct input into ggplot is possible. In which case you would not have to enter the data statement, you just need to start inputing your aesthetics.
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  group_by(Order) %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent), 
+            n = n(), 
+            sd.dev = sd(Percent)) %>%
+  mutate(std.err = sd.dev/sqrt(n)) %>%
+  ggplot(aes(x = Order, y = Mean)) +
+  geom_bar(stat="identity")
+```
+
+#### Dealing with NA values
+This dataset the NA value means an unidenfied fungus. So for plotting we would want to change that to unidentified. We can deal with NA values nicely within the tidyverse. 
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  group_by(Order) %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent), 
+            n = n(), 
+            sd.dev = sd(Percent)) %>%
+  
+  mutate(std.err = sd.dev/sqrt(n)) %>%
+  replace_na(list(Order = "unidentified")) %>%
+  ggplot(aes(x = Order, y = Mean)) +
+  geom_bar(stat="identity")
+```
+
+Arrange for `ggplot()` using `fct_reorder()`
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  group_by(Order) %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent), 
+            n = n(), 
+            sd.dev = sd(Percent)) %>%
+  
+  mutate(std.err = sd.dev/sqrt(n)) %>%
+  replace_na(list(Order = "unidentified")) %>%
+  mutate(Order2 = fct_reorder(Order, desc(-Mean))) %>%
+  ggplot(aes(x = Mean, y = Order2)) +
+  geom_bar(stat="identity") + 
+  xlab("Mean % Relative Abundance") +
+  ylab("")
+```
+
+Making it really sofisticated now by separating by crop and compartment and faceting
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  group_by(Order, Crop, Compartment) %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent), 
+            n = n(), 
+            sd.dev = sd(Percent)) %>%
+  mutate(std.err = sd.dev/sqrt(n)) %>%
+  replace_na(list(Order = "unidentified")) %>%
+  mutate(Order2 = fct_reorder(Order, desc(-Mean))) %>%
+  ggplot(aes(x = Mean, y = Order2)) +
+  geom_bar(stat="identity") + 
+  xlab("Mean % Relative Abundance") +
+  ylab("") + 
+  facet_wrap(~Crop*Compartment) +
+  theme_classic()
+```
+
+#### Joining 
+
+The join group of functions are super useful. Have you ever tried to match up data by rows based on some criteria? Its almost impossible without messing up over 10-15 rows of data. 
+
+More info can be found here: https://dplyr.tidyverse.org/reference/mutate-joins.html 
+
+But we can easily do this with the joining functions. They include:
+
+  -left_join() 
+    - Keep all rows of X and add matching rows from Y. Any rows in Y that don’t match X are excluded.
+  -right_join() 
+    - reverse of left_join()
+  -inner_join() 
+    - only keep rows that are common to both X AND Y, remove everything else. 
+  -full_join()
+    - Keep any columns that are in either X or Y
+    
+To try these out lets split our data into separate sets including taxonomy and metadata.
+
+Here we are also sampling 100 random rows of our dataset using the `sample_n()` function
+```{r}
+taxonomy <- microbiome.fungi2 %>%
+  select(OTU, Kingdom:Taxonomy) %>%
+  sample_n(size = 100)
+
+metadata <- microbiome.fungi2 %>% 
+  select(OTU:Fungicide) %>%
+  sample_n(size = 100)
+
+left_join(taxonomy, metadata, by = "OTU") # notice the NAs in the metadata since some OTUs did not appear in the random sample. 
+
+# to take the common set of both datasets you can use inner_join()
+inner_join(taxonomy, metadata, by = "OTU")
+
+# or full join to keep everything 
+full_join(taxonomy, metadata, by = "OTU")
+```
+
+Now this is kind of a silly example because we already had the dataset joined how we wanted it and split it appart. But you can immagine if you have two separate datasets with one column in common and you wanted to combine them into one, instead of taking days to do this by hand you could simply load into R and do it. 
+
+#### Pivoting
+
+Pivoting is also useful for converting from wide to long format and back again. We can do this with `pivot_longer()` and `pivot_wider()`
+
+More info can be found here: https://tidyr.tidyverse.org/reference/pivot_wider.html 
+
+I will demonstrate `pivot_wider()` assuming that most data is already formatted as long data. Lets explore turning our dataset into a wide format, since its in long format.
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  group_by(Order, Crop, Compartment, Fungicide) %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent)) %>%
+  replace_na(list(Order = "unidentified")) %>%
+  pivot_wider(names_from = Fungicide, values_from = Mean) 
+```
+
+Now we can easily calculate the difference between fungicide and control and plot it. 
+```{r}
+microbiome.fungi %>%
+  select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
+  filter(Class == "Sordariomycetes") %>%
+  group_by(Order, Crop, Compartment, Fungicide) %>%
+  mutate(Percent = Abundance*100) %>%
+  summarise(Mean = mean(Percent)) %>%
+  replace_na(list(Order = "unidentified")) %>%
+  pivot_wider(names_from = Fungicide, values_from = Mean, values_fill = 0) %>%
+  mutate(diff = C - F) %>%
+  ggplot(aes(y = Order, x = diff)) +
+  geom_point() +
+  facet_wrap(~Crop*Compartment)
+```
+
+
+
+
+
+
+
+
+
+
+
+
