@@ -24,3 +24,5 @@ The current directories here illustrate the topics covered.
 * [Introduction to Reproducible workflows](05_ReproducibleWorkflows)
 * [Introduction to R](06_IntroR/IntroR.md)
 * [Introduction to data visualization](07_ggplot/ggplot_plotting.md)
+* [R Markdown](08_Rmarkdown/markdown_tutorial.md)
+* [Data Wrangling](10_DataWrangling/DataWrangling.md)
