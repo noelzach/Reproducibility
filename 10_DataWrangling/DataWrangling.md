@@ -532,1337 +532,1331 @@ metadata <- microbiome.fungi2 %>%
 left_join(taxonomy, metadata, by = "OTU") # notice the NAs in the metadata since some OTUs did not appear in the random sample. 
 ```
 
-    ##           OTU Kingdom     Phylum              Class             Order
-    ## 1   FOTU_1399   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 2   FOTU_3557   Fungi Ascomycota               <NA>              <NA>
-    ## 3   FOTU_2877   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 4   FOTU_1588   Fungi Ascomycota    Saccharomycetes Saccharomycetales
-    ## 5   FOTU_6838   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 6   FOTU_2076   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 7   FOTU_2981   Fungi Ascomycota    Sordariomycetes    Phyllachorales
-    ## 8   FOTU_7147   Fungi Ascomycota     Eurotiomycetes        Eurotiales
-    ## 9   FOTU_2205   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 10  FOTU_1808   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 11   FOTU_635   Fungi Ascomycota    Sordariomycetes       Sordariales
-    ## 12   FOTU_180   Fungi Ascomycota    Sordariomycetes       Sordariales
-    ## 13  FOTU_2046   Fungi Ascomycota               <NA>              <NA>
-    ## 14   FOTU_386   Fungi Ascomycota    Dothideomycetes       Capnodiales
-    ## 15   FOTU_375   Fungi Ascomycota               <NA>              <NA>
-    ## 16  FOTU_3369   Fungi Ascomycota    Sordariomycetes              <NA>
-    ## 17   FOTU_799   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 18   FOTU_520   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 19  FOTU_5079   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 20  FOTU_3134   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 21  FOTU_1609   Fungi Ascomycota    Dothideomycetes       Dothideales
-    ## 22  FOTU_6475   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 23  FOTU_6425   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 24  FOTU_2843   Fungi Ascomycota               <NA>              <NA>
-    ## 25  FOTU_3287   Fungi Ascomycota    Sordariomycetes       Sordariales
-    ## 26   FOTU_150   Fungi Ascomycota               <NA>              <NA>
-    ## 27   FOTU_925   Fungi Ascomycota    Sordariomycetes     Glomerellales
-    ## 28  FOTU_4872   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 29   FOTU_786   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 30  FOTU_7144   Fungi Ascomycota      Pezizomycetes         Pezizales
-    ## 31  FOTU_1118   Fungi Ascomycota    Sordariomycetes     Glomerellales
-    ## 32  FOTU_6794   Fungi Ascomycota     Eurotiomycetes   Chaetothyriales
-    ## 33  FOTU_2562   Fungi Ascomycota               <NA>              <NA>
-    ## 34  FOTU_4288   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 35   FOTU_218   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 36  FOTU_5225   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 37  FOTU_4036   Fungi Ascomycota    Lecanoromycetes        Caliciales
-    ## 38   FOTU_930   Fungi Ascomycota Laboulbeniomycetes   Pyxidiophorales
-    ## 39  FOTU_4065   Fungi Ascomycota    Lecanoromycetes        Ostropales
-    ## 40  FOTU_3529   Fungi Ascomycota     Orbiliomycetes              <NA>
-    ## 41  FOTU_1533   Fungi Ascomycota     Eurotiomycetes        Eurotiales
-    ## 42  FOTU_1000   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 43   FOTU_103   Fungi Ascomycota    Sordariomycetes      Diaporthales
-    ## 44  FOTU_2258   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 45  FOTU_5713   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 46  FOTU_3243   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 47  FOTU_2963   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 48  FOTU_4971   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 49  FOTU_1591   Fungi Ascomycota    Sordariomycetes     Glomerellales
-    ## 50  FOTU_2547   Fungi Ascomycota    Dothideomycetes              <NA>
-    ## 51  FOTU_4714   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 52  FOTU_3926   Fungi Ascomycota    Dothideomycetes       Capnodiales
-    ## 53  FOTU_2353   Fungi Ascomycota    Sordariomycetes      Diaporthales
-    ## 54  FOTU_5991   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 55  FOTU_1444   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 56  FOTU_4194   Fungi Ascomycota               <NA>              <NA>
-    ## 57  FOTU_3773   Fungi Ascomycota               <NA>              <NA>
-    ## 58  FOTU_3385   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 59  FOTU_4084   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 60  FOTU_5139   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 61  FOTU_7166   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 62  FOTU_4891   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 63  FOTU_3049   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 64  FOTU_1567   Fungi Ascomycota      Leotiomycetes       Erysiphales
-    ## 65  FOTU_2293   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 66  FOTU_7137   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 67  FOTU_5802   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 68    FOTU_41   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 69  FOTU_6902   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 70  FOTU_4996   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 71  FOTU_5745   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 72  FOTU_2711   Fungi Ascomycota      Pezizomycetes         Pezizales
-    ## 73  FOTU_3733   Fungi Ascomycota     Orbiliomycetes        Orbiliales
-    ## 74  FOTU_3692   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 75  FOTU_3112   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 76  FOTU_3335   Fungi Ascomycota    Sordariomycetes    Coniochaetales
-    ## 77  FOTU_1653   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 78  FOTU_1141   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 79  FOTU_4856   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 80   FOTU_298   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 81    FOTU_14   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 82   FOTU_898   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 83  FOTU_3533   Fungi Ascomycota    Sordariomycetes       Sordariales
-    ## 84  FOTU_6681   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 85  FOTU_3511   Fungi Ascomycota               <NA>              <NA>
-    ## 86  FOTU_3595   Fungi Ascomycota    Dothideomycetes       Venturiales
-    ## 87  FOTU_5317   Fungi Ascomycota               <NA>              <NA>
-    ## 88  FOTU_1033   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 89  FOTU_6970   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 90  FOTU_4942   Fungi Ascomycota    Dothideomycetes       Capnodiales
-    ## 91   FOTU_406   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 92  FOTU_5611   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 93  FOTU_4667   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 94  FOTU_3237   Fungi Ascomycota     Eurotiomycetes        Eurotiales
-    ## 95  FOTU_1068   Fungi Ascomycota               <NA>              <NA>
-    ## 96  FOTU_2877   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 97  FOTU_3661   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 98  FOTU_3566   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 99  FOTU_1463   Fungi Ascomycota     Eurotiomycetes   Chaetothyriales
-    ## 100 FOTU_1399   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ##                   Family            Genus              Species
-    ## 1                   <NA>             <NA>                 <NA>
-    ## 2                   <NA>             <NA>                 <NA>
-    ## 3                   <NA>             <NA>                 <NA>
-    ## 4          Dipodascaceae             <NA>                 <NA>
-    ## 5                   <NA>             <NA>                 <NA>
-    ## 6      Lophiostomataceae             <NA>                 <NA>
-    ## 7        Phyllachoraceae      Phyllachora      Phyllachora sp.
-    ## 8         Aspergillaceae      Penicillium      Penicillium sp.
-    ## 9                   <NA>             <NA>                 <NA>
-    ## 10       Cordycipitaceae             <NA>                 <NA>
-    ## 11                  <NA>             <NA>                 <NA>
-    ## 12     Lasiosphaeriaceae             <NA>                 <NA>
-    ## 13                  <NA>             <NA>                 <NA>
-    ## 14    Teratosphaeriaceae        Devriesia        Devriesia sp.
-    ## 15                  <NA>             <NA>                 <NA>
-    ## 16                  <NA>             <NA>                 <NA>
-    ## 17      Stachybotryaceae  Striaticonidium  Striaticonidium sp.
-    ## 18       Sclerotiniaceae      Clarireedia      Clarireedia sp.
-    ## 19           Nectriaceae         Fusarium         Fusarium sp.
-    ## 20                  <NA>             <NA>                 <NA>
-    ## 21          Dothioraceae          Perusta          Perusta sp.
-    ## 22                  <NA>             <NA>                 <NA>
-    ## 23           Nectriaceae        Fusicolla        Fusicolla sp.
-    ## 24                  <NA>             <NA>                 <NA>
-    ## 25                  <NA>             <NA>                 <NA>
-    ## 26                  <NA>             <NA>                 <NA>
-    ## 27  Plectosphaerellaceae          Lectera          Lectera sp.
-    ## 28         Pleosporaceae       Alternaria       Alternaria sp.
-    ## 29         Pleosporaceae             <NA>                 <NA>
-    ## 30            Pezizaceae             <NA>                 <NA>
-    ## 31        Glomerellaceae   Colletotrichum   Colletotrichum sp.
-    ## 32       Trichomeriaceae           Knufia           Knufia sp.
-    ## 33                  <NA>             <NA>                 <NA>
-    ## 34                  <NA>             <NA>                 <NA>
-    ## 35         Sporocadaceae   Pestalotiopsis   Pestalotiopsis sp.
-    ## 36       Coniothyriaceae     Coniothyrium     Coniothyrium sp.
-    ## 37           Physciaceae       Physciella       Physciella sp.
-    ## 38      Pyxidiophoraceae     Pyxidiophora     Pyxidiophora sp.
-    ## 39          Stictidaceae     Cryptodiscus     Cryptodiscus sp.
-    ## 40                  <NA>             <NA>                 <NA>
-    ## 41        Aspergillaceae      Penicillium      Penicillium sp.
-    ## 42                  <NA>             <NA>                 <NA>
-    ## 43         Diaporthaceae        Diaporthe        Diaporthe sp.
-    ## 44           Nectriaceae             <NA>                 <NA>
-    ## 45                  <NA>             <NA>                 <NA>
-    ## 46           Nectriaceae             <NA>                 <NA>
-    ## 47          Hypocreaceae      Trichoderma      Trichoderma sp.
-    ## 48                  <NA>             <NA>                 <NA>
-    ## 49  Plectosphaerellaceae     Verticillium     Verticillium sp.
-    ## 50                  <NA>             <NA>                 <NA>
-    ## 51                  <NA>             <NA>                 <NA>
-    ## 52                  <NA>             <NA>                 <NA>
-    ## 53                  <NA>             <NA>                 <NA>
-    ## 54                  <NA>             <NA>                 <NA>
-    ## 55                  <NA>             <NA>                 <NA>
-    ## 56                  <NA>             <NA>                 <NA>
-    ## 57                  <NA>             <NA>                 <NA>
-    ## 58     Phaeosphaeriaceae             <NA>                 <NA>
-    ## 59         Pleosporaceae             <NA>                 <NA>
-    ## 60                  <NA>             <NA>                 <NA>
-    ## 61         Didymellaceae     Neoascochyta     Neoascochyta sp.
-    ## 62         Pleosporaceae       Alternaria       Alternaria sp.
-    ## 63         Periconiaceae        Periconia        Periconia sp.
-    ## 64          Erysiphaceae         Erysiphe         Erysiphe sp.
-    ## 65           Xylariaceae      Lopadostoma      Lopadostoma sp.
-    ## 66         Pleosporaceae             <NA>                 <NA>
-    ## 67                  <NA>             <NA>                 <NA>
-    ## 68                  <NA>             <NA>                 <NA>
-    ## 69           Xylariaceae          Xylaria          Xylaria sp.
-    ## 70     Phaeosphaeriaceae     Neosetophoma     Neosetophoma sp.
-    ## 71                  <NA>             <NA>                 <NA>
-    ## 72        Pyronemataceae             <NA>                 <NA>
-    ## 73           Orbiliaceae       Dactylella       Dactylella sp.
-    ## 74          Massariaceae         Massaria         Massaria sp.
-    ## 75       Lentitheciaceae     Setoseptoria     Setoseptoria sp.
-    ## 76       Coniochaetaceae      Coniochaeta      Coniochaeta sp.
-    ## 77         Pleosporaceae        Bipolaris        Bipolaris sp.
-    ## 78          Hypocreaceae      Trichoderma      Trichoderma sp.
-    ## 79           Helotiaceae             <NA>                 <NA>
-    ## 80                  <NA>             <NA>                 <NA>
-    ## 81                  <NA>             <NA>                 <NA>
-    ## 82  Tetraplosphaeriaceae Tetraplosphaeria Tetraplosphaeria sp.
-    ## 83     Lasiosphaeriaceae             <NA>                 <NA>
-    ## 84       Teichosporaceae             <NA>                 <NA>
-    ## 85                  <NA>             <NA>                 <NA>
-    ## 86          Venturiaceae         Venturia         Venturia sp.
-    ## 87                  <NA>             <NA>                 <NA>
-    ## 88           Helotiaceae             <NA>                 <NA>
-    ## 89          Hypocreaceae        Hypomyces        Hypomyces sp.
-    ## 90        Dissoconiaceae      Dissoconium      Dissoconium sp.
-    ## 91          Niessliaceae     Eucasphaeria     Eucasphaeria sp.
-    ## 92                  <NA>             <NA>                 <NA>
-    ## 93                  <NA>             <NA>                 <NA>
-    ## 94        Trichocomaceae      Talaromyces      Talaromyces sp.
-    ## 95                  <NA>             <NA>                 <NA>
-    ## 96                  <NA>             <NA>                 <NA>
-    ## 97                  <NA>             <NA>                 <NA>
-    ## 98         Sporocadaceae   Pestalotiopsis   Pestalotiopsis sp.
-    ## 99                  <NA>             <NA>                 <NA>
-    ## 100                 <NA>             <NA>                 <NA>
-    ##                     Isolate Isolate_percent_id            BestMatch
-    ## 1                      <NA>              0.000          Hypocreales
-    ## 2                      <NA>              0.000           Ascomycota
-    ## 3                     JU-01             81.481          Hypocreales
-    ## 4       MICO_2-48_[len=383]             97.015        Dipodascaceae
-    ## 5                      <NA>              0.000         Pleosporales
-    ## 6                      <NA>              0.000    Lophiostomataceae
-    ## 7                      <NA>              0.000      Phyllachora sp.
-    ## 8                      JL73             88.235      Penicillium sp.
-    ## 9                      <NA>              0.000         Pleosporales
-    ## 10                     JL82             77.232      Cordycipitaceae
-    ## 11                     <NA>              0.000          Sordariales
-    ## 12                     <NA>              0.000    Lasiosphaeriaceae
-    ## 13                     <NA>              0.000           Ascomycota
-    ## 14                     <NA>              0.000        Devriesia sp.
-    ## 15                     <NA>              0.000           Ascomycota
-    ## 16                     <NA>              0.000      Sordariomycetes
-    ## 17                   ABAK_7             78.281  Striaticonidium sp.
-    ## 18                     <NA>              0.000      Clarireedia sp.
-    ## 19  Mortierella_polycephala             91.045         Fusarium sp.
-    ## 20                     <NA>              0.000         Pleosporales
-    ## 21                     <NA>              0.000          Perusta sp.
-    ## 22                    JU-33             84.659           Xylariales
-    ## 23                  ABAK_15             83.333        Fusicolla sp.
-    ## 24                     <NA>              0.000           Ascomycota
-    ## 25                     <NA>              0.000          Sordariales
-    ## 26                     <NA>              0.000           Ascomycota
-    ## 27   C-ILSO2_4-19_[len=514]             85.990          Lectera sp.
-    ## 28                     <NA>              0.000       Alternaria sp.
-    ## 29                     <NA>              0.000        Pleosporaceae
-    ## 30                     <NA>              0.000           Pezizaceae
-    ## 31                     <NA>              0.000   Colletotrichum sp.
-    ## 32                     <NA>              0.000           Knufia sp.
-    ## 33                     <NA>              0.000           Ascomycota
-    ## 34                     <NA>              0.000         Pleosporales
-    ## 35                     <NA>              0.000   Pestalotiopsis sp.
-    ## 36                     <NA>              0.000     Coniothyrium sp.
-    ## 37                     <NA>              0.000       Physciella sp.
-    ## 38                     <NA>              0.000     Pyxidiophora sp.
-    ## 39                     <NA>              0.000     Cryptodiscus sp.
-    ## 40                     <NA>              0.000       Orbiliomycetes
-    ## 41       Mortierella_alpina             87.685      Penicillium sp.
-    ## 42                     <NA>              0.000         Pleosporales
-    ## 43                     <NA>              0.000        Diaporthe sp.
-    ## 44      MISO_9-11_[len=564]             85.024          Nectriaceae
-    ## 45                     <NA>              0.000           Helotiales
-    ## 46  Mortierella_polycephala             95.500          Nectriaceae
-    ## 47                    JU-49             91.500      Trichoderma sp.
-    ## 48    V-MICO2_3-2_[len=506]             86.792         Pleosporales
-    ## 49   C-ILSO2_4-19_[len=514]             86.316     Verticillium sp.
-    ## 50    V-MICO2_3-2_[len=506]             82.486      Dothideomycetes
-    ## 51                     <NA>              0.000           Helotiales
-    ## 52                     <NA>              0.000          Capnodiales
-    ## 53                     <NA>              0.000         Diaporthales
-    ## 54                     <NA>              0.000         Pleosporales
-    ## 55                     <NA>              0.000         Pleosporales
-    ## 56                     <NA>              0.000           Ascomycota
-    ## 57                     <NA>              0.000           Ascomycota
-    ## 58                     <NA>              0.000    Phaeosphaeriaceae
-    ## 59                     <NA>              0.000        Pleosporaceae
-    ## 60                     <NA>              0.000         Pleosporales
-    ## 61                     <NA>              0.000     Neoascochyta sp.
-    ## 62                     <NA>              0.000       Alternaria sp.
-    ## 63                     <NA>              0.000        Periconia sp.
-    ## 64                     <NA>              0.000         Erysiphe sp.
-    ## 65                     <NA>              0.000      Lopadostoma sp.
-    ## 66                     <NA>              0.000        Pleosporaceae
-    ## 67                     <NA>              0.000           Helotiales
-    ## 68                     <NA>              0.000           Xylariales
-    ## 69                     <NA>              0.000          Xylaria sp.
-    ## 70                     <NA>              0.000     Neosetophoma sp.
-    ## 71                     <NA>              0.000           Helotiales
-    ## 72                     <NA>              0.000       Pyronemataceae
-    ## 73                     <NA>              0.000       Dactylella sp.
-    ## 74                     <NA>              0.000         Massaria sp.
-    ## 75                     <NA>              0.000     Setoseptoria sp.
-    ## 76                     <NA>              0.000      Coniochaeta sp.
-    ## 77                     <NA>              0.000        Bipolaris sp.
-    ## 78                    JU-49             91.500      Trichoderma sp.
-    ## 79                     <NA>              0.000          Helotiaceae
-    ## 80                     <NA>              0.000           Helotiales
-    ## 81                     <NA>              0.000         Pleosporales
-    ## 82                     <NA>              0.000 Tetraplosphaeria sp.
-    ## 83                     <NA>              0.000    Lasiosphaeriaceae
-    ## 84                     <NA>              0.000      Teichosporaceae
-    ## 85                     <NA>              0.000           Ascomycota
-    ## 86                     <NA>              0.000         Venturia sp.
-    ## 87                     <NA>              0.000           Ascomycota
-    ## 88                     <NA>              0.000          Helotiaceae
-    ## 89                     <NA>              0.000        Hypomyces sp.
-    ## 90                     <NA>              0.000      Dissoconium sp.
-    ## 91                    JU-01             81.651     Eucasphaeria sp.
-    ## 92                     <NA>              0.000         Pleosporales
-    ## 93                     <NA>              0.000           Helotiales
-    ## 94                   CK1355             96.000      Talaromyces sp.
-    ## 95                     <NA>              0.000           Ascomycota
-    ## 96                    JU-01             81.481          Hypocreales
-    ## 97                     <NA>              0.000           Helotiales
-    ## 98                     <NA>              0.000   Pestalotiopsis sp.
-    ## 99                     <NA>              0.000      Chaetothyriales
-    ## 100                    <NA>              0.000          Hypocreales
-    ##                          Taxonomy                                  SampleID
-    ## 1           FOTU_1399-Hypocreales Corn2017LeafObjective2Collection1T2R1CAH5
-    ## 2            FOTU_3557-Ascomycota                                      <NA>
-    ## 3           FOTU_2877-Hypocreales                                      <NA>
-    ## 4         FOTU_1588-Dipodascaceae                                      <NA>
-    ## 5          FOTU_6838-Pleosporales                                      <NA>
-    ## 6     FOTU_2076-Lophiostomataceae                                      <NA>
-    ## 7       FOTU_2981-Phyllachora sp.                                      <NA>
-    ## 8       FOTU_7147-Penicillium sp.                                      <NA>
-    ## 9          FOTU_2205-Pleosporales                                      <NA>
-    ## 10      FOTU_1808-Cordycipitaceae                                      <NA>
-    ## 11           FOTU_635-Sordariales                                      <NA>
-    ## 12     FOTU_180-Lasiosphaeriaceae                                      <NA>
-    ## 13           FOTU_2046-Ascomycota                                      <NA>
-    ## 14         FOTU_386-Devriesia sp.                                      <NA>
-    ## 15            FOTU_375-Ascomycota                                      <NA>
-    ## 16      FOTU_3369-Sordariomycetes                                      <NA>
-    ## 17   FOTU_799-Striaticonidium sp.                                      <NA>
-    ## 18       FOTU_520-Clarireedia sp.                                      <NA>
-    ## 19         FOTU_5079-Fusarium sp.                                      <NA>
-    ## 20         FOTU_3134-Pleosporales                                      <NA>
-    ## 21          FOTU_1609-Perusta sp.                                      <NA>
-    ## 22           FOTU_6475-Xylariales                                      <NA>
-    ## 23        FOTU_6425-Fusicolla sp.                                      <NA>
-    ## 24           FOTU_2843-Ascomycota                                      <NA>
-    ## 25          FOTU_3287-Sordariales                                      <NA>
-    ## 26            FOTU_150-Ascomycota                                      <NA>
-    ## 27           FOTU_925-Lectera sp.                                      <NA>
-    ## 28       FOTU_4872-Alternaria sp.                                      <NA>
-    ## 29         FOTU_786-Pleosporaceae                                      <NA>
-    ## 30           FOTU_7144-Pezizaceae                                      <NA>
-    ## 31   FOTU_1118-Colletotrichum sp.                                      <NA>
-    ## 32           FOTU_6794-Knufia sp.                                      <NA>
-    ## 33           FOTU_2562-Ascomycota                                      <NA>
-    ## 34         FOTU_4288-Pleosporales                                      <NA>
-    ## 35    FOTU_218-Pestalotiopsis sp.                                      <NA>
-    ## 36     FOTU_5225-Coniothyrium sp.                                      <NA>
-    ## 37       FOTU_4036-Physciella sp.                                      <NA>
-    ## 38      FOTU_930-Pyxidiophora sp.                                      <NA>
-    ## 39     FOTU_4065-Cryptodiscus sp.                                      <NA>
-    ## 40       FOTU_3529-Orbiliomycetes                                      <NA>
-    ## 41      FOTU_1533-Penicillium sp.                                      <NA>
-    ## 42         FOTU_1000-Pleosporales                                      <NA>
-    ## 43         FOTU_103-Diaporthe sp.                                      <NA>
-    ## 44          FOTU_2258-Nectriaceae                                      <NA>
-    ## 45           FOTU_5713-Helotiales                                      <NA>
-    ## 46          FOTU_3243-Nectriaceae                                      <NA>
-    ## 47      FOTU_2963-Trichoderma sp.                                      <NA>
-    ## 48         FOTU_4971-Pleosporales                                      <NA>
-    ## 49     FOTU_1591-Verticillium sp.                                      <NA>
-    ## 50      FOTU_2547-Dothideomycetes                                      <NA>
-    ## 51           FOTU_4714-Helotiales                                      <NA>
-    ## 52          FOTU_3926-Capnodiales                                      <NA>
-    ## 53         FOTU_2353-Diaporthales                                      <NA>
-    ## 54         FOTU_5991-Pleosporales                                      <NA>
-    ## 55         FOTU_1444-Pleosporales                                      <NA>
-    ## 56           FOTU_4194-Ascomycota                                      <NA>
-    ## 57           FOTU_3773-Ascomycota                                      <NA>
-    ## 58    FOTU_3385-Phaeosphaeriaceae                                      <NA>
-    ## 59        FOTU_4084-Pleosporaceae                                      <NA>
-    ## 60         FOTU_5139-Pleosporales                                      <NA>
-    ## 61     FOTU_7166-Neoascochyta sp.                                      <NA>
-    ## 62       FOTU_4891-Alternaria sp.                                      <NA>
-    ## 63        FOTU_3049-Periconia sp.                                      <NA>
-    ## 64         FOTU_1567-Erysiphe sp.                                      <NA>
-    ## 65      FOTU_2293-Lopadostoma sp.                                      <NA>
-    ## 66        FOTU_7137-Pleosporaceae                                      <NA>
-    ## 67           FOTU_5802-Helotiales                                      <NA>
-    ## 68             FOTU_41-Xylariales                                      <NA>
-    ## 69          FOTU_6902-Xylaria sp.                                      <NA>
-    ## 70     FOTU_4996-Neosetophoma sp.                                      <NA>
-    ## 71           FOTU_5745-Helotiales                                 T1R2FAR6R
-    ## 72       FOTU_2711-Pyronemataceae                                      <NA>
-    ## 73       FOTU_3733-Dactylella sp.                                      <NA>
-    ## 74         FOTU_3692-Massaria sp.                                      <NA>
-    ## 75     FOTU_3112-Setoseptoria sp.                                      <NA>
-    ## 76      FOTU_3335-Coniochaeta sp.                                      <NA>
-    ## 77        FOTU_1653-Bipolaris sp.                                      <NA>
-    ## 78      FOTU_1141-Trichoderma sp.                                      <NA>
-    ## 79          FOTU_4856-Helotiaceae                                      <NA>
-    ## 80            FOTU_298-Helotiales                                      <NA>
-    ## 81           FOTU_14-Pleosporales                                      <NA>
-    ## 82  FOTU_898-Tetraplosphaeria sp.                                      <NA>
-    ## 83    FOTU_3533-Lasiosphaeriaceae                                      <NA>
-    ## 84      FOTU_6681-Teichosporaceae                                      <NA>
-    ## 85           FOTU_3511-Ascomycota                                      <NA>
-    ## 86         FOTU_3595-Venturia sp.                                      <NA>
-    ## 87           FOTU_5317-Ascomycota                                      <NA>
-    ## 88          FOTU_1033-Helotiaceae                                      <NA>
-    ## 89        FOTU_6970-Hypomyces sp.                                      <NA>
-    ## 90      FOTU_4942-Dissoconium sp.                                      <NA>
-    ## 91      FOTU_406-Eucasphaeria sp.                                      <NA>
-    ## 92         FOTU_5611-Pleosporales                                      <NA>
-    ## 93           FOTU_4667-Helotiales                                      <NA>
-    ## 94      FOTU_3237-Talaromyces sp.                                      <NA>
-    ## 95           FOTU_1068-Ascomycota                                      <NA>
-    ## 96          FOTU_2877-Hypocreales                                      <NA>
-    ## 97           FOTU_3661-Helotiales                                      <NA>
-    ## 98   FOTU_3566-Pestalotiopsis sp.                                      <NA>
-    ## 99      FOTU_1463-Chaetothyriales                                      <NA>
-    ## 100         FOTU_1399-Hypocreales Corn2017LeafObjective2Collection1T2R1CAH5
-    ##     Abundance Crop Compartment DateSampled GrowthStage Treatment  Rep Fungicide
-    ## 1           0 Corn        Leaf   26-Jun-17          V6        T2   R1         C
-    ## 2          NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 3          NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 4          NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 5          NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 6          NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 7          NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 8          NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 9          NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 10         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 11         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 12         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 13         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 14         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 15         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 16         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 17         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 18         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 19         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 20         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 21         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 22         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 23         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 24         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 25         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 26         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 27         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 28         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 29         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 30         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 31         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 32         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 33         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 34         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 35         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 36         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 37         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 38         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 39         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 40         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 41         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 42         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 43         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 44         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 45         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 46         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 47         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 48         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 49         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 50         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 51         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 52         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 53         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 54         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 55         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 56         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 57         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 58         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 59         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 60         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 61         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 62         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 63         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 64         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 65         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 66         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 67         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 68         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 69         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 70         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 71          0  Soy        Root   27-Aug-18          R6        T1   R2         F
-    ## 72         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 73         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 74         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 75         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 76         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 77         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 78         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 79         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 80         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 81         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 82         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 83         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 84         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 85         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 86         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 87         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 88         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 89         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 90         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 91         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 92         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 93         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 94         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 95         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 96         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 97         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 98         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 99         NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>      <NA>
-    ## 100         0 Corn        Leaf   26-Jun-17          V6        T2   R1         C
+    ##           OTU Kingdom     Phylum           Class             Order
+    ## 1   FOTU_1160   Fungi Ascomycota  Eurotiomycetes   Chaetothyriales
+    ## 2   FOTU_4062   Fungi Ascomycota  Eurotiomycetes   Chaetothyriales
+    ## 3    FOTU_712   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 4   FOTU_1104   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 5   FOTU_3687   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 6   FOTU_5397   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 7   FOTU_6853   Fungi Ascomycota   Pezizomycetes         Pezizales
+    ## 8   FOTU_5119   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 9     FOTU_77   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 10  FOTU_3814   Fungi Ascomycota Lecanoromycetes       Lecanorales
+    ## 11  FOTU_2363   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 12  FOTU_1475   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 13   FOTU_258   Fungi Ascomycota            <NA>              <NA>
+    ## 14  FOTU_4078   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 15  FOTU_5602   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 16   FOTU_879   Fungi Ascomycota Dothideomycetes       Tubeufiales
+    ## 17  FOTU_5224   Fungi Ascomycota  Eurotiomycetes        Eurotiales
+    ## 18  FOTU_2837   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 19  FOTU_1608   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 20  FOTU_3367   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 21  FOTU_2599   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 22  FOTU_3137   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 23  FOTU_5493   Fungi Ascomycota  Orbiliomycetes        Orbiliales
+    ## 24   FOTU_412   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 25  FOTU_6634   Fungi Ascomycota Dothideomycetes              <NA>
+    ## 26  FOTU_6825   Fungi Ascomycota            <NA>              <NA>
+    ## 27  FOTU_1645   Fungi Ascomycota Dothideomycetes              <NA>
+    ## 28  FOTU_1917   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 29  FOTU_7117   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 30  FOTU_1666   Fungi Ascomycota Sordariomycetes     Glomerellales
+    ## 31  FOTU_3428   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 32  FOTU_3731   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 33  FOTU_6705   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 34   FOTU_789   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 35  FOTU_5359   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 36  FOTU_5995   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 37  FOTU_2857   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 38  FOTU_2018   Fungi Ascomycota Dothideomycetes       Capnodiales
+    ## 39   FOTU_139   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 40   FOTU_205   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 41  FOTU_5764   Fungi Ascomycota            <NA>              <NA>
+    ## 42  FOTU_4866   Fungi Ascomycota  Orbiliomycetes        Orbiliales
+    ## 43  FOTU_3541   Fungi Ascomycota            <NA>              <NA>
+    ## 44  FOTU_3122   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 45  FOTU_2704   Fungi Ascomycota Sordariomycetes          Branch06
+    ## 46  FOTU_1370   Fungi Ascomycota            <NA>              <NA>
+    ## 47  FOTU_3443   Fungi Ascomycota   Pezizomycetes         Pezizales
+    ## 48  FOTU_4805   Fungi Ascomycota   Pezizomycetes         Pezizales
+    ## 49  FOTU_2400   Fungi Ascomycota Dothideomycetes       Capnodiales
+    ## 50  FOTU_7115   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 51   FOTU_128   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 52   FOTU_656   Fungi Ascomycota Saccharomycetes Saccharomycetales
+    ## 53  FOTU_6333   Fungi Ascomycota  Orbiliomycetes        Orbiliales
+    ## 54  FOTU_4664   Fungi Ascomycota            <NA>              <NA>
+    ## 55  FOTU_7152   Fungi Ascomycota  Eurotiomycetes        Eurotiales
+    ## 56  FOTU_6429   Fungi Ascomycota  Eurotiomycetes   Chaetothyriales
+    ## 57  FOTU_6293   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 58  FOTU_3530   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 59  FOTU_2572   Fungi Ascomycota Dothideomycetes Botryosphaeriales
+    ## 60  FOTU_5001   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 61   FOTU_973   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 62  FOTU_2299   Fungi Ascomycota            <NA>              <NA>
+    ## 63  FOTU_1119   Fungi Ascomycota            <NA>              <NA>
+    ## 64  FOTU_4909   Fungi Ascomycota            <NA>              <NA>
+    ## 65   FOTU_342   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 66   FOTU_841   Fungi Ascomycota Sordariomycetes Chaetosphaeriales
+    ## 67  FOTU_6909   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 68  FOTU_1922   Fungi Ascomycota Sordariomycetes        Xylariales
+    ## 69  FOTU_3075   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 70  FOTU_1257   Fungi Ascomycota            <NA>              <NA>
+    ## 71  FOTU_2839   Fungi Ascomycota            <NA>              <NA>
+    ## 72  FOTU_1063   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 73  FOTU_2042   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 74  FOTU_6308   Fungi Ascomycota            <NA>              <NA>
+    ## 75  FOTU_3056   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 76  FOTU_3372   Fungi Ascomycota   Leotiomycetes       Erysiphales
+    ## 77  FOTU_2889   Fungi Ascomycota Dothideomycetes       Capnodiales
+    ## 78  FOTU_3413   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 79  FOTU_2170   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 80  FOTU_1534   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 81   FOTU_613   Fungi Ascomycota Taphrinomycetes       Taphrinales
+    ## 82   FOTU_175   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 83  FOTU_1565   Fungi Ascomycota Sordariomycetes    Coniochaetales
+    ## 84  FOTU_3480   Fungi Ascomycota Dothideomycetes              <NA>
+    ## 85  FOTU_1214   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 86  FOTU_2665   Fungi Ascomycota   Pezizomycetes         Pezizales
+    ## 87    FOTU_38   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 88  FOTU_6430   Fungi Ascomycota Dothideomycetes       Dothideales
+    ## 89   FOTU_839   Fungi Ascomycota            <NA>              <NA>
+    ## 90  FOTU_5405   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 91  FOTU_5465   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 92  FOTU_2109   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 93  FOTU_2210   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 94  FOTU_1950   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 95  FOTU_5990   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 96   FOTU_731   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 97   FOTU_991   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 98  FOTU_4088   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 99  FOTU_3866   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 100  FOTU_122   Fungi Ascomycota Sordariomycetes      Diaporthales
+    ##                  Family            Genus              Species
+    ## 1   Herpotrichiellaceae Cladophialophora Cladophialophora sp.
+    ## 2                  <NA>             <NA>                 <NA>
+    ## 3                  <NA>             <NA>                 <NA>
+    ## 4         Sporormiaceae             <NA>                 <NA>
+    ## 5                  <NA>             <NA>                 <NA>
+    ## 6         Didymellaceae             <NA>                 <NA>
+    ## 7            Pezizaceae             <NA>                 <NA>
+    ## 8                  <NA>             <NA>                 <NA>
+    ## 9     Lasiosphaeriaceae             <NA>                 <NA>
+    ## 10                 <NA>             <NA>                 <NA>
+    ## 11        Pleosporaceae             <NA>                 <NA>
+    ## 12                 <NA>             <NA>                 <NA>
+    ## 13                 <NA>             <NA>                 <NA>
+    ## 14      Hyaloscyphaceae             <NA>                 <NA>
+    ## 15    Lasiosphaeriaceae             <NA>                 <NA>
+    ## 16         Tubeufiaceae   Neohelicomyces   Neohelicomyces sp.
+    ## 17       Trichocomaceae      Talaromyces      Talaromyces sp.
+    ## 18        Didymellaceae        Didymella        Didymella sp.
+    ## 19                 <NA>             <NA>                 <NA>
+    ## 20                 <NA>             <NA>                 <NA>
+    ## 21     Cucurbitariaceae  Neocucurbitaria  Neocucurbitaria sp.
+    ## 22   Didymosphaeriaceae Paraconiothyrium Paraconiothyrium sp.
+    ## 23       Incertae_sedis       Vermispora       Vermispora sp.
+    ## 24                 <NA>             <NA>                 <NA>
+    ## 25                 <NA>             <NA>                 <NA>
+    ## 26                 <NA>             <NA>                 <NA>
+    ## 27                 <NA>             <NA>                 <NA>
+    ## 28                 <NA>             <NA>                 <NA>
+    ## 29        Didymellaceae             <NA>                 <NA>
+    ## 30       Glomerellaceae   Colletotrichum   Colletotrichum sp.
+    ## 31                 <NA>             <NA>                 <NA>
+    ## 32      Hyaloscyphaceae          Lachnum          Lachnum sp.
+    ## 33      Teichosporaceae      Teichospora      Teichospora sp.
+    ## 34        Pleosporaceae      Pyrenophora      Pyrenophora sp.
+    ## 35                 <NA>             <NA>                 <NA>
+    ## 36                 <NA>             <NA>                 <NA>
+    ## 37    Leptosphaeriaceae   Sphaerellopsis   Sphaerellopsis sp.
+    ## 38   Teratosphaeriaceae   Catenulostroma   Catenulostroma sp.
+    ## 39    Lasiosphaeriaceae             <NA>                 <NA>
+    ## 40        Chaetomiaceae         Humicola         Humicola sp.
+    ## 41                 <NA>             <NA>                 <NA>
+    ## 42          Orbiliaceae             <NA>                 <NA>
+    ## 43                 <NA>             <NA>                 <NA>
+    ## 44    Lophiostomataceae      Lophiostoma      Lophiostoma sp.
+    ## 45                 <NA>             <NA>                 <NA>
+    ## 46                 <NA>             <NA>                 <NA>
+    ## 47       Pyronemataceae             <NA>                 <NA>
+    ## 48           Tuberaceae            Tuber            Tuber sp.
+    ## 49   Mycosphaerellaceae    Cercosporella    Cercosporella sp.
+    ## 50        Didymellaceae             <NA>                 <NA>
+    ## 51                 <NA>             <NA>                 <NA>
+    ## 52                 <NA>             <NA>                 <NA>
+    ## 53          Orbiliaceae             <NA>                 <NA>
+    ## 54                 <NA>             <NA>                 <NA>
+    ## 55       Trichocomaceae      Talaromyces      Talaromyces sp.
+    ## 56                 <NA>             <NA>                 <NA>
+    ## 57                 <NA>             <NA>                 <NA>
+    ## 58                 <NA>             <NA>                 <NA>
+    ## 59   Botryosphaeriaceae         Diplodia         Diplodia sp.
+    ## 60                 <NA>             <NA>                 <NA>
+    ## 61                 <NA>             <NA>                 <NA>
+    ## 62                 <NA>             <NA>                 <NA>
+    ## 63                 <NA>             <NA>                 <NA>
+    ## 64                 <NA>             <NA>                 <NA>
+    ## 65        Massarinaceae     Stagonospora     Stagonospora sp.
+    ## 66   Chaetosphaeriaceae   Chaetosphaeria   Chaetosphaeria sp.
+    ## 67                 <NA>             <NA>                 <NA>
+    ## 68                 <NA>             <NA>                 <NA>
+    ## 69       Thyridariaceae   Parathyridaria   Parathyridaria sp.
+    ## 70                 <NA>             <NA>                 <NA>
+    ## 71                 <NA>             <NA>                 <NA>
+    ## 72   Didymosphaeriaceae Paraconiothyrium Paraconiothyrium sp.
+    ## 73         Dermateaceae        Helgardia        Helgardia sp.
+    ## 74                 <NA>             <NA>                 <NA>
+    ## 75                 <NA>             <NA>                 <NA>
+    ## 76         Erysiphaceae         Erysiphe         Erysiphe sp.
+    ## 77   Mycosphaerellaceae  Scleroramularia  Scleroramularia sp.
+    ## 78                 <NA>             <NA>                 <NA>
+    ## 79    Phaeosphaeriaceae    Wojnowiciella    Wojnowiciella sp.
+    ## 80                 <NA>             <NA>                 <NA>
+    ## 81         Taphrinaceae         Taphrina         Taphrina sp.
+    ## 82                 <NA>             <NA>                 <NA>
+    ## 83      Coniochaetaceae      Coniochaeta      Coniochaeta sp.
+    ## 84                 <NA>             <NA>                 <NA>
+    ## 85         Dermateaceae         Calloria         Calloria sp.
+    ## 86       Pyronemataceae             <NA>                 <NA>
+    ## 87        Pleosporaceae       Alternaria       Alternaria sp.
+    ## 88         Dothioraceae             <NA>                 <NA>
+    ## 89                 <NA>             <NA>                 <NA>
+    ## 90                 <NA>             <NA>                 <NA>
+    ## 91                 <NA>             <NA>                 <NA>
+    ## 92        Didymellaceae        Calophoma        Calophoma sp.
+    ## 93      Teichosporaceae      Teichospora      Teichospora sp.
+    ## 94          Helotiaceae             <NA>                 <NA>
+    ## 95                 <NA>             <NA>                 <NA>
+    ## 96       Bionectriaceae             <NA>                 <NA>
+    ## 97                 <NA>             <NA>                 <NA>
+    ## 98                 <NA>             <NA>                 <NA>
+    ## 99                 <NA>             <NA>                 <NA>
+    ## 100           Valsaceae             <NA>                 <NA>
+    ##                        Isolate Isolate_percent_id            BestMatch
+    ## 1                         <NA>              0.000 Cladophialophora sp.
+    ## 2                         <NA>              0.000      Chaetothyriales
+    ## 3                         <NA>              0.000         Pleosporales
+    ## 4                         <NA>              0.000        Sporormiaceae
+    ## 5                         <NA>              0.000         Pleosporales
+    ## 6                         <NA>              0.000        Didymellaceae
+    ## 7                         <NA>              0.000           Pezizaceae
+    ## 8                         <NA>              0.000         Pleosporales
+    ## 9                         <NA>              0.000    Lasiosphaeriaceae
+    ## 10                        <NA>              0.000          Lecanorales
+    ## 11                        <NA>              0.000        Pleosporaceae
+    ## 12                        <NA>              0.000         Pleosporales
+    ## 13                        <NA>              0.000           Ascomycota
+    ## 14                        <NA>              0.000      Hyaloscyphaceae
+    ## 15                        <NA>              0.000    Lasiosphaeriaceae
+    ## 16                        <NA>              0.000   Neohelicomyces sp.
+    ## 17                      CK1355             93.035      Talaromyces sp.
+    ## 18                        <NA>              0.000        Didymella sp.
+    ## 19                        <NA>              0.000         Pleosporales
+    ## 20                        <NA>              0.000         Pleosporales
+    ## 21                        <NA>              0.000  Neocucurbitaria sp.
+    ## 22                        <NA>              0.000 Paraconiothyrium sp.
+    ## 23                        <NA>              0.000       Vermispora sp.
+    ## 24                        <NA>              0.000           Helotiales
+    ## 25                        <NA>              0.000      Dothideomycetes
+    ## 26                        <NA>              0.000           Ascomycota
+    ## 27                        <NA>              0.000      Dothideomycetes
+    ## 28                        <NA>              0.000          Hypocreales
+    ## 29                        <NA>              0.000        Didymellaceae
+    ## 30                        <NA>              0.000   Colletotrichum sp.
+    ## 31                        <NA>              0.000          Sordariales
+    ## 32                        <NA>              0.000          Lachnum sp.
+    ## 33                        <NA>              0.000      Teichospora sp.
+    ## 34                        <NA>              0.000      Pyrenophora sp.
+    ## 35                        <NA>              0.000         Pleosporales
+    ## 36                        <NA>              0.000           Helotiales
+    ## 37                        <NA>              0.000   Sphaerellopsis sp.
+    ## 38                        <NA>              0.000   Catenulostroma sp.
+    ## 39                        <NA>              0.000    Lasiosphaeriaceae
+    ## 40         MISO_9-11_[len=564]             79.167         Humicola sp.
+    ## 41                        <NA>              0.000           Ascomycota
+    ## 42                        <NA>              0.000          Orbiliaceae
+    ## 43                        <NA>              0.000           Ascomycota
+    ## 44                        <NA>              0.000      Lophiostoma sp.
+    ## 45                        <NA>              0.000             Branch06
+    ## 46                        <NA>              0.000           Ascomycota
+    ## 47                        <NA>              0.000       Pyronemataceae
+    ## 48                        <NA>              0.000            Tuber sp.
+    ## 49                        <NA>              0.000    Cercosporella sp.
+    ## 50                        <NA>              0.000        Didymellaceae
+    ## 51                        <NA>              0.000         Pleosporales
+    ## 52                        <NA>              0.000    Saccharomycetales
+    ## 53                        <NA>              0.000          Orbiliaceae
+    ## 54                        <NA>              0.000           Ascomycota
+    ## 55                      CK1355             91.045      Talaromyces sp.
+    ## 56                        <NA>              0.000      Chaetothyriales
+    ## 57                        <NA>              0.000         Pleosporales
+    ## 58                        <NA>              0.000           Helotiales
+    ## 59                        <NA>              0.000         Diplodia sp.
+    ## 60                        <NA>              0.000           Helotiales
+    ## 61                        <NA>              0.000         Pleosporales
+    ## 62                        <NA>              0.000           Ascomycota
+    ## 63                        <NA>              0.000           Ascomycota
+    ## 64                        <NA>              0.000           Ascomycota
+    ## 65                        <NA>              0.000     Stagonospora sp.
+    ## 66     V-MISO2L_3-8b_[len=587]             78.191   Chaetosphaeria sp.
+    ## 67                        <NA>              0.000         Pleosporales
+    ## 68                        <NA>              0.000           Xylariales
+    ## 69                        <NA>              0.000   Parathyridaria sp.
+    ## 70                        <NA>              0.000           Ascomycota
+    ## 71                        <NA>              0.000           Ascomycota
+    ## 72                        <NA>              0.000 Paraconiothyrium sp.
+    ## 73                        <NA>              0.000        Helgardia sp.
+    ## 74                        <NA>              0.000           Ascomycota
+    ## 75                        <NA>              0.000         Pleosporales
+    ## 76                        <NA>              0.000         Erysiphe sp.
+    ## 77                        <NA>              0.000  Scleroramularia sp.
+    ## 78                        <NA>              0.000         Pleosporales
+    ## 79                        <NA>              0.000    Wojnowiciella sp.
+    ## 80                        <NA>              0.000          Hypocreales
+    ## 81                        <NA>              0.000         Taphrina sp.
+    ## 82                        <NA>              0.000         Pleosporales
+    ## 83                        <NA>              0.000      Coniochaeta sp.
+    ## 84                        <NA>              0.000      Dothideomycetes
+    ## 85                        <NA>              0.000         Calloria sp.
+    ## 86                        <NA>              0.000       Pyronemataceae
+    ## 87                        <NA>              0.000       Alternaria sp.
+    ## 88                        <NA>              0.000         Dothioraceae
+    ## 89                        <NA>              0.000           Ascomycota
+    ## 90                        <NA>              0.000         Pleosporales
+    ## 91                        <NA>              0.000         Pleosporales
+    ## 92                        <NA>              0.000        Calophoma sp.
+    ## 93                        <NA>              0.000      Teichospora sp.
+    ## 94                        <NA>              0.000          Helotiaceae
+    ## 95                        <NA>              0.000         Pleosporales
+    ## 96         MISO_9-11_[len=564]             86.634       Bionectriaceae
+    ## 97  Entomortierella_parvispora             77.670          Hypocreales
+    ## 98                        <NA>              0.000          Hypocreales
+    ## 99                        <NA>              0.000          Hypocreales
+    ## 100                       <NA>              0.000            Valsaceae
+    ##                           Taxonomy  SampleID Abundance Crop Compartment
+    ## 1   FOTU_1160-Cladophialophora sp.      <NA>        NA <NA>        <NA>
+    ## 2        FOTU_4062-Chaetothyriales      <NA>        NA <NA>        <NA>
+    ## 3            FOTU_712-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 4          FOTU_1104-Sporormiaceae      <NA>        NA <NA>        <NA>
+    ## 5           FOTU_3687-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 6          FOTU_5397-Didymellaceae      <NA>        NA <NA>        <NA>
+    ## 7             FOTU_6853-Pezizaceae      <NA>        NA <NA>        <NA>
+    ## 8           FOTU_5119-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 9        FOTU_77-Lasiosphaeriaceae      <NA>        NA <NA>        <NA>
+    ## 10           FOTU_3814-Lecanorales      <NA>        NA <NA>        <NA>
+    ## 11         FOTU_2363-Pleosporaceae      <NA>        NA <NA>        <NA>
+    ## 12          FOTU_1475-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 13             FOTU_258-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 14       FOTU_4078-Hyaloscyphaceae      <NA>        NA <NA>        <NA>
+    ## 15     FOTU_5602-Lasiosphaeriaceae      <NA>        NA <NA>        <NA>
+    ## 16     FOTU_879-Neohelicomyces sp.      <NA>        NA <NA>        <NA>
+    ## 17       FOTU_5224-Talaromyces sp.      <NA>        NA <NA>        <NA>
+    ## 18         FOTU_2837-Didymella sp.      <NA>        NA <NA>        <NA>
+    ## 19          FOTU_1608-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 20          FOTU_3367-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 21   FOTU_2599-Neocucurbitaria sp.      <NA>        NA <NA>        <NA>
+    ## 22  FOTU_3137-Paraconiothyrium sp.      <NA>        NA <NA>        <NA>
+    ## 23        FOTU_5493-Vermispora sp.      <NA>        NA <NA>        <NA>
+    ## 24             FOTU_412-Helotiales      <NA>        NA <NA>        <NA>
+    ## 25       FOTU_6634-Dothideomycetes      <NA>        NA <NA>        <NA>
+    ## 26            FOTU_6825-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 27       FOTU_1645-Dothideomycetes      <NA>        NA <NA>        <NA>
+    ## 28           FOTU_1917-Hypocreales      <NA>        NA <NA>        <NA>
+    ## 29         FOTU_7117-Didymellaceae      <NA>        NA <NA>        <NA>
+    ## 30    FOTU_1666-Colletotrichum sp.      <NA>        NA <NA>        <NA>
+    ## 31           FOTU_3428-Sordariales      <NA>        NA <NA>        <NA>
+    ## 32           FOTU_3731-Lachnum sp.      <NA>        NA <NA>        <NA>
+    ## 33       FOTU_6705-Teichospora sp.      <NA>        NA <NA>        <NA>
+    ## 34        FOTU_789-Pyrenophora sp.      <NA>        NA <NA>        <NA>
+    ## 35          FOTU_5359-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 36            FOTU_5995-Helotiales      <NA>        NA <NA>        <NA>
+    ## 37    FOTU_2857-Sphaerellopsis sp.      <NA>        NA <NA>        <NA>
+    ## 38    FOTU_2018-Catenulostroma sp.      <NA>        NA <NA>        <NA>
+    ## 39      FOTU_139-Lasiosphaeriaceae      <NA>        NA <NA>        <NA>
+    ## 40           FOTU_205-Humicola sp.      <NA>        NA <NA>        <NA>
+    ## 41            FOTU_5764-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 42           FOTU_4866-Orbiliaceae      <NA>        NA <NA>        <NA>
+    ## 43            FOTU_3541-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 44       FOTU_3122-Lophiostoma sp.      <NA>        NA <NA>        <NA>
+    ## 45              FOTU_2704-Branch06      <NA>        NA <NA>        <NA>
+    ## 46            FOTU_1370-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 47        FOTU_3443-Pyronemataceae      <NA>        NA <NA>        <NA>
+    ## 48             FOTU_4805-Tuber sp.      <NA>        NA <NA>        <NA>
+    ## 49     FOTU_2400-Cercosporella sp.      <NA>        NA <NA>        <NA>
+    ## 50         FOTU_7115-Didymellaceae      <NA>        NA <NA>        <NA>
+    ## 51           FOTU_128-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 52      FOTU_656-Saccharomycetales      <NA>        NA <NA>        <NA>
+    ## 53           FOTU_6333-Orbiliaceae      <NA>        NA <NA>        <NA>
+    ## 54            FOTU_4664-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 55       FOTU_7152-Talaromyces sp.      <NA>        NA <NA>        <NA>
+    ## 56       FOTU_6429-Chaetothyriales      <NA>        NA <NA>        <NA>
+    ## 57          FOTU_6293-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 58            FOTU_3530-Helotiales      <NA>        NA <NA>        <NA>
+    ## 59          FOTU_2572-Diplodia sp.      <NA>        NA <NA>        <NA>
+    ## 60            FOTU_5001-Helotiales      <NA>        NA <NA>        <NA>
+    ## 61           FOTU_973-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 62            FOTU_2299-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 63            FOTU_1119-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 64            FOTU_4909-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 65       FOTU_342-Stagonospora sp.      <NA>        NA <NA>        <NA>
+    ## 66     FOTU_841-Chaetosphaeria sp.      <NA>        NA <NA>        <NA>
+    ## 67          FOTU_6909-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 68            FOTU_1922-Xylariales      <NA>        NA <NA>        <NA>
+    ## 69    FOTU_3075-Parathyridaria sp.      <NA>        NA <NA>        <NA>
+    ## 70            FOTU_1257-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 71            FOTU_2839-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 72  FOTU_1063-Paraconiothyrium sp.      <NA>        NA <NA>        <NA>
+    ## 73         FOTU_2042-Helgardia sp.      <NA>        NA <NA>        <NA>
+    ## 74            FOTU_6308-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 75          FOTU_3056-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 76          FOTU_3372-Erysiphe sp.      <NA>        NA <NA>        <NA>
+    ## 77   FOTU_2889-Scleroramularia sp.      <NA>        NA <NA>        <NA>
+    ## 78          FOTU_3413-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 79     FOTU_2170-Wojnowiciella sp.      <NA>        NA <NA>        <NA>
+    ## 80           FOTU_1534-Hypocreales      <NA>        NA <NA>        <NA>
+    ## 81           FOTU_613-Taphrina sp.      <NA>        NA <NA>        <NA>
+    ## 82           FOTU_175-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 83       FOTU_1565-Coniochaeta sp.      <NA>        NA <NA>        <NA>
+    ## 84       FOTU_3480-Dothideomycetes      <NA>        NA <NA>        <NA>
+    ## 85          FOTU_1214-Calloria sp.      <NA>        NA <NA>        <NA>
+    ## 86        FOTU_2665-Pyronemataceae      <NA>        NA <NA>        <NA>
+    ## 87          FOTU_38-Alternaria sp.      <NA>        NA <NA>        <NA>
+    ## 88          FOTU_6430-Dothioraceae      <NA>        NA <NA>        <NA>
+    ## 89             FOTU_839-Ascomycota      <NA>        NA <NA>        <NA>
+    ## 90          FOTU_5405-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 91          FOTU_5465-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 92         FOTU_2109-Calophoma sp.      <NA>        NA <NA>        <NA>
+    ## 93       FOTU_2210-Teichospora sp.      <NA>        NA <NA>        <NA>
+    ## 94           FOTU_1950-Helotiaceae      <NA>        NA <NA>        <NA>
+    ## 95          FOTU_5990-Pleosporales      <NA>        NA <NA>        <NA>
+    ## 96         FOTU_731-Bionectriaceae      <NA>        NA <NA>        <NA>
+    ## 97            FOTU_991-Hypocreales      <NA>        NA <NA>        <NA>
+    ## 98           FOTU_4088-Hypocreales      <NA>        NA <NA>        <NA>
+    ## 99           FOTU_3866-Hypocreales      <NA>        NA <NA>        <NA>
+    ## 100             FOTU_122-Valsaceae T2R1FCR3L         0  Soy        Leaf
+    ##     DateSampled GrowthStage Treatment  Rep Fungicide
+    ## 1          <NA>        <NA>      <NA> <NA>      <NA>
+    ## 2          <NA>        <NA>      <NA> <NA>      <NA>
+    ## 3          <NA>        <NA>      <NA> <NA>      <NA>
+    ## 4          <NA>        <NA>      <NA> <NA>      <NA>
+    ## 5          <NA>        <NA>      <NA> <NA>      <NA>
+    ## 6          <NA>        <NA>      <NA> <NA>      <NA>
+    ## 7          <NA>        <NA>      <NA> <NA>      <NA>
+    ## 8          <NA>        <NA>      <NA> <NA>      <NA>
+    ## 9          <NA>        <NA>      <NA> <NA>      <NA>
+    ## 10         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 11         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 12         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 13         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 14         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 15         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 16         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 17         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 18         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 19         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 20         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 21         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 22         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 23         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 24         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 25         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 26         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 27         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 28         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 29         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 30         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 31         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 32         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 33         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 34         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 35         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 36         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 37         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 38         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 39         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 40         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 41         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 42         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 43         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 44         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 45         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 46         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 47         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 48         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 49         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 50         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 51         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 52         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 53         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 54         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 55         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 56         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 57         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 58         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 59         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 60         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 61         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 62         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 63         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 64         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 65         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 66         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 67         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 68         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 69         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 70         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 71         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 72         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 73         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 74         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 75         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 76         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 77         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 78         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 79         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 80         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 81         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 82         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 83         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 84         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 85         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 86         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 87         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 88         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 89         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 90         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 91         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 92         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 93         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 94         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 95         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 96         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 97         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 98         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 99         <NA>        <NA>      <NA> <NA>      <NA>
+    ## 100    3-Aug-18          R3        T2   R1         F
 
 ``` r
 # to take the common set of both datasets you can use inner_join()
 inner_join(taxonomy, metadata, by = "OTU")
 ```
 
-    ##         OTU Kingdom     Phylum           Class       Order Family Genus Species
-    ## 1 FOTU_1399   Fungi Ascomycota Sordariomycetes Hypocreales   <NA>  <NA>    <NA>
-    ## 2 FOTU_5745   Fungi Ascomycota   Leotiomycetes  Helotiales   <NA>  <NA>    <NA>
-    ## 3 FOTU_1399   Fungi Ascomycota Sordariomycetes Hypocreales   <NA>  <NA>    <NA>
-    ##   Isolate Isolate_percent_id   BestMatch              Taxonomy
-    ## 1    <NA>                  0 Hypocreales FOTU_1399-Hypocreales
-    ## 2    <NA>                  0  Helotiales  FOTU_5745-Helotiales
-    ## 3    <NA>                  0 Hypocreales FOTU_1399-Hypocreales
-    ##                                    SampleID Abundance Crop Compartment
-    ## 1 Corn2017LeafObjective2Collection1T2R1CAH5         0 Corn        Leaf
-    ## 2                                 T1R2FAR6R         0  Soy        Root
-    ## 3 Corn2017LeafObjective2Collection1T2R1CAH5         0 Corn        Leaf
-    ##   DateSampled GrowthStage Treatment Rep Fungicide
-    ## 1   26-Jun-17          V6        T2  R1         C
-    ## 2   27-Aug-18          R6        T1  R2         F
-    ## 3   26-Jun-17          V6        T2  R1         C
+    ##        OTU Kingdom     Phylum           Class        Order    Family Genus
+    ## 1 FOTU_122   Fungi Ascomycota Sordariomycetes Diaporthales Valsaceae  <NA>
+    ##   Species Isolate Isolate_percent_id BestMatch           Taxonomy  SampleID
+    ## 1    <NA>    <NA>                  0 Valsaceae FOTU_122-Valsaceae T2R1FCR3L
+    ##   Abundance Crop Compartment DateSampled GrowthStage Treatment Rep Fungicide
+    ## 1         0  Soy        Leaf    3-Aug-18          R3        T2  R1         F
 
 ``` r
 # or full join to keep everything 
 full_join(taxonomy, metadata, by = "OTU")
 ```
 
-    ##           OTU Kingdom     Phylum              Class             Order
-    ## 1   FOTU_1399   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 2   FOTU_3557   Fungi Ascomycota               <NA>              <NA>
-    ## 3   FOTU_2877   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 4   FOTU_1588   Fungi Ascomycota    Saccharomycetes Saccharomycetales
-    ## 5   FOTU_6838   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 6   FOTU_2076   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 7   FOTU_2981   Fungi Ascomycota    Sordariomycetes    Phyllachorales
-    ## 8   FOTU_7147   Fungi Ascomycota     Eurotiomycetes        Eurotiales
-    ## 9   FOTU_2205   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 10  FOTU_1808   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 11   FOTU_635   Fungi Ascomycota    Sordariomycetes       Sordariales
-    ## 12   FOTU_180   Fungi Ascomycota    Sordariomycetes       Sordariales
-    ## 13  FOTU_2046   Fungi Ascomycota               <NA>              <NA>
-    ## 14   FOTU_386   Fungi Ascomycota    Dothideomycetes       Capnodiales
-    ## 15   FOTU_375   Fungi Ascomycota               <NA>              <NA>
-    ## 16  FOTU_3369   Fungi Ascomycota    Sordariomycetes              <NA>
-    ## 17   FOTU_799   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 18   FOTU_520   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 19  FOTU_5079   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 20  FOTU_3134   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 21  FOTU_1609   Fungi Ascomycota    Dothideomycetes       Dothideales
-    ## 22  FOTU_6475   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 23  FOTU_6425   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 24  FOTU_2843   Fungi Ascomycota               <NA>              <NA>
-    ## 25  FOTU_3287   Fungi Ascomycota    Sordariomycetes       Sordariales
-    ## 26   FOTU_150   Fungi Ascomycota               <NA>              <NA>
-    ## 27   FOTU_925   Fungi Ascomycota    Sordariomycetes     Glomerellales
-    ## 28  FOTU_4872   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 29   FOTU_786   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 30  FOTU_7144   Fungi Ascomycota      Pezizomycetes         Pezizales
-    ## 31  FOTU_1118   Fungi Ascomycota    Sordariomycetes     Glomerellales
-    ## 32  FOTU_6794   Fungi Ascomycota     Eurotiomycetes   Chaetothyriales
-    ## 33  FOTU_2562   Fungi Ascomycota               <NA>              <NA>
-    ## 34  FOTU_4288   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 35   FOTU_218   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 36  FOTU_5225   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 37  FOTU_4036   Fungi Ascomycota    Lecanoromycetes        Caliciales
-    ## 38   FOTU_930   Fungi Ascomycota Laboulbeniomycetes   Pyxidiophorales
-    ## 39  FOTU_4065   Fungi Ascomycota    Lecanoromycetes        Ostropales
-    ## 40  FOTU_3529   Fungi Ascomycota     Orbiliomycetes              <NA>
-    ## 41  FOTU_1533   Fungi Ascomycota     Eurotiomycetes        Eurotiales
-    ## 42  FOTU_1000   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 43   FOTU_103   Fungi Ascomycota    Sordariomycetes      Diaporthales
-    ## 44  FOTU_2258   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 45  FOTU_5713   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 46  FOTU_3243   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 47  FOTU_2963   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 48  FOTU_4971   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 49  FOTU_1591   Fungi Ascomycota    Sordariomycetes     Glomerellales
-    ## 50  FOTU_2547   Fungi Ascomycota    Dothideomycetes              <NA>
-    ## 51  FOTU_4714   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 52  FOTU_3926   Fungi Ascomycota    Dothideomycetes       Capnodiales
-    ## 53  FOTU_2353   Fungi Ascomycota    Sordariomycetes      Diaporthales
-    ## 54  FOTU_5991   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 55  FOTU_1444   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 56  FOTU_4194   Fungi Ascomycota               <NA>              <NA>
-    ## 57  FOTU_3773   Fungi Ascomycota               <NA>              <NA>
-    ## 58  FOTU_3385   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 59  FOTU_4084   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 60  FOTU_5139   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 61  FOTU_7166   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 62  FOTU_4891   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 63  FOTU_3049   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 64  FOTU_1567   Fungi Ascomycota      Leotiomycetes       Erysiphales
-    ## 65  FOTU_2293   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 66  FOTU_7137   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 67  FOTU_5802   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 68    FOTU_41   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 69  FOTU_6902   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 70  FOTU_4996   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 71  FOTU_5745   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 72  FOTU_2711   Fungi Ascomycota      Pezizomycetes         Pezizales
-    ## 73  FOTU_3733   Fungi Ascomycota     Orbiliomycetes        Orbiliales
-    ## 74  FOTU_3692   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 75  FOTU_3112   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 76  FOTU_3335   Fungi Ascomycota    Sordariomycetes    Coniochaetales
-    ## 77  FOTU_1653   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 78  FOTU_1141   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 79  FOTU_4856   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 80   FOTU_298   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 81    FOTU_14   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 82   FOTU_898   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 83  FOTU_3533   Fungi Ascomycota    Sordariomycetes       Sordariales
-    ## 84  FOTU_6681   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 85  FOTU_3511   Fungi Ascomycota               <NA>              <NA>
-    ## 86  FOTU_3595   Fungi Ascomycota    Dothideomycetes       Venturiales
-    ## 87  FOTU_5317   Fungi Ascomycota               <NA>              <NA>
-    ## 88  FOTU_1033   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 89  FOTU_6970   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 90  FOTU_4942   Fungi Ascomycota    Dothideomycetes       Capnodiales
-    ## 91   FOTU_406   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 92  FOTU_5611   Fungi Ascomycota    Dothideomycetes      Pleosporales
-    ## 93  FOTU_4667   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 94  FOTU_3237   Fungi Ascomycota     Eurotiomycetes        Eurotiales
-    ## 95  FOTU_1068   Fungi Ascomycota               <NA>              <NA>
-    ## 96  FOTU_2877   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 97  FOTU_3661   Fungi Ascomycota      Leotiomycetes        Helotiales
-    ## 98  FOTU_3566   Fungi Ascomycota    Sordariomycetes        Xylariales
-    ## 99  FOTU_1463   Fungi Ascomycota     Eurotiomycetes   Chaetothyriales
-    ## 100 FOTU_1399   Fungi Ascomycota    Sordariomycetes       Hypocreales
-    ## 101 FOTU_4760    <NA>       <NA>               <NA>              <NA>
-    ## 102  FOTU_606    <NA>       <NA>               <NA>              <NA>
-    ## 103 FOTU_1164    <NA>       <NA>               <NA>              <NA>
-    ## 104  FOTU_139    <NA>       <NA>               <NA>              <NA>
-    ## 105 FOTU_3393    <NA>       <NA>               <NA>              <NA>
-    ## 106 FOTU_6259    <NA>       <NA>               <NA>              <NA>
-    ## 107 FOTU_2907    <NA>       <NA>               <NA>              <NA>
-    ## 108 FOTU_2695    <NA>       <NA>               <NA>              <NA>
-    ## 109 FOTU_3638    <NA>       <NA>               <NA>              <NA>
-    ## 110 FOTU_1306    <NA>       <NA>               <NA>              <NA>
-    ## 111 FOTU_4992    <NA>       <NA>               <NA>              <NA>
-    ## 112  FOTU_167    <NA>       <NA>               <NA>              <NA>
-    ## 113  FOTU_353    <NA>       <NA>               <NA>              <NA>
-    ## 114 FOTU_7113    <NA>       <NA>               <NA>              <NA>
-    ## 115 FOTU_1793    <NA>       <NA>               <NA>              <NA>
-    ## 116 FOTU_5321    <NA>       <NA>               <NA>              <NA>
-    ## 117 FOTU_1419    <NA>       <NA>               <NA>              <NA>
-    ## 118 FOTU_3740    <NA>       <NA>               <NA>              <NA>
-    ## 119 FOTU_2534    <NA>       <NA>               <NA>              <NA>
-    ## 120 FOTU_4375    <NA>       <NA>               <NA>              <NA>
-    ## 121 FOTU_3633    <NA>       <NA>               <NA>              <NA>
-    ## 122 FOTU_2982    <NA>       <NA>               <NA>              <NA>
-    ## 123 FOTU_2903    <NA>       <NA>               <NA>              <NA>
-    ## 124 FOTU_5962    <NA>       <NA>               <NA>              <NA>
-    ## 125 FOTU_6791    <NA>       <NA>               <NA>              <NA>
-    ## 126 FOTU_5893    <NA>       <NA>               <NA>              <NA>
-    ## 127 FOTU_2982    <NA>       <NA>               <NA>              <NA>
-    ## 128 FOTU_2084    <NA>       <NA>               <NA>              <NA>
-    ## 129 FOTU_1110    <NA>       <NA>               <NA>              <NA>
-    ## 130 FOTU_5374    <NA>       <NA>               <NA>              <NA>
-    ## 131 FOTU_3019    <NA>       <NA>               <NA>              <NA>
-    ## 132 FOTU_3224    <NA>       <NA>               <NA>              <NA>
-    ## 133  FOTU_159    <NA>       <NA>               <NA>              <NA>
-    ## 134 FOTU_1086    <NA>       <NA>               <NA>              <NA>
-    ## 135  FOTU_169    <NA>       <NA>               <NA>              <NA>
-    ## 136 FOTU_1595    <NA>       <NA>               <NA>              <NA>
-    ## 137 FOTU_3066    <NA>       <NA>               <NA>              <NA>
-    ## 138 FOTU_1467    <NA>       <NA>               <NA>              <NA>
-    ## 139 FOTU_3935    <NA>       <NA>               <NA>              <NA>
-    ## 140   FOTU_33    <NA>       <NA>               <NA>              <NA>
-    ## 141 FOTU_5773    <NA>       <NA>               <NA>              <NA>
-    ## 142 FOTU_5354    <NA>       <NA>               <NA>              <NA>
-    ## 143 FOTU_5312    <NA>       <NA>               <NA>              <NA>
-    ## 144 FOTU_5716    <NA>       <NA>               <NA>              <NA>
-    ## 145  FOTU_407    <NA>       <NA>               <NA>              <NA>
-    ## 146 FOTU_5669    <NA>       <NA>               <NA>              <NA>
-    ## 147 FOTU_5538    <NA>       <NA>               <NA>              <NA>
-    ## 148  FOTU_378    <NA>       <NA>               <NA>              <NA>
-    ## 149 FOTU_4605    <NA>       <NA>               <NA>              <NA>
-    ## 150 FOTU_1039    <NA>       <NA>               <NA>              <NA>
-    ## 151 FOTU_1458    <NA>       <NA>               <NA>              <NA>
-    ## 152 FOTU_4684    <NA>       <NA>               <NA>              <NA>
-    ## 153 FOTU_4040    <NA>       <NA>               <NA>              <NA>
-    ## 154 FOTU_4445    <NA>       <NA>               <NA>              <NA>
-    ## 155 FOTU_2495    <NA>       <NA>               <NA>              <NA>
-    ## 156  FOTU_267    <NA>       <NA>               <NA>              <NA>
-    ## 157 FOTU_5515    <NA>       <NA>               <NA>              <NA>
-    ## 158 FOTU_5647    <NA>       <NA>               <NA>              <NA>
-    ## 159  FOTU_819    <NA>       <NA>               <NA>              <NA>
-    ## 160 FOTU_6778    <NA>       <NA>               <NA>              <NA>
-    ## 161 FOTU_4677    <NA>       <NA>               <NA>              <NA>
-    ## 162 FOTU_1011    <NA>       <NA>               <NA>              <NA>
-    ## 163 FOTU_5585    <NA>       <NA>               <NA>              <NA>
-    ## 164  FOTU_444    <NA>       <NA>               <NA>              <NA>
-    ## 165 FOTU_4997    <NA>       <NA>               <NA>              <NA>
-    ## 166 FOTU_3883    <NA>       <NA>               <NA>              <NA>
-    ## 167 FOTU_1498    <NA>       <NA>               <NA>              <NA>
-    ## 168  FOTU_246    <NA>       <NA>               <NA>              <NA>
-    ## 169  FOTU_749    <NA>       <NA>               <NA>              <NA>
-    ## 170  FOTU_452    <NA>       <NA>               <NA>              <NA>
-    ## 171 FOTU_1571    <NA>       <NA>               <NA>              <NA>
-    ## 172  FOTU_612    <NA>       <NA>               <NA>              <NA>
-    ## 173 FOTU_2779    <NA>       <NA>               <NA>              <NA>
-    ## 174 FOTU_6516    <NA>       <NA>               <NA>              <NA>
-    ## 175  FOTU_631    <NA>       <NA>               <NA>              <NA>
-    ## 176  FOTU_551    <NA>       <NA>               <NA>              <NA>
-    ## 177 FOTU_2332    <NA>       <NA>               <NA>              <NA>
-    ## 178 FOTU_6371    <NA>       <NA>               <NA>              <NA>
-    ## 179 FOTU_2422    <NA>       <NA>               <NA>              <NA>
-    ## 180 FOTU_2566    <NA>       <NA>               <NA>              <NA>
-    ## 181   FOTU_38    <NA>       <NA>               <NA>              <NA>
-    ## 182  FOTU_574    <NA>       <NA>               <NA>              <NA>
-    ## 183 FOTU_5705    <NA>       <NA>               <NA>              <NA>
-    ## 184 FOTU_1788    <NA>       <NA>               <NA>              <NA>
-    ## 185 FOTU_6070    <NA>       <NA>               <NA>              <NA>
-    ## 186 FOTU_3818    <NA>       <NA>               <NA>              <NA>
-    ## 187 FOTU_2907    <NA>       <NA>               <NA>              <NA>
-    ## 188  FOTU_950    <NA>       <NA>               <NA>              <NA>
-    ## 189  FOTU_590    <NA>       <NA>               <NA>              <NA>
-    ## 190 FOTU_6033    <NA>       <NA>               <NA>              <NA>
-    ## 191 FOTU_6610    <NA>       <NA>               <NA>              <NA>
-    ## 192 FOTU_1660    <NA>       <NA>               <NA>              <NA>
-    ## 193 FOTU_1584    <NA>       <NA>               <NA>              <NA>
-    ## 194 FOTU_5230    <NA>       <NA>               <NA>              <NA>
-    ## 195 FOTU_3372    <NA>       <NA>               <NA>              <NA>
-    ## 196 FOTU_2274    <NA>       <NA>               <NA>              <NA>
-    ## 197 FOTU_5782    <NA>       <NA>               <NA>              <NA>
-    ## 198  FOTU_976    <NA>       <NA>               <NA>              <NA>
-    ##                   Family            Genus              Species
-    ## 1                   <NA>             <NA>                 <NA>
-    ## 2                   <NA>             <NA>                 <NA>
-    ## 3                   <NA>             <NA>                 <NA>
-    ## 4          Dipodascaceae             <NA>                 <NA>
-    ## 5                   <NA>             <NA>                 <NA>
-    ## 6      Lophiostomataceae             <NA>                 <NA>
-    ## 7        Phyllachoraceae      Phyllachora      Phyllachora sp.
-    ## 8         Aspergillaceae      Penicillium      Penicillium sp.
-    ## 9                   <NA>             <NA>                 <NA>
-    ## 10       Cordycipitaceae             <NA>                 <NA>
-    ## 11                  <NA>             <NA>                 <NA>
-    ## 12     Lasiosphaeriaceae             <NA>                 <NA>
-    ## 13                  <NA>             <NA>                 <NA>
-    ## 14    Teratosphaeriaceae        Devriesia        Devriesia sp.
-    ## 15                  <NA>             <NA>                 <NA>
-    ## 16                  <NA>             <NA>                 <NA>
-    ## 17      Stachybotryaceae  Striaticonidium  Striaticonidium sp.
-    ## 18       Sclerotiniaceae      Clarireedia      Clarireedia sp.
-    ## 19           Nectriaceae         Fusarium         Fusarium sp.
-    ## 20                  <NA>             <NA>                 <NA>
-    ## 21          Dothioraceae          Perusta          Perusta sp.
-    ## 22                  <NA>             <NA>                 <NA>
-    ## 23           Nectriaceae        Fusicolla        Fusicolla sp.
-    ## 24                  <NA>             <NA>                 <NA>
-    ## 25                  <NA>             <NA>                 <NA>
-    ## 26                  <NA>             <NA>                 <NA>
-    ## 27  Plectosphaerellaceae          Lectera          Lectera sp.
-    ## 28         Pleosporaceae       Alternaria       Alternaria sp.
-    ## 29         Pleosporaceae             <NA>                 <NA>
-    ## 30            Pezizaceae             <NA>                 <NA>
-    ## 31        Glomerellaceae   Colletotrichum   Colletotrichum sp.
-    ## 32       Trichomeriaceae           Knufia           Knufia sp.
-    ## 33                  <NA>             <NA>                 <NA>
-    ## 34                  <NA>             <NA>                 <NA>
-    ## 35         Sporocadaceae   Pestalotiopsis   Pestalotiopsis sp.
-    ## 36       Coniothyriaceae     Coniothyrium     Coniothyrium sp.
-    ## 37           Physciaceae       Physciella       Physciella sp.
-    ## 38      Pyxidiophoraceae     Pyxidiophora     Pyxidiophora sp.
-    ## 39          Stictidaceae     Cryptodiscus     Cryptodiscus sp.
-    ## 40                  <NA>             <NA>                 <NA>
-    ## 41        Aspergillaceae      Penicillium      Penicillium sp.
-    ## 42                  <NA>             <NA>                 <NA>
-    ## 43         Diaporthaceae        Diaporthe        Diaporthe sp.
-    ## 44           Nectriaceae             <NA>                 <NA>
-    ## 45                  <NA>             <NA>                 <NA>
-    ## 46           Nectriaceae             <NA>                 <NA>
-    ## 47          Hypocreaceae      Trichoderma      Trichoderma sp.
-    ## 48                  <NA>             <NA>                 <NA>
-    ## 49  Plectosphaerellaceae     Verticillium     Verticillium sp.
-    ## 50                  <NA>             <NA>                 <NA>
-    ## 51                  <NA>             <NA>                 <NA>
-    ## 52                  <NA>             <NA>                 <NA>
-    ## 53                  <NA>             <NA>                 <NA>
-    ## 54                  <NA>             <NA>                 <NA>
-    ## 55                  <NA>             <NA>                 <NA>
-    ## 56                  <NA>             <NA>                 <NA>
-    ## 57                  <NA>             <NA>                 <NA>
-    ## 58     Phaeosphaeriaceae             <NA>                 <NA>
-    ## 59         Pleosporaceae             <NA>                 <NA>
-    ## 60                  <NA>             <NA>                 <NA>
-    ## 61         Didymellaceae     Neoascochyta     Neoascochyta sp.
-    ## 62         Pleosporaceae       Alternaria       Alternaria sp.
-    ## 63         Periconiaceae        Periconia        Periconia sp.
-    ## 64          Erysiphaceae         Erysiphe         Erysiphe sp.
-    ## 65           Xylariaceae      Lopadostoma      Lopadostoma sp.
-    ## 66         Pleosporaceae             <NA>                 <NA>
-    ## 67                  <NA>             <NA>                 <NA>
-    ## 68                  <NA>             <NA>                 <NA>
-    ## 69           Xylariaceae          Xylaria          Xylaria sp.
-    ## 70     Phaeosphaeriaceae     Neosetophoma     Neosetophoma sp.
-    ## 71                  <NA>             <NA>                 <NA>
-    ## 72        Pyronemataceae             <NA>                 <NA>
-    ## 73           Orbiliaceae       Dactylella       Dactylella sp.
-    ## 74          Massariaceae         Massaria         Massaria sp.
-    ## 75       Lentitheciaceae     Setoseptoria     Setoseptoria sp.
-    ## 76       Coniochaetaceae      Coniochaeta      Coniochaeta sp.
-    ## 77         Pleosporaceae        Bipolaris        Bipolaris sp.
-    ## 78          Hypocreaceae      Trichoderma      Trichoderma sp.
-    ## 79           Helotiaceae             <NA>                 <NA>
-    ## 80                  <NA>             <NA>                 <NA>
-    ## 81                  <NA>             <NA>                 <NA>
-    ## 82  Tetraplosphaeriaceae Tetraplosphaeria Tetraplosphaeria sp.
-    ## 83     Lasiosphaeriaceae             <NA>                 <NA>
-    ## 84       Teichosporaceae             <NA>                 <NA>
-    ## 85                  <NA>             <NA>                 <NA>
-    ## 86          Venturiaceae         Venturia         Venturia sp.
-    ## 87                  <NA>             <NA>                 <NA>
-    ## 88           Helotiaceae             <NA>                 <NA>
-    ## 89          Hypocreaceae        Hypomyces        Hypomyces sp.
-    ## 90        Dissoconiaceae      Dissoconium      Dissoconium sp.
-    ## 91          Niessliaceae     Eucasphaeria     Eucasphaeria sp.
-    ## 92                  <NA>             <NA>                 <NA>
-    ## 93                  <NA>             <NA>                 <NA>
-    ## 94        Trichocomaceae      Talaromyces      Talaromyces sp.
-    ## 95                  <NA>             <NA>                 <NA>
-    ## 96                  <NA>             <NA>                 <NA>
-    ## 97                  <NA>             <NA>                 <NA>
-    ## 98         Sporocadaceae   Pestalotiopsis   Pestalotiopsis sp.
-    ## 99                  <NA>             <NA>                 <NA>
-    ## 100                 <NA>             <NA>                 <NA>
-    ## 101                 <NA>             <NA>                 <NA>
-    ## 102                 <NA>             <NA>                 <NA>
-    ## 103                 <NA>             <NA>                 <NA>
-    ## 104                 <NA>             <NA>                 <NA>
-    ## 105                 <NA>             <NA>                 <NA>
-    ## 106                 <NA>             <NA>                 <NA>
-    ## 107                 <NA>             <NA>                 <NA>
-    ## 108                 <NA>             <NA>                 <NA>
-    ## 109                 <NA>             <NA>                 <NA>
-    ## 110                 <NA>             <NA>                 <NA>
-    ## 111                 <NA>             <NA>                 <NA>
-    ## 112                 <NA>             <NA>                 <NA>
-    ## 113                 <NA>             <NA>                 <NA>
-    ## 114                 <NA>             <NA>                 <NA>
-    ## 115                 <NA>             <NA>                 <NA>
-    ## 116                 <NA>             <NA>                 <NA>
-    ## 117                 <NA>             <NA>                 <NA>
-    ## 118                 <NA>             <NA>                 <NA>
-    ## 119                 <NA>             <NA>                 <NA>
-    ## 120                 <NA>             <NA>                 <NA>
-    ## 121                 <NA>             <NA>                 <NA>
-    ## 122                 <NA>             <NA>                 <NA>
-    ## 123                 <NA>             <NA>                 <NA>
-    ## 124                 <NA>             <NA>                 <NA>
-    ## 125                 <NA>             <NA>                 <NA>
-    ## 126                 <NA>             <NA>                 <NA>
-    ## 127                 <NA>             <NA>                 <NA>
-    ## 128                 <NA>             <NA>                 <NA>
-    ## 129                 <NA>             <NA>                 <NA>
-    ## 130                 <NA>             <NA>                 <NA>
-    ## 131                 <NA>             <NA>                 <NA>
-    ## 132                 <NA>             <NA>                 <NA>
-    ## 133                 <NA>             <NA>                 <NA>
-    ## 134                 <NA>             <NA>                 <NA>
-    ## 135                 <NA>             <NA>                 <NA>
-    ## 136                 <NA>             <NA>                 <NA>
-    ## 137                 <NA>             <NA>                 <NA>
-    ## 138                 <NA>             <NA>                 <NA>
-    ## 139                 <NA>             <NA>                 <NA>
-    ## 140                 <NA>             <NA>                 <NA>
-    ## 141                 <NA>             <NA>                 <NA>
-    ## 142                 <NA>             <NA>                 <NA>
-    ## 143                 <NA>             <NA>                 <NA>
-    ## 144                 <NA>             <NA>                 <NA>
-    ## 145                 <NA>             <NA>                 <NA>
-    ## 146                 <NA>             <NA>                 <NA>
-    ## 147                 <NA>             <NA>                 <NA>
-    ## 148                 <NA>             <NA>                 <NA>
-    ## 149                 <NA>             <NA>                 <NA>
-    ## 150                 <NA>             <NA>                 <NA>
-    ## 151                 <NA>             <NA>                 <NA>
-    ## 152                 <NA>             <NA>                 <NA>
-    ## 153                 <NA>             <NA>                 <NA>
-    ## 154                 <NA>             <NA>                 <NA>
-    ## 155                 <NA>             <NA>                 <NA>
-    ## 156                 <NA>             <NA>                 <NA>
-    ## 157                 <NA>             <NA>                 <NA>
-    ## 158                 <NA>             <NA>                 <NA>
-    ## 159                 <NA>             <NA>                 <NA>
-    ## 160                 <NA>             <NA>                 <NA>
-    ## 161                 <NA>             <NA>                 <NA>
-    ## 162                 <NA>             <NA>                 <NA>
-    ## 163                 <NA>             <NA>                 <NA>
-    ## 164                 <NA>             <NA>                 <NA>
-    ## 165                 <NA>             <NA>                 <NA>
-    ## 166                 <NA>             <NA>                 <NA>
-    ## 167                 <NA>             <NA>                 <NA>
-    ## 168                 <NA>             <NA>                 <NA>
-    ## 169                 <NA>             <NA>                 <NA>
-    ## 170                 <NA>             <NA>                 <NA>
-    ## 171                 <NA>             <NA>                 <NA>
-    ## 172                 <NA>             <NA>                 <NA>
-    ## 173                 <NA>             <NA>                 <NA>
-    ## 174                 <NA>             <NA>                 <NA>
-    ## 175                 <NA>             <NA>                 <NA>
-    ## 176                 <NA>             <NA>                 <NA>
-    ## 177                 <NA>             <NA>                 <NA>
-    ## 178                 <NA>             <NA>                 <NA>
-    ## 179                 <NA>             <NA>                 <NA>
-    ## 180                 <NA>             <NA>                 <NA>
-    ## 181                 <NA>             <NA>                 <NA>
-    ## 182                 <NA>             <NA>                 <NA>
-    ## 183                 <NA>             <NA>                 <NA>
-    ## 184                 <NA>             <NA>                 <NA>
-    ## 185                 <NA>             <NA>                 <NA>
-    ## 186                 <NA>             <NA>                 <NA>
-    ## 187                 <NA>             <NA>                 <NA>
-    ## 188                 <NA>             <NA>                 <NA>
-    ## 189                 <NA>             <NA>                 <NA>
-    ## 190                 <NA>             <NA>                 <NA>
-    ## 191                 <NA>             <NA>                 <NA>
-    ## 192                 <NA>             <NA>                 <NA>
-    ## 193                 <NA>             <NA>                 <NA>
-    ## 194                 <NA>             <NA>                 <NA>
-    ## 195                 <NA>             <NA>                 <NA>
-    ## 196                 <NA>             <NA>                 <NA>
-    ## 197                 <NA>             <NA>                 <NA>
-    ## 198                 <NA>             <NA>                 <NA>
-    ##                     Isolate Isolate_percent_id            BestMatch
-    ## 1                      <NA>              0.000          Hypocreales
-    ## 2                      <NA>              0.000           Ascomycota
-    ## 3                     JU-01             81.481          Hypocreales
-    ## 4       MICO_2-48_[len=383]             97.015        Dipodascaceae
-    ## 5                      <NA>              0.000         Pleosporales
-    ## 6                      <NA>              0.000    Lophiostomataceae
-    ## 7                      <NA>              0.000      Phyllachora sp.
-    ## 8                      JL73             88.235      Penicillium sp.
-    ## 9                      <NA>              0.000         Pleosporales
-    ## 10                     JL82             77.232      Cordycipitaceae
-    ## 11                     <NA>              0.000          Sordariales
-    ## 12                     <NA>              0.000    Lasiosphaeriaceae
-    ## 13                     <NA>              0.000           Ascomycota
-    ## 14                     <NA>              0.000        Devriesia sp.
-    ## 15                     <NA>              0.000           Ascomycota
-    ## 16                     <NA>              0.000      Sordariomycetes
-    ## 17                   ABAK_7             78.281  Striaticonidium sp.
-    ## 18                     <NA>              0.000      Clarireedia sp.
-    ## 19  Mortierella_polycephala             91.045         Fusarium sp.
-    ## 20                     <NA>              0.000         Pleosporales
-    ## 21                     <NA>              0.000          Perusta sp.
-    ## 22                    JU-33             84.659           Xylariales
-    ## 23                  ABAK_15             83.333        Fusicolla sp.
-    ## 24                     <NA>              0.000           Ascomycota
-    ## 25                     <NA>              0.000          Sordariales
-    ## 26                     <NA>              0.000           Ascomycota
-    ## 27   C-ILSO2_4-19_[len=514]             85.990          Lectera sp.
-    ## 28                     <NA>              0.000       Alternaria sp.
-    ## 29                     <NA>              0.000        Pleosporaceae
-    ## 30                     <NA>              0.000           Pezizaceae
-    ## 31                     <NA>              0.000   Colletotrichum sp.
-    ## 32                     <NA>              0.000           Knufia sp.
-    ## 33                     <NA>              0.000           Ascomycota
-    ## 34                     <NA>              0.000         Pleosporales
-    ## 35                     <NA>              0.000   Pestalotiopsis sp.
-    ## 36                     <NA>              0.000     Coniothyrium sp.
-    ## 37                     <NA>              0.000       Physciella sp.
-    ## 38                     <NA>              0.000     Pyxidiophora sp.
-    ## 39                     <NA>              0.000     Cryptodiscus sp.
-    ## 40                     <NA>              0.000       Orbiliomycetes
-    ## 41       Mortierella_alpina             87.685      Penicillium sp.
-    ## 42                     <NA>              0.000         Pleosporales
-    ## 43                     <NA>              0.000        Diaporthe sp.
-    ## 44      MISO_9-11_[len=564]             85.024          Nectriaceae
-    ## 45                     <NA>              0.000           Helotiales
-    ## 46  Mortierella_polycephala             95.500          Nectriaceae
-    ## 47                    JU-49             91.500      Trichoderma sp.
-    ## 48    V-MICO2_3-2_[len=506]             86.792         Pleosporales
-    ## 49   C-ILSO2_4-19_[len=514]             86.316     Verticillium sp.
-    ## 50    V-MICO2_3-2_[len=506]             82.486      Dothideomycetes
-    ## 51                     <NA>              0.000           Helotiales
-    ## 52                     <NA>              0.000          Capnodiales
-    ## 53                     <NA>              0.000         Diaporthales
-    ## 54                     <NA>              0.000         Pleosporales
-    ## 55                     <NA>              0.000         Pleosporales
-    ## 56                     <NA>              0.000           Ascomycota
-    ## 57                     <NA>              0.000           Ascomycota
-    ## 58                     <NA>              0.000    Phaeosphaeriaceae
-    ## 59                     <NA>              0.000        Pleosporaceae
-    ## 60                     <NA>              0.000         Pleosporales
-    ## 61                     <NA>              0.000     Neoascochyta sp.
-    ## 62                     <NA>              0.000       Alternaria sp.
-    ## 63                     <NA>              0.000        Periconia sp.
-    ## 64                     <NA>              0.000         Erysiphe sp.
-    ## 65                     <NA>              0.000      Lopadostoma sp.
-    ## 66                     <NA>              0.000        Pleosporaceae
-    ## 67                     <NA>              0.000           Helotiales
-    ## 68                     <NA>              0.000           Xylariales
-    ## 69                     <NA>              0.000          Xylaria sp.
-    ## 70                     <NA>              0.000     Neosetophoma sp.
-    ## 71                     <NA>              0.000           Helotiales
-    ## 72                     <NA>              0.000       Pyronemataceae
-    ## 73                     <NA>              0.000       Dactylella sp.
-    ## 74                     <NA>              0.000         Massaria sp.
-    ## 75                     <NA>              0.000     Setoseptoria sp.
-    ## 76                     <NA>              0.000      Coniochaeta sp.
-    ## 77                     <NA>              0.000        Bipolaris sp.
-    ## 78                    JU-49             91.500      Trichoderma sp.
-    ## 79                     <NA>              0.000          Helotiaceae
-    ## 80                     <NA>              0.000           Helotiales
-    ## 81                     <NA>              0.000         Pleosporales
-    ## 82                     <NA>              0.000 Tetraplosphaeria sp.
-    ## 83                     <NA>              0.000    Lasiosphaeriaceae
-    ## 84                     <NA>              0.000      Teichosporaceae
-    ## 85                     <NA>              0.000           Ascomycota
-    ## 86                     <NA>              0.000         Venturia sp.
-    ## 87                     <NA>              0.000           Ascomycota
-    ## 88                     <NA>              0.000          Helotiaceae
-    ## 89                     <NA>              0.000        Hypomyces sp.
-    ## 90                     <NA>              0.000      Dissoconium sp.
-    ## 91                    JU-01             81.651     Eucasphaeria sp.
-    ## 92                     <NA>              0.000         Pleosporales
-    ## 93                     <NA>              0.000           Helotiales
-    ## 94                   CK1355             96.000      Talaromyces sp.
-    ## 95                     <NA>              0.000           Ascomycota
-    ## 96                    JU-01             81.481          Hypocreales
-    ## 97                     <NA>              0.000           Helotiales
-    ## 98                     <NA>              0.000   Pestalotiopsis sp.
-    ## 99                     <NA>              0.000      Chaetothyriales
-    ## 100                    <NA>              0.000          Hypocreales
-    ## 101                    <NA>                 NA                 <NA>
-    ## 102                    <NA>                 NA                 <NA>
-    ## 103                    <NA>                 NA                 <NA>
-    ## 104                    <NA>                 NA                 <NA>
-    ## 105                    <NA>                 NA                 <NA>
-    ## 106                    <NA>                 NA                 <NA>
-    ## 107                    <NA>                 NA                 <NA>
-    ## 108                    <NA>                 NA                 <NA>
-    ## 109                    <NA>                 NA                 <NA>
-    ## 110                    <NA>                 NA                 <NA>
-    ## 111                    <NA>                 NA                 <NA>
-    ## 112                    <NA>                 NA                 <NA>
-    ## 113                    <NA>                 NA                 <NA>
-    ## 114                    <NA>                 NA                 <NA>
-    ## 115                    <NA>                 NA                 <NA>
-    ## 116                    <NA>                 NA                 <NA>
-    ## 117                    <NA>                 NA                 <NA>
-    ## 118                    <NA>                 NA                 <NA>
-    ## 119                    <NA>                 NA                 <NA>
-    ## 120                    <NA>                 NA                 <NA>
-    ## 121                    <NA>                 NA                 <NA>
-    ## 122                    <NA>                 NA                 <NA>
-    ## 123                    <NA>                 NA                 <NA>
-    ## 124                    <NA>                 NA                 <NA>
-    ## 125                    <NA>                 NA                 <NA>
-    ## 126                    <NA>                 NA                 <NA>
-    ## 127                    <NA>                 NA                 <NA>
-    ## 128                    <NA>                 NA                 <NA>
-    ## 129                    <NA>                 NA                 <NA>
-    ## 130                    <NA>                 NA                 <NA>
-    ## 131                    <NA>                 NA                 <NA>
-    ## 132                    <NA>                 NA                 <NA>
-    ## 133                    <NA>                 NA                 <NA>
-    ## 134                    <NA>                 NA                 <NA>
-    ## 135                    <NA>                 NA                 <NA>
-    ## 136                    <NA>                 NA                 <NA>
-    ## 137                    <NA>                 NA                 <NA>
-    ## 138                    <NA>                 NA                 <NA>
-    ## 139                    <NA>                 NA                 <NA>
-    ## 140                    <NA>                 NA                 <NA>
-    ## 141                    <NA>                 NA                 <NA>
-    ## 142                    <NA>                 NA                 <NA>
-    ## 143                    <NA>                 NA                 <NA>
-    ## 144                    <NA>                 NA                 <NA>
-    ## 145                    <NA>                 NA                 <NA>
-    ## 146                    <NA>                 NA                 <NA>
-    ## 147                    <NA>                 NA                 <NA>
-    ## 148                    <NA>                 NA                 <NA>
-    ## 149                    <NA>                 NA                 <NA>
-    ## 150                    <NA>                 NA                 <NA>
-    ## 151                    <NA>                 NA                 <NA>
-    ## 152                    <NA>                 NA                 <NA>
-    ## 153                    <NA>                 NA                 <NA>
-    ## 154                    <NA>                 NA                 <NA>
-    ## 155                    <NA>                 NA                 <NA>
-    ## 156                    <NA>                 NA                 <NA>
-    ## 157                    <NA>                 NA                 <NA>
-    ## 158                    <NA>                 NA                 <NA>
-    ## 159                    <NA>                 NA                 <NA>
-    ## 160                    <NA>                 NA                 <NA>
-    ## 161                    <NA>                 NA                 <NA>
-    ## 162                    <NA>                 NA                 <NA>
-    ## 163                    <NA>                 NA                 <NA>
-    ## 164                    <NA>                 NA                 <NA>
-    ## 165                    <NA>                 NA                 <NA>
-    ## 166                    <NA>                 NA                 <NA>
-    ## 167                    <NA>                 NA                 <NA>
-    ## 168                    <NA>                 NA                 <NA>
-    ## 169                    <NA>                 NA                 <NA>
-    ## 170                    <NA>                 NA                 <NA>
-    ## 171                    <NA>                 NA                 <NA>
-    ## 172                    <NA>                 NA                 <NA>
-    ## 173                    <NA>                 NA                 <NA>
-    ## 174                    <NA>                 NA                 <NA>
-    ## 175                    <NA>                 NA                 <NA>
-    ## 176                    <NA>                 NA                 <NA>
-    ## 177                    <NA>                 NA                 <NA>
-    ## 178                    <NA>                 NA                 <NA>
-    ## 179                    <NA>                 NA                 <NA>
-    ## 180                    <NA>                 NA                 <NA>
-    ## 181                    <NA>                 NA                 <NA>
-    ## 182                    <NA>                 NA                 <NA>
-    ## 183                    <NA>                 NA                 <NA>
-    ## 184                    <NA>                 NA                 <NA>
-    ## 185                    <NA>                 NA                 <NA>
-    ## 186                    <NA>                 NA                 <NA>
-    ## 187                    <NA>                 NA                 <NA>
-    ## 188                    <NA>                 NA                 <NA>
-    ## 189                    <NA>                 NA                 <NA>
-    ## 190                    <NA>                 NA                 <NA>
-    ## 191                    <NA>                 NA                 <NA>
-    ## 192                    <NA>                 NA                 <NA>
-    ## 193                    <NA>                 NA                 <NA>
-    ## 194                    <NA>                 NA                 <NA>
-    ## 195                    <NA>                 NA                 <NA>
-    ## 196                    <NA>                 NA                 <NA>
-    ## 197                    <NA>                 NA                 <NA>
-    ## 198                    <NA>                 NA                 <NA>
-    ##                          Taxonomy                                   SampleID
-    ## 1           FOTU_1399-Hypocreales  Corn2017LeafObjective2Collection1T2R1CAH5
-    ## 2            FOTU_3557-Ascomycota                                       <NA>
-    ## 3           FOTU_2877-Hypocreales                                       <NA>
-    ## 4         FOTU_1588-Dipodascaceae                                       <NA>
-    ## 5          FOTU_6838-Pleosporales                                       <NA>
-    ## 6     FOTU_2076-Lophiostomataceae                                       <NA>
-    ## 7       FOTU_2981-Phyllachora sp.                                       <NA>
-    ## 8       FOTU_7147-Penicillium sp.                                       <NA>
-    ## 9          FOTU_2205-Pleosporales                                       <NA>
-    ## 10      FOTU_1808-Cordycipitaceae                                       <NA>
-    ## 11           FOTU_635-Sordariales                                       <NA>
-    ## 12     FOTU_180-Lasiosphaeriaceae                                       <NA>
-    ## 13           FOTU_2046-Ascomycota                                       <NA>
-    ## 14         FOTU_386-Devriesia sp.                                       <NA>
-    ## 15            FOTU_375-Ascomycota                                       <NA>
-    ## 16      FOTU_3369-Sordariomycetes                                       <NA>
-    ## 17   FOTU_799-Striaticonidium sp.                                       <NA>
-    ## 18       FOTU_520-Clarireedia sp.                                       <NA>
-    ## 19         FOTU_5079-Fusarium sp.                                       <NA>
-    ## 20         FOTU_3134-Pleosporales                                       <NA>
-    ## 21          FOTU_1609-Perusta sp.                                       <NA>
-    ## 22           FOTU_6475-Xylariales                                       <NA>
-    ## 23        FOTU_6425-Fusicolla sp.                                       <NA>
-    ## 24           FOTU_2843-Ascomycota                                       <NA>
-    ## 25          FOTU_3287-Sordariales                                       <NA>
-    ## 26            FOTU_150-Ascomycota                                       <NA>
-    ## 27           FOTU_925-Lectera sp.                                       <NA>
-    ## 28       FOTU_4872-Alternaria sp.                                       <NA>
-    ## 29         FOTU_786-Pleosporaceae                                       <NA>
-    ## 30           FOTU_7144-Pezizaceae                                       <NA>
-    ## 31   FOTU_1118-Colletotrichum sp.                                       <NA>
-    ## 32           FOTU_6794-Knufia sp.                                       <NA>
-    ## 33           FOTU_2562-Ascomycota                                       <NA>
-    ## 34         FOTU_4288-Pleosporales                                       <NA>
-    ## 35    FOTU_218-Pestalotiopsis sp.                                       <NA>
-    ## 36     FOTU_5225-Coniothyrium sp.                                       <NA>
-    ## 37       FOTU_4036-Physciella sp.                                       <NA>
-    ## 38      FOTU_930-Pyxidiophora sp.                                       <NA>
-    ## 39     FOTU_4065-Cryptodiscus sp.                                       <NA>
-    ## 40       FOTU_3529-Orbiliomycetes                                       <NA>
-    ## 41      FOTU_1533-Penicillium sp.                                       <NA>
-    ## 42         FOTU_1000-Pleosporales                                       <NA>
-    ## 43         FOTU_103-Diaporthe sp.                                       <NA>
-    ## 44          FOTU_2258-Nectriaceae                                       <NA>
-    ## 45           FOTU_5713-Helotiales                                       <NA>
-    ## 46          FOTU_3243-Nectriaceae                                       <NA>
-    ## 47      FOTU_2963-Trichoderma sp.                                       <NA>
-    ## 48         FOTU_4971-Pleosporales                                       <NA>
-    ## 49     FOTU_1591-Verticillium sp.                                       <NA>
-    ## 50      FOTU_2547-Dothideomycetes                                       <NA>
-    ## 51           FOTU_4714-Helotiales                                       <NA>
-    ## 52          FOTU_3926-Capnodiales                                       <NA>
-    ## 53         FOTU_2353-Diaporthales                                       <NA>
-    ## 54         FOTU_5991-Pleosporales                                       <NA>
-    ## 55         FOTU_1444-Pleosporales                                       <NA>
-    ## 56           FOTU_4194-Ascomycota                                       <NA>
-    ## 57           FOTU_3773-Ascomycota                                       <NA>
-    ## 58    FOTU_3385-Phaeosphaeriaceae                                       <NA>
-    ## 59        FOTU_4084-Pleosporaceae                                       <NA>
-    ## 60         FOTU_5139-Pleosporales                                       <NA>
-    ## 61     FOTU_7166-Neoascochyta sp.                                       <NA>
-    ## 62       FOTU_4891-Alternaria sp.                                       <NA>
-    ## 63        FOTU_3049-Periconia sp.                                       <NA>
-    ## 64         FOTU_1567-Erysiphe sp.                                       <NA>
-    ## 65      FOTU_2293-Lopadostoma sp.                                       <NA>
-    ## 66        FOTU_7137-Pleosporaceae                                       <NA>
-    ## 67           FOTU_5802-Helotiales                                       <NA>
-    ## 68             FOTU_41-Xylariales                                       <NA>
-    ## 69          FOTU_6902-Xylaria sp.                                       <NA>
-    ## 70     FOTU_4996-Neosetophoma sp.                                       <NA>
-    ## 71           FOTU_5745-Helotiales                                  T1R2FAR6R
-    ## 72       FOTU_2711-Pyronemataceae                                       <NA>
-    ## 73       FOTU_3733-Dactylella sp.                                       <NA>
-    ## 74         FOTU_3692-Massaria sp.                                       <NA>
-    ## 75     FOTU_3112-Setoseptoria sp.                                       <NA>
-    ## 76      FOTU_3335-Coniochaeta sp.                                       <NA>
-    ## 77        FOTU_1653-Bipolaris sp.                                       <NA>
-    ## 78      FOTU_1141-Trichoderma sp.                                       <NA>
-    ## 79          FOTU_4856-Helotiaceae                                       <NA>
-    ## 80            FOTU_298-Helotiales                                       <NA>
-    ## 81           FOTU_14-Pleosporales                                       <NA>
-    ## 82  FOTU_898-Tetraplosphaeria sp.                                       <NA>
-    ## 83    FOTU_3533-Lasiosphaeriaceae                                       <NA>
-    ## 84      FOTU_6681-Teichosporaceae                                       <NA>
-    ## 85           FOTU_3511-Ascomycota                                       <NA>
-    ## 86         FOTU_3595-Venturia sp.                                       <NA>
-    ## 87           FOTU_5317-Ascomycota                                       <NA>
-    ## 88          FOTU_1033-Helotiaceae                                       <NA>
-    ## 89        FOTU_6970-Hypomyces sp.                                       <NA>
-    ## 90      FOTU_4942-Dissoconium sp.                                       <NA>
-    ## 91      FOTU_406-Eucasphaeria sp.                                       <NA>
-    ## 92         FOTU_5611-Pleosporales                                       <NA>
-    ## 93           FOTU_4667-Helotiales                                       <NA>
-    ## 94      FOTU_3237-Talaromyces sp.                                       <NA>
-    ## 95           FOTU_1068-Ascomycota                                       <NA>
-    ## 96          FOTU_2877-Hypocreales                                       <NA>
-    ## 97           FOTU_3661-Helotiales                                       <NA>
-    ## 98   FOTU_3566-Pestalotiopsis sp.                                       <NA>
-    ## 99      FOTU_1463-Chaetothyriales                                       <NA>
-    ## 100         FOTU_1399-Hypocreales  Corn2017LeafObjective2Collection1T2R1CAH5
-    ## 101                          <NA>                                  T1R6FCR3R
-    ## 102                          <NA>                                  T2R5FAR6R
-    ## 103                          <NA>  Corn2017RootObjective2Collection1T2R6ACF2
-    ## 104                          <NA>                                  T1R6FBR6R
-    ## 105                          <NA>  Corn2017RootObjective2Collection1T1R5CCC8
-    ## 106                          <NA>  Corn2017LeafObjective2Collection1T2R6CBC8
-    ## 107                          <NA> Corn2017LeafObjective2Collection2T1R5FCG10
-    ## 108                          <NA>                                  T1R1FAR4R
-    ## 109                          <NA>                                  T2R2FAR4R
-    ## 110                          <NA> Corn2017LeafObjective2Collection2T1R5FCG10
-    ## 111                          <NA>                                  T1R6CAR6L
-    ## 112                          <NA>                                  T1R6CAR6L
-    ## 113                          <NA>  Corn2017RootObjective2Collection2T2R1CFB6
-    ## 114                          <NA> Corn2017LeafObjective2Collection2T1R2CCD10
-    ## 115                          <NA>                                  T2R2FBR3L
-    ## 116                          <NA>                                  T1R2FAR4L
-    ## 117                          <NA>  Corn2017RootObjective2Collection3T2R2BCF9
-    ## 118                          <NA>                                  T1R6FBR3L
-    ## 119                          <NA>  Corn2017RootObjective2Collection1T1R5CCC8
-    ## 120                          <NA>                                  T2R1FBR4R
-    ## 121                          <NA>                                   T1R1AR4R
-    ## 122                          <NA>  Corn2017LeafObjective2Collection1T2R1CBA6
-    ## 123                          <NA>                                  T2R1CCR6L
-    ## 124                          <NA>                                  T2R5CAR6R
-    ## 125                          <NA> Corn2017RootObjective2Collection1T1R2CFC11
-    ## 126                          <NA>                                  T1R5CCR3R
-    ## 127                          <NA>  Corn2017LeafObjective2Collection1T2R2FCC7
-    ## 128                          <NA> Corn2017RootObjective2Collection3T2R6BCA12
-    ## 129                          <NA>  Corn2017LeafObjective2Collection2T2R6CBG2
-    ## 130                          <NA>  Corn2017LeafObjective2Collection2T1R1FAH8
-    ## 131                          <NA>                                  T1R2CBR3L
-    ## 132                          <NA>                                  T1R2CBR4R
-    ## 133                          <NA> Corn2017LeafObjective2Collection2T1R5CBA11
-    ## 134                          <NA>                                  T1R6CCR6R
-    ## 135                          <NA>  Corn2017LeafObjective2Collection3T1R6FCH5
-    ## 136                          <NA>  Corn2017LeafObjective2Collection3T2R2FAC7
-    ## 137                          <NA>  Corn2017RootObjective2Collection3T1R5BFE6
-    ## 138                          <NA> Corn2017RootObjective2Collection3T2R6BFD12
-    ## 139                          <NA>                                  T1R1FAR6R
-    ## 140                          <NA>                                  T2R6CCR6L
-    ## 141                          <NA>                                  T1R6FAR6L
-    ## 142                          <NA>                                  T1R5CCR4L
-    ## 143                          <NA>  Corn2017LeafObjective2Collection1T2R6FBF8
-    ## 144                          <NA>                                  T2R2FBR3R
-    ## 145                          <NA>                                  T2R1FCR6R
-    ## 146                          <NA>                                  T2R1CBR4R
-    ## 147                          <NA>  Corn2017LeafObjective2Collection1T1R5CAD4
-    ## 148                          <NA>  Corn2017RootObjective2Collection1T2R6CFC3
-    ## 149                          <NA>  Corn2017LeafObjective2Collection3T1R1CCC3
-    ## 150                          <NA>                                  T2R2CCR3R
-    ## 151                          <NA>                                  T1R5FCR4R
-    ## 152                          <NA>                                  T1R6CBR6L
-    ## 153                          <NA>                                  T2R1FCR3R
-    ## 154                          <NA>                                  T1R5FBR3L
-    ## 155                          <NA>  Corn2017LeafObjective2Collection1T2R6CBC8
-    ## 156                          <NA>  Corn2017LeafObjective2Collection3T1R2CBH3
-    ## 157                          <NA> Corn2017RootObjective2Collection2T1R2ACF11
-    ## 158                          <NA> Corn2017LeafObjective2Collection2T1R6FAD11
-    ## 159                          <NA>  Corn2017LeafObjective2Collection1T2R2CCH6
-    ## 160                          <NA>                                  T2R6CCR4L
-    ## 161                          <NA>  Corn2017RootObjective2Collection2T1R1AFA6
-    ## 162                          <NA>                                  T2R5FBR6L
-    ## 163                          <NA>  Corn2017RootObjective2Collection2T2R2CCA7
-    ## 164                          <NA>                                  T2R2FBR3L
-    ## 165                          <NA>  Corn2017RootObjective2Collection3T2R1ACC8
-    ## 166                          <NA>                                  T1R2CCR3L
-    ## 167                          <NA>  Corn2017LeafObjective2Collection3T2R2CAH6
-    ## 168                          <NA>  Corn2017RootObjective2Collection1T1R1CCD8
-    ## 169                          <NA>  Corn2017RootObjective2Collection2T2R6CFB5
-    ## 170                          <NA>                                  T1R6FBR6R
-    ## 171                          <NA>  Corn2017RootObjective2Collection1T2R5CFA2
-    ## 172                          <NA>                                  T1R5FBR6R
-    ## 173                          <NA>                                  T1R1FBR4L
-    ## 174                          <NA>                                  T2R5FAR4L
-    ## 175                          <NA>  Corn2017LeafObjective2Collection3T2R5FBB8
-    ## 176                          <NA> Corn2017RootObjective2Collection1T2R2BCD11
-    ## 177                          <NA>  Corn2017LeafObjective2Collection3T2R6FBH8
-    ## 178                          <NA> Corn2017RootObjective2Collection1T2R2ACD12
-    ## 179                          <NA>  Corn2017RootObjective2Collection3T1R2CCA5
-    ## 180                          <NA> Corn2017RootObjective2Collection2T1R6ACA11
-    ## 181                          <NA> Corn2017RootObjective2Collection2T1R6AFB12
-    ## 182                          <NA> Corn2017LeafObjective2Collection2T1R5FCG10
-    ## 183                          <NA>                                  T1R1FBR3R
-    ## 184                          <NA>                                  T1R5CAR6L
-    ## 185                          <NA>                                  T2R1CBR4L
-    ## 186                          <NA>  Corn2017LeafObjective2Collection1T2R1CCB6
-    ## 187                          <NA>                                  T2R6CBR3L
-    ## 188                          <NA>                                  T2R1FAR3L
-    ## 189                          <NA>                                  T2R2CAR6L
-    ## 190                          <NA>                                  T2R6CCR4R
-    ## 191                          <NA>                                  T2R1CBR4R
-    ## 192                          <NA>                                  T2R5FCR4L
-    ## 193                          <NA>                                  T1R2CBR6R
-    ## 194                          <NA>  Corn2017LeafObjective2Collection3T2R1FAE6
-    ## 195                          <NA>                                  T1R6CAR3R
-    ## 196                          <NA>                                  T1R1FBR3L
-    ## 197                          <NA> Corn2017RootObjective2Collection1T1R2BFC12
-    ## 198                          <NA>                                  T1R2CCR6L
+    ##           OTU Kingdom     Phylum           Class             Order
+    ## 1   FOTU_1160   Fungi Ascomycota  Eurotiomycetes   Chaetothyriales
+    ## 2   FOTU_4062   Fungi Ascomycota  Eurotiomycetes   Chaetothyriales
+    ## 3    FOTU_712   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 4   FOTU_1104   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 5   FOTU_3687   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 6   FOTU_5397   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 7   FOTU_6853   Fungi Ascomycota   Pezizomycetes         Pezizales
+    ## 8   FOTU_5119   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 9     FOTU_77   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 10  FOTU_3814   Fungi Ascomycota Lecanoromycetes       Lecanorales
+    ## 11  FOTU_2363   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 12  FOTU_1475   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 13   FOTU_258   Fungi Ascomycota            <NA>              <NA>
+    ## 14  FOTU_4078   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 15  FOTU_5602   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 16   FOTU_879   Fungi Ascomycota Dothideomycetes       Tubeufiales
+    ## 17  FOTU_5224   Fungi Ascomycota  Eurotiomycetes        Eurotiales
+    ## 18  FOTU_2837   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 19  FOTU_1608   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 20  FOTU_3367   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 21  FOTU_2599   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 22  FOTU_3137   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 23  FOTU_5493   Fungi Ascomycota  Orbiliomycetes        Orbiliales
+    ## 24   FOTU_412   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 25  FOTU_6634   Fungi Ascomycota Dothideomycetes              <NA>
+    ## 26  FOTU_6825   Fungi Ascomycota            <NA>              <NA>
+    ## 27  FOTU_1645   Fungi Ascomycota Dothideomycetes              <NA>
+    ## 28  FOTU_1917   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 29  FOTU_7117   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 30  FOTU_1666   Fungi Ascomycota Sordariomycetes     Glomerellales
+    ## 31  FOTU_3428   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 32  FOTU_3731   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 33  FOTU_6705   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 34   FOTU_789   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 35  FOTU_5359   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 36  FOTU_5995   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 37  FOTU_2857   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 38  FOTU_2018   Fungi Ascomycota Dothideomycetes       Capnodiales
+    ## 39   FOTU_139   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 40   FOTU_205   Fungi Ascomycota Sordariomycetes       Sordariales
+    ## 41  FOTU_5764   Fungi Ascomycota            <NA>              <NA>
+    ## 42  FOTU_4866   Fungi Ascomycota  Orbiliomycetes        Orbiliales
+    ## 43  FOTU_3541   Fungi Ascomycota            <NA>              <NA>
+    ## 44  FOTU_3122   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 45  FOTU_2704   Fungi Ascomycota Sordariomycetes          Branch06
+    ## 46  FOTU_1370   Fungi Ascomycota            <NA>              <NA>
+    ## 47  FOTU_3443   Fungi Ascomycota   Pezizomycetes         Pezizales
+    ## 48  FOTU_4805   Fungi Ascomycota   Pezizomycetes         Pezizales
+    ## 49  FOTU_2400   Fungi Ascomycota Dothideomycetes       Capnodiales
+    ## 50  FOTU_7115   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 51   FOTU_128   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 52   FOTU_656   Fungi Ascomycota Saccharomycetes Saccharomycetales
+    ## 53  FOTU_6333   Fungi Ascomycota  Orbiliomycetes        Orbiliales
+    ## 54  FOTU_4664   Fungi Ascomycota            <NA>              <NA>
+    ## 55  FOTU_7152   Fungi Ascomycota  Eurotiomycetes        Eurotiales
+    ## 56  FOTU_6429   Fungi Ascomycota  Eurotiomycetes   Chaetothyriales
+    ## 57  FOTU_6293   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 58  FOTU_3530   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 59  FOTU_2572   Fungi Ascomycota Dothideomycetes Botryosphaeriales
+    ## 60  FOTU_5001   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 61   FOTU_973   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 62  FOTU_2299   Fungi Ascomycota            <NA>              <NA>
+    ## 63  FOTU_1119   Fungi Ascomycota            <NA>              <NA>
+    ## 64  FOTU_4909   Fungi Ascomycota            <NA>              <NA>
+    ## 65   FOTU_342   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 66   FOTU_841   Fungi Ascomycota Sordariomycetes Chaetosphaeriales
+    ## 67  FOTU_6909   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 68  FOTU_1922   Fungi Ascomycota Sordariomycetes        Xylariales
+    ## 69  FOTU_3075   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 70  FOTU_1257   Fungi Ascomycota            <NA>              <NA>
+    ## 71  FOTU_2839   Fungi Ascomycota            <NA>              <NA>
+    ## 72  FOTU_1063   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 73  FOTU_2042   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 74  FOTU_6308   Fungi Ascomycota            <NA>              <NA>
+    ## 75  FOTU_3056   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 76  FOTU_3372   Fungi Ascomycota   Leotiomycetes       Erysiphales
+    ## 77  FOTU_2889   Fungi Ascomycota Dothideomycetes       Capnodiales
+    ## 78  FOTU_3413   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 79  FOTU_2170   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 80  FOTU_1534   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 81   FOTU_613   Fungi Ascomycota Taphrinomycetes       Taphrinales
+    ## 82   FOTU_175   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 83  FOTU_1565   Fungi Ascomycota Sordariomycetes    Coniochaetales
+    ## 84  FOTU_3480   Fungi Ascomycota Dothideomycetes              <NA>
+    ## 85  FOTU_1214   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 86  FOTU_2665   Fungi Ascomycota   Pezizomycetes         Pezizales
+    ## 87    FOTU_38   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 88  FOTU_6430   Fungi Ascomycota Dothideomycetes       Dothideales
+    ## 89   FOTU_839   Fungi Ascomycota            <NA>              <NA>
+    ## 90  FOTU_5405   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 91  FOTU_5465   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 92  FOTU_2109   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 93  FOTU_2210   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 94  FOTU_1950   Fungi Ascomycota   Leotiomycetes        Helotiales
+    ## 95  FOTU_5990   Fungi Ascomycota Dothideomycetes      Pleosporales
+    ## 96   FOTU_731   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 97   FOTU_991   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 98  FOTU_4088   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 99  FOTU_3866   Fungi Ascomycota Sordariomycetes       Hypocreales
+    ## 100  FOTU_122   Fungi Ascomycota Sordariomycetes      Diaporthales
+    ## 101  FOTU_397    <NA>       <NA>            <NA>              <NA>
+    ## 102 FOTU_6327    <NA>       <NA>            <NA>              <NA>
+    ## 103 FOTU_6834    <NA>       <NA>            <NA>              <NA>
+    ## 104 FOTU_1090    <NA>       <NA>            <NA>              <NA>
+    ## 105  FOTU_867    <NA>       <NA>            <NA>              <NA>
+    ## 106  FOTU_645    <NA>       <NA>            <NA>              <NA>
+    ## 107 FOTU_5991    <NA>       <NA>            <NA>              <NA>
+    ## 108 FOTU_4856    <NA>       <NA>            <NA>              <NA>
+    ## 109 FOTU_5779    <NA>       <NA>            <NA>              <NA>
+    ## 110 FOTU_2364    <NA>       <NA>            <NA>              <NA>
+    ## 111 FOTU_2353    <NA>       <NA>            <NA>              <NA>
+    ## 112 FOTU_1349    <NA>       <NA>            <NA>              <NA>
+    ## 113 FOTU_7137    <NA>       <NA>            <NA>              <NA>
+    ## 114 FOTU_1653    <NA>       <NA>            <NA>              <NA>
+    ## 115 FOTU_1044    <NA>       <NA>            <NA>              <NA>
+    ## 116 FOTU_2137    <NA>       <NA>            <NA>              <NA>
+    ## 117 FOTU_1443    <NA>       <NA>            <NA>              <NA>
+    ## 118 FOTU_2841    <NA>       <NA>            <NA>              <NA>
+    ## 119 FOTU_1024    <NA>       <NA>            <NA>              <NA>
+    ## 120 FOTU_6100    <NA>       <NA>            <NA>              <NA>
+    ## 121 FOTU_6685    <NA>       <NA>            <NA>              <NA>
+    ## 122 FOTU_6147    <NA>       <NA>            <NA>              <NA>
+    ## 123 FOTU_3920    <NA>       <NA>            <NA>              <NA>
+    ## 124 FOTU_2744    <NA>       <NA>            <NA>              <NA>
+    ## 125 FOTU_2182    <NA>       <NA>            <NA>              <NA>
+    ## 126  FOTU_579    <NA>       <NA>            <NA>              <NA>
+    ## 127 FOTU_1452    <NA>       <NA>            <NA>              <NA>
+    ## 128  FOTU_194    <NA>       <NA>            <NA>              <NA>
+    ## 129 FOTU_6723    <NA>       <NA>            <NA>              <NA>
+    ## 130 FOTU_5684    <NA>       <NA>            <NA>              <NA>
+    ## 131 FOTU_4412    <NA>       <NA>            <NA>              <NA>
+    ## 132 FOTU_2567    <NA>       <NA>            <NA>              <NA>
+    ## 133 FOTU_6525    <NA>       <NA>            <NA>              <NA>
+    ## 134   FOTU_12    <NA>       <NA>            <NA>              <NA>
+    ## 135   FOTU_60    <NA>       <NA>            <NA>              <NA>
+    ## 136 FOTU_2258    <NA>       <NA>            <NA>              <NA>
+    ## 137 FOTU_6880    <NA>       <NA>            <NA>              <NA>
+    ## 138  FOTU_240    <NA>       <NA>            <NA>              <NA>
+    ## 139 FOTU_1585    <NA>       <NA>            <NA>              <NA>
+    ## 140 FOTU_2136    <NA>       <NA>            <NA>              <NA>
+    ## 141  FOTU_444    <NA>       <NA>            <NA>              <NA>
+    ## 142 FOTU_2128    <NA>       <NA>            <NA>              <NA>
+    ## 143 FOTU_6284    <NA>       <NA>            <NA>              <NA>
+    ## 144 FOTU_1399    <NA>       <NA>            <NA>              <NA>
+    ## 145 FOTU_6708    <NA>       <NA>            <NA>              <NA>
+    ## 146 FOTU_5564    <NA>       <NA>            <NA>              <NA>
+    ## 147 FOTU_4550    <NA>       <NA>            <NA>              <NA>
+    ## 148 FOTU_1381    <NA>       <NA>            <NA>              <NA>
+    ## 149 FOTU_4856    <NA>       <NA>            <NA>              <NA>
+    ## 150 FOTU_3066    <NA>       <NA>            <NA>              <NA>
+    ## 151 FOTU_2092    <NA>       <NA>            <NA>              <NA>
+    ## 152 FOTU_2283    <NA>       <NA>            <NA>              <NA>
+    ## 153 FOTU_1873    <NA>       <NA>            <NA>              <NA>
+    ## 154  FOTU_875    <NA>       <NA>            <NA>              <NA>
+    ## 155 FOTU_3177    <NA>       <NA>            <NA>              <NA>
+    ## 156 FOTU_4969    <NA>       <NA>            <NA>              <NA>
+    ## 157 FOTU_4057    <NA>       <NA>            <NA>              <NA>
+    ## 158 FOTU_2659    <NA>       <NA>            <NA>              <NA>
+    ## 159 FOTU_4059    <NA>       <NA>            <NA>              <NA>
+    ## 160 FOTU_1301    <NA>       <NA>            <NA>              <NA>
+    ## 161  FOTU_218    <NA>       <NA>            <NA>              <NA>
+    ## 162 FOTU_3586    <NA>       <NA>            <NA>              <NA>
+    ## 163 FOTU_3124    <NA>       <NA>            <NA>              <NA>
+    ## 164 FOTU_5394    <NA>       <NA>            <NA>              <NA>
+    ## 165 FOTU_1256    <NA>       <NA>            <NA>              <NA>
+    ## 166 FOTU_2886    <NA>       <NA>            <NA>              <NA>
+    ## 167 FOTU_1302    <NA>       <NA>            <NA>              <NA>
+    ## 168 FOTU_1117    <NA>       <NA>            <NA>              <NA>
+    ## 169 FOTU_5414    <NA>       <NA>            <NA>              <NA>
+    ## 170 FOTU_4445    <NA>       <NA>            <NA>              <NA>
+    ## 171  FOTU_531    <NA>       <NA>            <NA>              <NA>
+    ## 172   FOTU_30    <NA>       <NA>            <NA>              <NA>
+    ## 173 FOTU_2557    <NA>       <NA>            <NA>              <NA>
+    ## 174  FOTU_788    <NA>       <NA>            <NA>              <NA>
+    ## 175 FOTU_1193    <NA>       <NA>            <NA>              <NA>
+    ## 176 FOTU_5860    <NA>       <NA>            <NA>              <NA>
+    ## 177 FOTU_3857    <NA>       <NA>            <NA>              <NA>
+    ## 178 FOTU_5665    <NA>       <NA>            <NA>              <NA>
+    ## 179  FOTU_424    <NA>       <NA>            <NA>              <NA>
+    ## 180   FOTU_20    <NA>       <NA>            <NA>              <NA>
+    ## 181 FOTU_5195    <NA>       <NA>            <NA>              <NA>
+    ## 182 FOTU_3272    <NA>       <NA>            <NA>              <NA>
+    ## 183 FOTU_1193    <NA>       <NA>            <NA>              <NA>
+    ## 184 FOTU_1591    <NA>       <NA>            <NA>              <NA>
+    ## 185  FOTU_451    <NA>       <NA>            <NA>              <NA>
+    ## 186 FOTU_6809    <NA>       <NA>            <NA>              <NA>
+    ## 187 FOTU_2601    <NA>       <NA>            <NA>              <NA>
+    ## 188 FOTU_3619    <NA>       <NA>            <NA>              <NA>
+    ## 189 FOTU_5011    <NA>       <NA>            <NA>              <NA>
+    ## 190 FOTU_5464    <NA>       <NA>            <NA>              <NA>
+    ## 191  FOTU_153    <NA>       <NA>            <NA>              <NA>
+    ## 192 FOTU_5846    <NA>       <NA>            <NA>              <NA>
+    ## 193 FOTU_5008    <NA>       <NA>            <NA>              <NA>
+    ## 194 FOTU_4908    <NA>       <NA>            <NA>              <NA>
+    ## 195 FOTU_3951    <NA>       <NA>            <NA>              <NA>
+    ## 196  FOTU_815    <NA>       <NA>            <NA>              <NA>
+    ## 197 FOTU_3430    <NA>       <NA>            <NA>              <NA>
+    ## 198 FOTU_3537    <NA>       <NA>            <NA>              <NA>
+    ## 199 FOTU_5456    <NA>       <NA>            <NA>              <NA>
+    ##                  Family            Genus              Species
+    ## 1   Herpotrichiellaceae Cladophialophora Cladophialophora sp.
+    ## 2                  <NA>             <NA>                 <NA>
+    ## 3                  <NA>             <NA>                 <NA>
+    ## 4         Sporormiaceae             <NA>                 <NA>
+    ## 5                  <NA>             <NA>                 <NA>
+    ## 6         Didymellaceae             <NA>                 <NA>
+    ## 7            Pezizaceae             <NA>                 <NA>
+    ## 8                  <NA>             <NA>                 <NA>
+    ## 9     Lasiosphaeriaceae             <NA>                 <NA>
+    ## 10                 <NA>             <NA>                 <NA>
+    ## 11        Pleosporaceae             <NA>                 <NA>
+    ## 12                 <NA>             <NA>                 <NA>
+    ## 13                 <NA>             <NA>                 <NA>
+    ## 14      Hyaloscyphaceae             <NA>                 <NA>
+    ## 15    Lasiosphaeriaceae             <NA>                 <NA>
+    ## 16         Tubeufiaceae   Neohelicomyces   Neohelicomyces sp.
+    ## 17       Trichocomaceae      Talaromyces      Talaromyces sp.
+    ## 18        Didymellaceae        Didymella        Didymella sp.
+    ## 19                 <NA>             <NA>                 <NA>
+    ## 20                 <NA>             <NA>                 <NA>
+    ## 21     Cucurbitariaceae  Neocucurbitaria  Neocucurbitaria sp.
+    ## 22   Didymosphaeriaceae Paraconiothyrium Paraconiothyrium sp.
+    ## 23       Incertae_sedis       Vermispora       Vermispora sp.
+    ## 24                 <NA>             <NA>                 <NA>
+    ## 25                 <NA>             <NA>                 <NA>
+    ## 26                 <NA>             <NA>                 <NA>
+    ## 27                 <NA>             <NA>                 <NA>
+    ## 28                 <NA>             <NA>                 <NA>
+    ## 29        Didymellaceae             <NA>                 <NA>
+    ## 30       Glomerellaceae   Colletotrichum   Colletotrichum sp.
+    ## 31                 <NA>             <NA>                 <NA>
+    ## 32      Hyaloscyphaceae          Lachnum          Lachnum sp.
+    ## 33      Teichosporaceae      Teichospora      Teichospora sp.
+    ## 34        Pleosporaceae      Pyrenophora      Pyrenophora sp.
+    ## 35                 <NA>             <NA>                 <NA>
+    ## 36                 <NA>             <NA>                 <NA>
+    ## 37    Leptosphaeriaceae   Sphaerellopsis   Sphaerellopsis sp.
+    ## 38   Teratosphaeriaceae   Catenulostroma   Catenulostroma sp.
+    ## 39    Lasiosphaeriaceae             <NA>                 <NA>
+    ## 40        Chaetomiaceae         Humicola         Humicola sp.
+    ## 41                 <NA>             <NA>                 <NA>
+    ## 42          Orbiliaceae             <NA>                 <NA>
+    ## 43                 <NA>             <NA>                 <NA>
+    ## 44    Lophiostomataceae      Lophiostoma      Lophiostoma sp.
+    ## 45                 <NA>             <NA>                 <NA>
+    ## 46                 <NA>             <NA>                 <NA>
+    ## 47       Pyronemataceae             <NA>                 <NA>
+    ## 48           Tuberaceae            Tuber            Tuber sp.
+    ## 49   Mycosphaerellaceae    Cercosporella    Cercosporella sp.
+    ## 50        Didymellaceae             <NA>                 <NA>
+    ## 51                 <NA>             <NA>                 <NA>
+    ## 52                 <NA>             <NA>                 <NA>
+    ## 53          Orbiliaceae             <NA>                 <NA>
+    ## 54                 <NA>             <NA>                 <NA>
+    ## 55       Trichocomaceae      Talaromyces      Talaromyces sp.
+    ## 56                 <NA>             <NA>                 <NA>
+    ## 57                 <NA>             <NA>                 <NA>
+    ## 58                 <NA>             <NA>                 <NA>
+    ## 59   Botryosphaeriaceae         Diplodia         Diplodia sp.
+    ## 60                 <NA>             <NA>                 <NA>
+    ## 61                 <NA>             <NA>                 <NA>
+    ## 62                 <NA>             <NA>                 <NA>
+    ## 63                 <NA>             <NA>                 <NA>
+    ## 64                 <NA>             <NA>                 <NA>
+    ## 65        Massarinaceae     Stagonospora     Stagonospora sp.
+    ## 66   Chaetosphaeriaceae   Chaetosphaeria   Chaetosphaeria sp.
+    ## 67                 <NA>             <NA>                 <NA>
+    ## 68                 <NA>             <NA>                 <NA>
+    ## 69       Thyridariaceae   Parathyridaria   Parathyridaria sp.
+    ## 70                 <NA>             <NA>                 <NA>
+    ## 71                 <NA>             <NA>                 <NA>
+    ## 72   Didymosphaeriaceae Paraconiothyrium Paraconiothyrium sp.
+    ## 73         Dermateaceae        Helgardia        Helgardia sp.
+    ## 74                 <NA>             <NA>                 <NA>
+    ## 75                 <NA>             <NA>                 <NA>
+    ## 76         Erysiphaceae         Erysiphe         Erysiphe sp.
+    ## 77   Mycosphaerellaceae  Scleroramularia  Scleroramularia sp.
+    ## 78                 <NA>             <NA>                 <NA>
+    ## 79    Phaeosphaeriaceae    Wojnowiciella    Wojnowiciella sp.
+    ## 80                 <NA>             <NA>                 <NA>
+    ## 81         Taphrinaceae         Taphrina         Taphrina sp.
+    ## 82                 <NA>             <NA>                 <NA>
+    ## 83      Coniochaetaceae      Coniochaeta      Coniochaeta sp.
+    ## 84                 <NA>             <NA>                 <NA>
+    ## 85         Dermateaceae         Calloria         Calloria sp.
+    ## 86       Pyronemataceae             <NA>                 <NA>
+    ## 87        Pleosporaceae       Alternaria       Alternaria sp.
+    ## 88         Dothioraceae             <NA>                 <NA>
+    ## 89                 <NA>             <NA>                 <NA>
+    ## 90                 <NA>             <NA>                 <NA>
+    ## 91                 <NA>             <NA>                 <NA>
+    ## 92        Didymellaceae        Calophoma        Calophoma sp.
+    ## 93      Teichosporaceae      Teichospora      Teichospora sp.
+    ## 94          Helotiaceae             <NA>                 <NA>
+    ## 95                 <NA>             <NA>                 <NA>
+    ## 96       Bionectriaceae             <NA>                 <NA>
+    ## 97                 <NA>             <NA>                 <NA>
+    ## 98                 <NA>             <NA>                 <NA>
+    ## 99                 <NA>             <NA>                 <NA>
+    ## 100           Valsaceae             <NA>                 <NA>
+    ## 101                <NA>             <NA>                 <NA>
+    ## 102                <NA>             <NA>                 <NA>
+    ## 103                <NA>             <NA>                 <NA>
+    ## 104                <NA>             <NA>                 <NA>
+    ## 105                <NA>             <NA>                 <NA>
+    ## 106                <NA>             <NA>                 <NA>
+    ## 107                <NA>             <NA>                 <NA>
+    ## 108                <NA>             <NA>                 <NA>
+    ## 109                <NA>             <NA>                 <NA>
+    ## 110                <NA>             <NA>                 <NA>
+    ## 111                <NA>             <NA>                 <NA>
+    ## 112                <NA>             <NA>                 <NA>
+    ## 113                <NA>             <NA>                 <NA>
+    ## 114                <NA>             <NA>                 <NA>
+    ## 115                <NA>             <NA>                 <NA>
+    ## 116                <NA>             <NA>                 <NA>
+    ## 117                <NA>             <NA>                 <NA>
+    ## 118                <NA>             <NA>                 <NA>
+    ## 119                <NA>             <NA>                 <NA>
+    ## 120                <NA>             <NA>                 <NA>
+    ## 121                <NA>             <NA>                 <NA>
+    ## 122                <NA>             <NA>                 <NA>
+    ## 123                <NA>             <NA>                 <NA>
+    ## 124                <NA>             <NA>                 <NA>
+    ## 125                <NA>             <NA>                 <NA>
+    ## 126                <NA>             <NA>                 <NA>
+    ## 127                <NA>             <NA>                 <NA>
+    ## 128                <NA>             <NA>                 <NA>
+    ## 129                <NA>             <NA>                 <NA>
+    ## 130                <NA>             <NA>                 <NA>
+    ## 131                <NA>             <NA>                 <NA>
+    ## 132                <NA>             <NA>                 <NA>
+    ## 133                <NA>             <NA>                 <NA>
+    ## 134                <NA>             <NA>                 <NA>
+    ## 135                <NA>             <NA>                 <NA>
+    ## 136                <NA>             <NA>                 <NA>
+    ## 137                <NA>             <NA>                 <NA>
+    ## 138                <NA>             <NA>                 <NA>
+    ## 139                <NA>             <NA>                 <NA>
+    ## 140                <NA>             <NA>                 <NA>
+    ## 141                <NA>             <NA>                 <NA>
+    ## 142                <NA>             <NA>                 <NA>
+    ## 143                <NA>             <NA>                 <NA>
+    ## 144                <NA>             <NA>                 <NA>
+    ## 145                <NA>             <NA>                 <NA>
+    ## 146                <NA>             <NA>                 <NA>
+    ## 147                <NA>             <NA>                 <NA>
+    ## 148                <NA>             <NA>                 <NA>
+    ## 149                <NA>             <NA>                 <NA>
+    ## 150                <NA>             <NA>                 <NA>
+    ## 151                <NA>             <NA>                 <NA>
+    ## 152                <NA>             <NA>                 <NA>
+    ## 153                <NA>             <NA>                 <NA>
+    ## 154                <NA>             <NA>                 <NA>
+    ## 155                <NA>             <NA>                 <NA>
+    ## 156                <NA>             <NA>                 <NA>
+    ## 157                <NA>             <NA>                 <NA>
+    ## 158                <NA>             <NA>                 <NA>
+    ## 159                <NA>             <NA>                 <NA>
+    ## 160                <NA>             <NA>                 <NA>
+    ## 161                <NA>             <NA>                 <NA>
+    ## 162                <NA>             <NA>                 <NA>
+    ## 163                <NA>             <NA>                 <NA>
+    ## 164                <NA>             <NA>                 <NA>
+    ## 165                <NA>             <NA>                 <NA>
+    ## 166                <NA>             <NA>                 <NA>
+    ## 167                <NA>             <NA>                 <NA>
+    ## 168                <NA>             <NA>                 <NA>
+    ## 169                <NA>             <NA>                 <NA>
+    ## 170                <NA>             <NA>                 <NA>
+    ## 171                <NA>             <NA>                 <NA>
+    ## 172                <NA>             <NA>                 <NA>
+    ## 173                <NA>             <NA>                 <NA>
+    ## 174                <NA>             <NA>                 <NA>
+    ## 175                <NA>             <NA>                 <NA>
+    ## 176                <NA>             <NA>                 <NA>
+    ## 177                <NA>             <NA>                 <NA>
+    ## 178                <NA>             <NA>                 <NA>
+    ## 179                <NA>             <NA>                 <NA>
+    ## 180                <NA>             <NA>                 <NA>
+    ## 181                <NA>             <NA>                 <NA>
+    ## 182                <NA>             <NA>                 <NA>
+    ## 183                <NA>             <NA>                 <NA>
+    ## 184                <NA>             <NA>                 <NA>
+    ## 185                <NA>             <NA>                 <NA>
+    ## 186                <NA>             <NA>                 <NA>
+    ## 187                <NA>             <NA>                 <NA>
+    ## 188                <NA>             <NA>                 <NA>
+    ## 189                <NA>             <NA>                 <NA>
+    ## 190                <NA>             <NA>                 <NA>
+    ## 191                <NA>             <NA>                 <NA>
+    ## 192                <NA>             <NA>                 <NA>
+    ## 193                <NA>             <NA>                 <NA>
+    ## 194                <NA>             <NA>                 <NA>
+    ## 195                <NA>             <NA>                 <NA>
+    ## 196                <NA>             <NA>                 <NA>
+    ## 197                <NA>             <NA>                 <NA>
+    ## 198                <NA>             <NA>                 <NA>
+    ## 199                <NA>             <NA>                 <NA>
+    ##                        Isolate Isolate_percent_id            BestMatch
+    ## 1                         <NA>              0.000 Cladophialophora sp.
+    ## 2                         <NA>              0.000      Chaetothyriales
+    ## 3                         <NA>              0.000         Pleosporales
+    ## 4                         <NA>              0.000        Sporormiaceae
+    ## 5                         <NA>              0.000         Pleosporales
+    ## 6                         <NA>              0.000        Didymellaceae
+    ## 7                         <NA>              0.000           Pezizaceae
+    ## 8                         <NA>              0.000         Pleosporales
+    ## 9                         <NA>              0.000    Lasiosphaeriaceae
+    ## 10                        <NA>              0.000          Lecanorales
+    ## 11                        <NA>              0.000        Pleosporaceae
+    ## 12                        <NA>              0.000         Pleosporales
+    ## 13                        <NA>              0.000           Ascomycota
+    ## 14                        <NA>              0.000      Hyaloscyphaceae
+    ## 15                        <NA>              0.000    Lasiosphaeriaceae
+    ## 16                        <NA>              0.000   Neohelicomyces sp.
+    ## 17                      CK1355             93.035      Talaromyces sp.
+    ## 18                        <NA>              0.000        Didymella sp.
+    ## 19                        <NA>              0.000         Pleosporales
+    ## 20                        <NA>              0.000         Pleosporales
+    ## 21                        <NA>              0.000  Neocucurbitaria sp.
+    ## 22                        <NA>              0.000 Paraconiothyrium sp.
+    ## 23                        <NA>              0.000       Vermispora sp.
+    ## 24                        <NA>              0.000           Helotiales
+    ## 25                        <NA>              0.000      Dothideomycetes
+    ## 26                        <NA>              0.000           Ascomycota
+    ## 27                        <NA>              0.000      Dothideomycetes
+    ## 28                        <NA>              0.000          Hypocreales
+    ## 29                        <NA>              0.000        Didymellaceae
+    ## 30                        <NA>              0.000   Colletotrichum sp.
+    ## 31                        <NA>              0.000          Sordariales
+    ## 32                        <NA>              0.000          Lachnum sp.
+    ## 33                        <NA>              0.000      Teichospora sp.
+    ## 34                        <NA>              0.000      Pyrenophora sp.
+    ## 35                        <NA>              0.000         Pleosporales
+    ## 36                        <NA>              0.000           Helotiales
+    ## 37                        <NA>              0.000   Sphaerellopsis sp.
+    ## 38                        <NA>              0.000   Catenulostroma sp.
+    ## 39                        <NA>              0.000    Lasiosphaeriaceae
+    ## 40         MISO_9-11_[len=564]             79.167         Humicola sp.
+    ## 41                        <NA>              0.000           Ascomycota
+    ## 42                        <NA>              0.000          Orbiliaceae
+    ## 43                        <NA>              0.000           Ascomycota
+    ## 44                        <NA>              0.000      Lophiostoma sp.
+    ## 45                        <NA>              0.000             Branch06
+    ## 46                        <NA>              0.000           Ascomycota
+    ## 47                        <NA>              0.000       Pyronemataceae
+    ## 48                        <NA>              0.000            Tuber sp.
+    ## 49                        <NA>              0.000    Cercosporella sp.
+    ## 50                        <NA>              0.000        Didymellaceae
+    ## 51                        <NA>              0.000         Pleosporales
+    ## 52                        <NA>              0.000    Saccharomycetales
+    ## 53                        <NA>              0.000          Orbiliaceae
+    ## 54                        <NA>              0.000           Ascomycota
+    ## 55                      CK1355             91.045      Talaromyces sp.
+    ## 56                        <NA>              0.000      Chaetothyriales
+    ## 57                        <NA>              0.000         Pleosporales
+    ## 58                        <NA>              0.000           Helotiales
+    ## 59                        <NA>              0.000         Diplodia sp.
+    ## 60                        <NA>              0.000           Helotiales
+    ## 61                        <NA>              0.000         Pleosporales
+    ## 62                        <NA>              0.000           Ascomycota
+    ## 63                        <NA>              0.000           Ascomycota
+    ## 64                        <NA>              0.000           Ascomycota
+    ## 65                        <NA>              0.000     Stagonospora sp.
+    ## 66     V-MISO2L_3-8b_[len=587]             78.191   Chaetosphaeria sp.
+    ## 67                        <NA>              0.000         Pleosporales
+    ## 68                        <NA>              0.000           Xylariales
+    ## 69                        <NA>              0.000   Parathyridaria sp.
+    ## 70                        <NA>              0.000           Ascomycota
+    ## 71                        <NA>              0.000           Ascomycota
+    ## 72                        <NA>              0.000 Paraconiothyrium sp.
+    ## 73                        <NA>              0.000        Helgardia sp.
+    ## 74                        <NA>              0.000           Ascomycota
+    ## 75                        <NA>              0.000         Pleosporales
+    ## 76                        <NA>              0.000         Erysiphe sp.
+    ## 77                        <NA>              0.000  Scleroramularia sp.
+    ## 78                        <NA>              0.000         Pleosporales
+    ## 79                        <NA>              0.000    Wojnowiciella sp.
+    ## 80                        <NA>              0.000          Hypocreales
+    ## 81                        <NA>              0.000         Taphrina sp.
+    ## 82                        <NA>              0.000         Pleosporales
+    ## 83                        <NA>              0.000      Coniochaeta sp.
+    ## 84                        <NA>              0.000      Dothideomycetes
+    ## 85                        <NA>              0.000         Calloria sp.
+    ## 86                        <NA>              0.000       Pyronemataceae
+    ## 87                        <NA>              0.000       Alternaria sp.
+    ## 88                        <NA>              0.000         Dothioraceae
+    ## 89                        <NA>              0.000           Ascomycota
+    ## 90                        <NA>              0.000         Pleosporales
+    ## 91                        <NA>              0.000         Pleosporales
+    ## 92                        <NA>              0.000        Calophoma sp.
+    ## 93                        <NA>              0.000      Teichospora sp.
+    ## 94                        <NA>              0.000          Helotiaceae
+    ## 95                        <NA>              0.000         Pleosporales
+    ## 96         MISO_9-11_[len=564]             86.634       Bionectriaceae
+    ## 97  Entomortierella_parvispora             77.670          Hypocreales
+    ## 98                        <NA>              0.000          Hypocreales
+    ## 99                        <NA>              0.000          Hypocreales
+    ## 100                       <NA>              0.000            Valsaceae
+    ## 101                       <NA>                 NA                 <NA>
+    ## 102                       <NA>                 NA                 <NA>
+    ## 103                       <NA>                 NA                 <NA>
+    ## 104                       <NA>                 NA                 <NA>
+    ## 105                       <NA>                 NA                 <NA>
+    ## 106                       <NA>                 NA                 <NA>
+    ## 107                       <NA>                 NA                 <NA>
+    ## 108                       <NA>                 NA                 <NA>
+    ## 109                       <NA>                 NA                 <NA>
+    ## 110                       <NA>                 NA                 <NA>
+    ## 111                       <NA>                 NA                 <NA>
+    ## 112                       <NA>                 NA                 <NA>
+    ## 113                       <NA>                 NA                 <NA>
+    ## 114                       <NA>                 NA                 <NA>
+    ## 115                       <NA>                 NA                 <NA>
+    ## 116                       <NA>                 NA                 <NA>
+    ## 117                       <NA>                 NA                 <NA>
+    ## 118                       <NA>                 NA                 <NA>
+    ## 119                       <NA>                 NA                 <NA>
+    ## 120                       <NA>                 NA                 <NA>
+    ## 121                       <NA>                 NA                 <NA>
+    ## 122                       <NA>                 NA                 <NA>
+    ## 123                       <NA>                 NA                 <NA>
+    ## 124                       <NA>                 NA                 <NA>
+    ## 125                       <NA>                 NA                 <NA>
+    ## 126                       <NA>                 NA                 <NA>
+    ## 127                       <NA>                 NA                 <NA>
+    ## 128                       <NA>                 NA                 <NA>
+    ## 129                       <NA>                 NA                 <NA>
+    ## 130                       <NA>                 NA                 <NA>
+    ## 131                       <NA>                 NA                 <NA>
+    ## 132                       <NA>                 NA                 <NA>
+    ## 133                       <NA>                 NA                 <NA>
+    ## 134                       <NA>                 NA                 <NA>
+    ## 135                       <NA>                 NA                 <NA>
+    ## 136                       <NA>                 NA                 <NA>
+    ## 137                       <NA>                 NA                 <NA>
+    ## 138                       <NA>                 NA                 <NA>
+    ## 139                       <NA>                 NA                 <NA>
+    ## 140                       <NA>                 NA                 <NA>
+    ## 141                       <NA>                 NA                 <NA>
+    ## 142                       <NA>                 NA                 <NA>
+    ## 143                       <NA>                 NA                 <NA>
+    ## 144                       <NA>                 NA                 <NA>
+    ## 145                       <NA>                 NA                 <NA>
+    ## 146                       <NA>                 NA                 <NA>
+    ## 147                       <NA>                 NA                 <NA>
+    ## 148                       <NA>                 NA                 <NA>
+    ## 149                       <NA>                 NA                 <NA>
+    ## 150                       <NA>                 NA                 <NA>
+    ## 151                       <NA>                 NA                 <NA>
+    ## 152                       <NA>                 NA                 <NA>
+    ## 153                       <NA>                 NA                 <NA>
+    ## 154                       <NA>                 NA                 <NA>
+    ## 155                       <NA>                 NA                 <NA>
+    ## 156                       <NA>                 NA                 <NA>
+    ## 157                       <NA>                 NA                 <NA>
+    ## 158                       <NA>                 NA                 <NA>
+    ## 159                       <NA>                 NA                 <NA>
+    ## 160                       <NA>                 NA                 <NA>
+    ## 161                       <NA>                 NA                 <NA>
+    ## 162                       <NA>                 NA                 <NA>
+    ## 163                       <NA>                 NA                 <NA>
+    ## 164                       <NA>                 NA                 <NA>
+    ## 165                       <NA>                 NA                 <NA>
+    ## 166                       <NA>                 NA                 <NA>
+    ## 167                       <NA>                 NA                 <NA>
+    ## 168                       <NA>                 NA                 <NA>
+    ## 169                       <NA>                 NA                 <NA>
+    ## 170                       <NA>                 NA                 <NA>
+    ## 171                       <NA>                 NA                 <NA>
+    ## 172                       <NA>                 NA                 <NA>
+    ## 173                       <NA>                 NA                 <NA>
+    ## 174                       <NA>                 NA                 <NA>
+    ## 175                       <NA>                 NA                 <NA>
+    ## 176                       <NA>                 NA                 <NA>
+    ## 177                       <NA>                 NA                 <NA>
+    ## 178                       <NA>                 NA                 <NA>
+    ## 179                       <NA>                 NA                 <NA>
+    ## 180                       <NA>                 NA                 <NA>
+    ## 181                       <NA>                 NA                 <NA>
+    ## 182                       <NA>                 NA                 <NA>
+    ## 183                       <NA>                 NA                 <NA>
+    ## 184                       <NA>                 NA                 <NA>
+    ## 185                       <NA>                 NA                 <NA>
+    ## 186                       <NA>                 NA                 <NA>
+    ## 187                       <NA>                 NA                 <NA>
+    ## 188                       <NA>                 NA                 <NA>
+    ## 189                       <NA>                 NA                 <NA>
+    ## 190                       <NA>                 NA                 <NA>
+    ## 191                       <NA>                 NA                 <NA>
+    ## 192                       <NA>                 NA                 <NA>
+    ## 193                       <NA>                 NA                 <NA>
+    ## 194                       <NA>                 NA                 <NA>
+    ## 195                       <NA>                 NA                 <NA>
+    ## 196                       <NA>                 NA                 <NA>
+    ## 197                       <NA>                 NA                 <NA>
+    ## 198                       <NA>                 NA                 <NA>
+    ## 199                       <NA>                 NA                 <NA>
+    ##                           Taxonomy                                   SampleID
+    ## 1   FOTU_1160-Cladophialophora sp.                                       <NA>
+    ## 2        FOTU_4062-Chaetothyriales                                       <NA>
+    ## 3            FOTU_712-Pleosporales                                       <NA>
+    ## 4          FOTU_1104-Sporormiaceae                                       <NA>
+    ## 5           FOTU_3687-Pleosporales                                       <NA>
+    ## 6          FOTU_5397-Didymellaceae                                       <NA>
+    ## 7             FOTU_6853-Pezizaceae                                       <NA>
+    ## 8           FOTU_5119-Pleosporales                                       <NA>
+    ## 9        FOTU_77-Lasiosphaeriaceae                                       <NA>
+    ## 10           FOTU_3814-Lecanorales                                       <NA>
+    ## 11         FOTU_2363-Pleosporaceae                                       <NA>
+    ## 12          FOTU_1475-Pleosporales                                       <NA>
+    ## 13             FOTU_258-Ascomycota                                       <NA>
+    ## 14       FOTU_4078-Hyaloscyphaceae                                       <NA>
+    ## 15     FOTU_5602-Lasiosphaeriaceae                                       <NA>
+    ## 16     FOTU_879-Neohelicomyces sp.                                       <NA>
+    ## 17       FOTU_5224-Talaromyces sp.                                       <NA>
+    ## 18         FOTU_2837-Didymella sp.                                       <NA>
+    ## 19          FOTU_1608-Pleosporales                                       <NA>
+    ## 20          FOTU_3367-Pleosporales                                       <NA>
+    ## 21   FOTU_2599-Neocucurbitaria sp.                                       <NA>
+    ## 22  FOTU_3137-Paraconiothyrium sp.                                       <NA>
+    ## 23        FOTU_5493-Vermispora sp.                                       <NA>
+    ## 24             FOTU_412-Helotiales                                       <NA>
+    ## 25       FOTU_6634-Dothideomycetes                                       <NA>
+    ## 26            FOTU_6825-Ascomycota                                       <NA>
+    ## 27       FOTU_1645-Dothideomycetes                                       <NA>
+    ## 28           FOTU_1917-Hypocreales                                       <NA>
+    ## 29         FOTU_7117-Didymellaceae                                       <NA>
+    ## 30    FOTU_1666-Colletotrichum sp.                                       <NA>
+    ## 31           FOTU_3428-Sordariales                                       <NA>
+    ## 32           FOTU_3731-Lachnum sp.                                       <NA>
+    ## 33       FOTU_6705-Teichospora sp.                                       <NA>
+    ## 34        FOTU_789-Pyrenophora sp.                                       <NA>
+    ## 35          FOTU_5359-Pleosporales                                       <NA>
+    ## 36            FOTU_5995-Helotiales                                       <NA>
+    ## 37    FOTU_2857-Sphaerellopsis sp.                                       <NA>
+    ## 38    FOTU_2018-Catenulostroma sp.                                       <NA>
+    ## 39      FOTU_139-Lasiosphaeriaceae                                       <NA>
+    ## 40           FOTU_205-Humicola sp.                                       <NA>
+    ## 41            FOTU_5764-Ascomycota                                       <NA>
+    ## 42           FOTU_4866-Orbiliaceae                                       <NA>
+    ## 43            FOTU_3541-Ascomycota                                       <NA>
+    ## 44       FOTU_3122-Lophiostoma sp.                                       <NA>
+    ## 45              FOTU_2704-Branch06                                       <NA>
+    ## 46            FOTU_1370-Ascomycota                                       <NA>
+    ## 47        FOTU_3443-Pyronemataceae                                       <NA>
+    ## 48             FOTU_4805-Tuber sp.                                       <NA>
+    ## 49     FOTU_2400-Cercosporella sp.                                       <NA>
+    ## 50         FOTU_7115-Didymellaceae                                       <NA>
+    ## 51           FOTU_128-Pleosporales                                       <NA>
+    ## 52      FOTU_656-Saccharomycetales                                       <NA>
+    ## 53           FOTU_6333-Orbiliaceae                                       <NA>
+    ## 54            FOTU_4664-Ascomycota                                       <NA>
+    ## 55       FOTU_7152-Talaromyces sp.                                       <NA>
+    ## 56       FOTU_6429-Chaetothyriales                                       <NA>
+    ## 57          FOTU_6293-Pleosporales                                       <NA>
+    ## 58            FOTU_3530-Helotiales                                       <NA>
+    ## 59          FOTU_2572-Diplodia sp.                                       <NA>
+    ## 60            FOTU_5001-Helotiales                                       <NA>
+    ## 61           FOTU_973-Pleosporales                                       <NA>
+    ## 62            FOTU_2299-Ascomycota                                       <NA>
+    ## 63            FOTU_1119-Ascomycota                                       <NA>
+    ## 64            FOTU_4909-Ascomycota                                       <NA>
+    ## 65       FOTU_342-Stagonospora sp.                                       <NA>
+    ## 66     FOTU_841-Chaetosphaeria sp.                                       <NA>
+    ## 67          FOTU_6909-Pleosporales                                       <NA>
+    ## 68            FOTU_1922-Xylariales                                       <NA>
+    ## 69    FOTU_3075-Parathyridaria sp.                                       <NA>
+    ## 70            FOTU_1257-Ascomycota                                       <NA>
+    ## 71            FOTU_2839-Ascomycota                                       <NA>
+    ## 72  FOTU_1063-Paraconiothyrium sp.                                       <NA>
+    ## 73         FOTU_2042-Helgardia sp.                                       <NA>
+    ## 74            FOTU_6308-Ascomycota                                       <NA>
+    ## 75          FOTU_3056-Pleosporales                                       <NA>
+    ## 76          FOTU_3372-Erysiphe sp.                                       <NA>
+    ## 77   FOTU_2889-Scleroramularia sp.                                       <NA>
+    ## 78          FOTU_3413-Pleosporales                                       <NA>
+    ## 79     FOTU_2170-Wojnowiciella sp.                                       <NA>
+    ## 80           FOTU_1534-Hypocreales                                       <NA>
+    ## 81           FOTU_613-Taphrina sp.                                       <NA>
+    ## 82           FOTU_175-Pleosporales                                       <NA>
+    ## 83       FOTU_1565-Coniochaeta sp.                                       <NA>
+    ## 84       FOTU_3480-Dothideomycetes                                       <NA>
+    ## 85          FOTU_1214-Calloria sp.                                       <NA>
+    ## 86        FOTU_2665-Pyronemataceae                                       <NA>
+    ## 87          FOTU_38-Alternaria sp.                                       <NA>
+    ## 88          FOTU_6430-Dothioraceae                                       <NA>
+    ## 89             FOTU_839-Ascomycota                                       <NA>
+    ## 90          FOTU_5405-Pleosporales                                       <NA>
+    ## 91          FOTU_5465-Pleosporales                                       <NA>
+    ## 92         FOTU_2109-Calophoma sp.                                       <NA>
+    ## 93       FOTU_2210-Teichospora sp.                                       <NA>
+    ## 94           FOTU_1950-Helotiaceae                                       <NA>
+    ## 95          FOTU_5990-Pleosporales                                       <NA>
+    ## 96         FOTU_731-Bionectriaceae                                       <NA>
+    ## 97            FOTU_991-Hypocreales                                       <NA>
+    ## 98           FOTU_4088-Hypocreales                                       <NA>
+    ## 99           FOTU_3866-Hypocreales                                       <NA>
+    ## 100             FOTU_122-Valsaceae                                  T2R1FCR3L
+    ## 101                           <NA> Corn2017RootObjective2Collection2T1R6ACA11
+    ## 102                           <NA>  Corn2017RootObjective2Collection1T1R5CFF1
+    ## 103                           <NA>  Corn2017RootObjective2Collection3T2R2CCG9
+    ## 104                           <NA>                                  T1R5CAR4R
+    ## 105                           <NA> Corn2017RootObjective2Collection2T1R5CFD10
+    ## 106                           <NA>  Corn2017RootObjective2Collection1T1R2CCD2
+    ## 107                           <NA>  Corn2017LeafObjective2Collection1T1R1CAH2
+    ## 108                           <NA>  Corn2017LeafObjective2Collection1T1R2CAF3
+    ## 109                           <NA>                                  T1R6CCR3L
+    ## 110                           <NA>                                  T1R2FCR3R
+    ## 111                           <NA>                                  T2R6FBR4R
+    ## 112                           <NA>                                  T1R6CCR3R
+    ## 113                           <NA>  Corn2017LeafObjective2Collection1T2R1FCD6
+    ## 114                           <NA>                                  T1R5FCR4L
+    ## 115                           <NA>                                  T1R5CAR3L
+    ## 116                           <NA>  Corn2017RootObjective2Collection2T2R2BCA8
+    ## 117                           <NA>                                  T1R5FBR4L
+    ## 118                           <NA>  Corn2017RootObjective2Collection1T2R2BFC4
+    ## 119                           <NA>  Corn2017RootObjective2Collection1T2R1ACE6
+    ## 120                           <NA>                                  T2R1FBR6L
+    ## 121                           <NA> Corn2017LeafObjective2Collection2T1R5CCC11
+    ## 122                           <NA>  Corn2017RootObjective2Collection3T1R1CCF3
+    ## 123                           <NA>                                  T1R6CCR4L
+    ## 124                           <NA>  Corn2017RootObjective2Collection3T1R6ACB7
+    ## 125                           <NA>                                  T1R1FAR4L
+    ## 126                           <NA>                                  T1R6FAR6L
+    ## 127                           <NA> Corn2017RootObjective2Collection2T1R2CFG11
+    ## 128                           <NA>                                  T2R6FAR3L
+    ## 129                           <NA>                                  T1R6FCR3L
+    ## 130                           <NA>                                  T1R6FCR6R
+    ## 131                           <NA>  Corn2017RootObjective2Collection1T2R6CFC3
+    ## 132                           <NA>  Corn2017RootObjective2Collection1T2R5ACD1
+    ## 133                           <NA>                                  T1R5CCR3R
+    ## 134                           <NA> Corn2017RootObjective2Collection2T2R5CFD12
+    ## 135                           <NA>                                  T1R1CBR6L
+    ## 136                           <NA>                                  T1R6FAR3R
+    ## 137                           <NA>  Corn2017RootObjective2Collection3T1R5CFF6
+    ## 138                           <NA>  Corn2017RootObjective2Collection3T1R2CCA5
+    ## 139                           <NA>                                  T2R5FCR3L
+    ## 140                           <NA>  Corn2017LeafObjective2Collection3T2R6CBE8
+    ## 141                           <NA>  Corn2017LeafObjective2Collection3T1R1CCC3
+    ## 142                           <NA>                                  T2R6FAR3R
+    ## 143                           <NA>  Corn2017LeafObjective2Collection1T2R2CCH6
+    ## 144                           <NA>                                  T2R5FBR4R
+    ## 145                           <NA>                                  T2R5FAR4R
+    ## 146                           <NA>  Corn2017RootObjective2Collection3T1R6AFE7
+    ## 147                           <NA>  Corn2017LeafObjective2Collection1T2R5FCA8
+    ## 148                           <NA>  Corn2017LeafObjective2Collection2T2R2CBC1
+    ## 149                           <NA>  Corn2017RootObjective2Collection1T2R5CCF1
+    ## 150                           <NA>                                  T2R6FBR4R
+    ## 151                           <NA>  Corn2017LeafObjective2Collection1T2R6FCG8
+    ## 152                           <NA>  Corn2017LeafObjective2Collection3T1R5CBF4
+    ## 153                           <NA> Corn2017RootObjective2Collection3T2R6BFD12
+    ## 154                           <NA>                                  T1R1CBR3L
+    ## 155                           <NA>                                  T2R2FCR6R
+    ## 156                           <NA>                                  T2R1CBR4R
+    ## 157                           <NA>  Corn2017RootObjective2Collection1T2R5CFA2
+    ## 158                           <NA>  Corn2017LeafObjective2Collection1T1R1CCB3
+    ## 159                           <NA> Corn2017RootObjective2Collection2T1R6AFB12
+    ## 160                           <NA>  Corn2017RootObjective2Collection1T1R2ACD4
+    ## 161                           <NA> Corn2017RootObjective2Collection1T1R2CFC11
+    ## 162                           <NA>  Corn2017RootObjective2Collection1T2R6BCG2
+    ## 163                           <NA>  Corn2017RootObjective2Collection1T2R5AFG1
+    ## 164                           <NA>  Corn2017RootObjective2Collection1T2R2CCC6
+    ## 165                           <NA>                                  T1R6CBR6L
+    ## 166                           <NA> Corn2017RootObjective2Collection1T1R1ACD10
+    ## 167                           <NA>  Corn2017RootObjective2Collection1T1R2CCD2
+    ## 168                           <NA> Corn2017RootObjective2Collection2T1R2BFF12
+    ## 169                           <NA>  Corn2017LeafObjective2Collection3T1R1CBB3
+    ## 170                           <NA>                                  T1R2FBR4L
+    ## 171                           <NA>                                  T1R5CAR6R
+    ## 172                           <NA> Corn2017RootObjective2Collection3T2R5BCH10
+    ## 173                           <NA>                                  T1R6CCR3R
+    ## 174                           <NA>  Corn2017RootObjective2Collection1T2R1BFE2
+    ## 175                           <NA> Corn2017RootObjective2Collection2T2R5ACD11
+    ## 176                           <NA>                                  T2R5CAR6R
+    ## 177                           <NA>                                  T2R2CBR6R
+    ## 178                           <NA>                                  T1R1FBR4L
+    ## 179                           <NA>                                  T2R5CAR3R
+    ## 180                           <NA>  Corn2017RootObjective2Collection2T2R5CCB2
+    ## 181                           <NA>  Corn2017RootObjective2Collection3T2R2ACE9
+    ## 182                           <NA>                                  T2R6FBR6L
+    ## 183                           <NA>                                  T2R5FAR4L
+    ## 184                           <NA>  Corn2017RootObjective2Collection3T1R1BCE3
+    ## 185                           <NA> Corn2017RootObjective2Collection1T1R6ACE12
+    ## 186                           <NA> Corn2017LeafObjective2Collection2T2R1CAD12
+    ## 187                           <NA>                                  T1R1CBR6R
+    ## 188                           <NA>                                  T1R6CAR4L
+    ## 189                           <NA>  Corn2017LeafObjective2Collection2T2R5CAH1
+    ## 190                           <NA>                                  T2R1FCR6R
+    ## 191                           <NA> Corn2017RootObjective2Collection3T2R6ACH11
+    ## 192                           <NA>                                  T1R2FCR6L
+    ## 193                           <NA>                                  T2R1FBR4L
+    ## 194                           <NA>  Corn2017LeafObjective2Collection3T2R1FBF6
+    ## 195                           <NA>                                  T2R1FAR4R
+    ## 196                           <NA>                                  T2R1FAR3L
+    ## 197                           <NA>                                  T1R5CAR6L
+    ## 198                           <NA>  Corn2017LeafObjective2Collection2T1R1FCB9
+    ## 199                           <NA>  Corn2017LeafObjective2Collection3T1R6FAF5
     ##        Abundance Crop Compartment DateSampled GrowthStage Treatment  Rep
-    ## 1   0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R1
+    ## 1             NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 2             NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 3             NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 4             NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
@@ -1932,7 +1926,7 @@ full_join(taxonomy, metadata, by = "OTU")
     ## 68            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 69            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 70            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
-    ## 71  0.000000e+00  Soy        Root   27-Aug-18          R6        T1   R2
+    ## 71            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 72            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 73            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 74            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
@@ -1961,107 +1955,108 @@ full_join(taxonomy, metadata, by = "OTU")
     ## 97            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 98            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
     ## 99            NA <NA>        <NA>        <NA>        <NA>      <NA> <NA>
-    ## 100 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R1
-    ## 101 0.000000e+00  Soy        Root    3-Aug-18          R3        T1   R6
-    ## 102 0.000000e+00  Soy        Root   27-Aug-18          R6        T2   R5
-    ## 103 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R6
-    ## 104 0.000000e+00  Soy        Root   27-Aug-18          R6        T1   R6
-    ## 105 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R5
-    ## 106 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R6
-    ## 107 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T1   R5
-    ## 108 0.000000e+00  Soy        Root   16-Aug-18          R4        T1   R1
-    ## 109 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R2
-    ## 110 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T1   R5
-    ## 111 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T1   R6
-    ## 112 1.322501e-03  Soy        Leaf   27-Aug-18          R6        T1   R6
-    ## 113 0.000000e+00 Corn        Root    5-Jul-17          V8        T2   R1
-    ## 114 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T1   R2
-    ## 115 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T2   R2
-    ## 116 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R2
-    ## 117 0.000000e+00 Corn        Root   31-Jul-17         V15        T2   R2
-    ## 118 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T1   R6
-    ## 119 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R5
-    ## 120 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R1
-    ## 121 0.000000e+00  Soy        Root   16-Aug-18          R4        T1   R1
-    ## 122 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R1
-    ## 123 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T2   R1
-    ## 124 0.000000e+00  Soy        Root   27-Aug-18          R6        T2   R5
-    ## 125 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R2
-    ## 126 0.000000e+00  Soy        Root    3-Aug-18          R3        T1   R5
-    ## 127 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R2
-    ## 128 0.000000e+00 Corn        Root   31-Jul-17         V15        T2   R6
-    ## 129 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T2   R6
-    ## 130 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T1   R1
-    ## 131 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T1   R2
-    ## 132 0.000000e+00  Soy        Root   16-Aug-18          R4        T1   R2
-    ## 133 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T1   R5
-    ## 134 0.000000e+00  Soy        Root   27-Aug-18          R6        T1   R6
-    ## 135 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T1   R6
-    ## 136 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T2   R2
+    ## 100 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T2   R1
+    ## 101 1.268762e-05 Corn        Root    5-Jul-17          V8        T1   R6
+    ## 102 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R5
+    ## 103 0.000000e+00 Corn        Root   31-Jul-17         V15        T2   R2
+    ## 104 0.000000e+00  Soy        Root   16-Aug-18          R4        T1   R5
+    ## 105 0.000000e+00 Corn        Root    5-Jul-17          V8        T1   R5
+    ## 106 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R2
+    ## 107 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T1   R1
+    ## 108 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T1   R2
+    ## 109 6.396929e-04  Soy        Leaf    3-Aug-18          R3        T1   R6
+    ## 110 0.000000e+00  Soy        Root    3-Aug-18          R3        T1   R2
+    ## 111 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R6
+    ## 112 0.000000e+00  Soy        Root    3-Aug-18          R3        T1   R6
+    ## 113 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R1
+    ## 114 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R5
+    ## 115 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T1   R5
+    ## 116 0.000000e+00 Corn        Root    5-Jul-17          V8        T2   R2
+    ## 117 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R5
+    ## 118 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R2
+    ## 119 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R1
+    ## 120 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T2   R1
+    ## 121 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T1   R5
+    ## 122 0.000000e+00 Corn        Root   31-Jul-17         V15        T1   R1
+    ## 123 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R6
+    ## 124 0.000000e+00 Corn        Root   31-Jul-17         V15        T1   R6
+    ## 125 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R1
+    ## 126 1.724187e-04  Soy        Leaf   27-Aug-18          R6        T1   R6
+    ## 127 0.000000e+00 Corn        Root    5-Jul-17          V8        T1   R2
+    ## 128 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T2   R6
+    ## 129 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T1   R6
+    ## 130 0.000000e+00  Soy        Root   27-Aug-18          R6        T1   R6
+    ## 131 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R6
+    ## 132 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R5
+    ## 133 0.000000e+00  Soy        Root    3-Aug-18          R3        T1   R5
+    ## 134 6.424286e-03 Corn        Root    5-Jul-17          V8        T2   R5
+    ## 135 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T1   R1
+    ## 136 0.000000e+00  Soy        Root    3-Aug-18          R3        T1   R6
     ## 137 0.000000e+00 Corn        Root   31-Jul-17         V15        T1   R5
-    ## 138 0.000000e+00 Corn        Root   31-Jul-17         V15        T2   R6
-    ## 139 0.000000e+00  Soy        Root   27-Aug-18          R6        T1   R1
-    ## 140 4.354580e-02  Soy        Leaf   27-Aug-18          R6        T2   R6
-    ## 141 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T1   R6
-    ## 142 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R5
-    ## 143 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R6
-    ## 144 0.000000e+00  Soy        Root    3-Aug-18          R3        T2   R2
-    ## 145 0.000000e+00  Soy        Root   27-Aug-18          R6        T2   R1
-    ## 146 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R1
-    ## 147 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T1   R5
-    ## 148 9.326715e-05 Corn        Root   26-Jun-17          V6        T2   R6
-    ## 149 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T1   R1
-    ## 150 0.000000e+00  Soy        Root    3-Aug-18          R3        T2   R2
-    ## 151 0.000000e+00  Soy        Root   16-Aug-18          R4        T1   R5
-    ## 152 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T1   R6
-    ## 153 0.000000e+00  Soy        Root    3-Aug-18          R3        T2   R1
-    ## 154 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T1   R5
-    ## 155 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R6
-    ## 156 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T1   R2
-    ## 157 0.000000e+00 Corn        Root    5-Jul-17          V8        T1   R2
-    ## 158 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T1   R6
-    ## 159 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R2
-    ## 160 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T2   R6
-    ## 161 0.000000e+00 Corn        Root    5-Jul-17          V8        T1   R1
-    ## 162 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T2   R5
-    ## 163 0.000000e+00 Corn        Root    5-Jul-17          V8        T2   R2
-    ## 164 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T2   R2
-    ## 165 0.000000e+00 Corn        Root   31-Jul-17         V15        T2   R1
-    ## 166 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T1   R2
-    ## 167 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T2   R2
-    ## 168 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R1
-    ## 169 0.000000e+00 Corn        Root    5-Jul-17          V8        T2   R6
-    ## 170 0.000000e+00  Soy        Root   27-Aug-18          R6        T1   R6
-    ## 171 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R5
-    ## 172 0.000000e+00  Soy        Root   27-Aug-18          R6        T1   R5
-    ## 173 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R1
-    ## 174 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T2   R5
-    ## 175 2.807018e-04 Corn        Leaf   31-Jul-17         V15        T2   R5
-    ## 176 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R2
-    ## 177 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T2   R6
-    ## 178 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R2
-    ## 179 0.000000e+00 Corn        Root   31-Jul-17         V15        T1   R2
-    ## 180 0.000000e+00 Corn        Root    5-Jul-17          V8        T1   R6
-    ## 181 0.000000e+00 Corn        Root    5-Jul-17          V8        T1   R6
-    ## 182 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T1   R5
-    ## 183 0.000000e+00  Soy        Root    3-Aug-18          R3        T1   R1
-    ## 184 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T1   R5
-    ## 185 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T2   R1
-    ## 186 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R1
-    ## 187 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T2   R6
-    ## 188 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T2   R1
-    ## 189 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T2   R2
-    ## 190 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R6
-    ## 191 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R1
-    ## 192 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T2   R5
-    ## 193 0.000000e+00  Soy        Root   27-Aug-18          R6        T1   R2
+    ## 138 5.533575e-05 Corn        Root   31-Jul-17         V15        T1   R2
+    ## 139 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T2   R5
+    ## 140 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T2   R6
+    ## 141 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T1   R1
+    ## 142 0.000000e+00  Soy        Root    3-Aug-18          R3        T2   R6
+    ## 143 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R2
+    ## 144 7.071636e-05  Soy        Root   16-Aug-18          R4        T2   R5
+    ## 145 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R5
+    ## 146 0.000000e+00 Corn        Root   31-Jul-17         V15        T1   R6
+    ## 147 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R5
+    ## 148 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T2   R2
+    ## 149 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R5
+    ## 150 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R6
+    ## 151 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T2   R6
+    ## 152 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T1   R5
+    ## 153 0.000000e+00 Corn        Root   31-Jul-17         V15        T2   R6
+    ## 154 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T1   R1
+    ## 155 0.000000e+00  Soy        Root   27-Aug-18          R6        T2   R2
+    ## 156 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R1
+    ## 157 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R5
+    ## 158 0.000000e+00 Corn        Leaf   26-Jun-17          V6        T1   R1
+    ## 159 0.000000e+00 Corn        Root    5-Jul-17          V8        T1   R6
+    ## 160 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R2
+    ## 161 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R2
+    ## 162 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R6
+    ## 163 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R5
+    ## 164 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R2
+    ## 165 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T1   R6
+    ## 166 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R1
+    ## 167 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R2
+    ## 168 0.000000e+00 Corn        Root    5-Jul-17          V8        T1   R2
+    ## 169 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T1   R1
+    ## 170 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R2
+    ## 171 3.943218e-03  Soy        Root   27-Aug-18          R6        T1   R5
+    ## 172 0.000000e+00 Corn        Root   31-Jul-17         V15        T2   R5
+    ## 173 0.000000e+00  Soy        Root    3-Aug-18          R3        T1   R6
+    ## 174 0.000000e+00 Corn        Root   26-Jun-17          V6        T2   R1
+    ## 175 0.000000e+00 Corn        Root    5-Jul-17          V8        T2   R5
+    ## 176 0.000000e+00  Soy        Root   27-Aug-18          R6        T2   R5
+    ## 177 0.000000e+00  Soy        Root   27-Aug-18          R6        T2   R2
+    ## 178 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R1
+    ## 179 0.000000e+00  Soy        Root    3-Aug-18          R3        T2   R5
+    ## 180 0.000000e+00 Corn        Root    5-Jul-17          V8        T2   R5
+    ## 181 0.000000e+00 Corn        Root   31-Jul-17         V15        T2   R2
+    ## 182 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T2   R6
+    ## 183 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T2   R5
+    ## 184 0.000000e+00 Corn        Root   31-Jul-17         V15        T1   R1
+    ## 185 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R6
+    ## 186 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T2   R1
+    ## 187 0.000000e+00  Soy        Root   27-Aug-18          R6        T1   R1
+    ## 188 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T1   R6
+    ## 189 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T2   R5
+    ## 190 0.000000e+00  Soy        Root   27-Aug-18          R6        T2   R1
+    ## 191 0.000000e+00 Corn        Root   31-Jul-17         V15        T2   R6
+    ## 192 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T1   R2
+    ## 193 0.000000e+00  Soy        Leaf   16-Aug-18          R4        T2   R1
     ## 194 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T2   R1
-    ## 195 0.000000e+00  Soy        Root    3-Aug-18          R3        T1   R6
-    ## 196 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T1   R1
-    ## 197 0.000000e+00 Corn        Root   26-Jun-17          V6        T1   R2
-    ## 198 5.024116e-05  Soy        Leaf   27-Aug-18          R6        T1   R2
+    ## 195 0.000000e+00  Soy        Root   16-Aug-18          R4        T2   R1
+    ## 196 0.000000e+00  Soy        Leaf    3-Aug-18          R3        T2   R1
+    ## 197 0.000000e+00  Soy        Leaf   27-Aug-18          R6        T1   R5
+    ## 198 0.000000e+00 Corn        Leaf    5-Jul-17          V8        T1   R1
+    ## 199 0.000000e+00 Corn        Leaf   31-Jul-17         V15        T1   R6
     ##     Fungicide
-    ## 1           C
+    ## 1        <NA>
     ## 2        <NA>
     ## 3        <NA>
     ## 4        <NA>
@@ -2131,7 +2126,7 @@ full_join(taxonomy, metadata, by = "OTU")
     ## 68       <NA>
     ## 69       <NA>
     ## 70       <NA>
-    ## 71          F
+    ## 71       <NA>
     ## 72       <NA>
     ## 73       <NA>
     ## 74       <NA>
@@ -2160,24 +2155,24 @@ full_join(taxonomy, metadata, by = "OTU")
     ## 97       <NA>
     ## 98       <NA>
     ## 99       <NA>
-    ## 100         C
-    ## 101         F
+    ## 100         F
+    ## 101         C
     ## 102         F
     ## 103         C
-    ## 104         F
-    ## 105         C
+    ## 104         C
+    ## 105         F
     ## 106         C
-    ## 107         F
-    ## 108         F
-    ## 109         F
+    ## 107         C
+    ## 108         C
+    ## 109         C
     ## 110         F
-    ## 111         C
+    ## 111         F
     ## 112         C
     ## 113         F
-    ## 114         C
-    ## 115         F
-    ## 116         F
-    ## 117         C
+    ## 114         F
+    ## 115         C
+    ## 116         C
+    ## 117         F
     ## 118         F
     ## 119         C
     ## 120         F
@@ -2186,79 +2181,80 @@ full_join(taxonomy, metadata, by = "OTU")
     ## 123         C
     ## 124         C
     ## 125         F
-    ## 126         C
+    ## 126         F
     ## 127         F
-    ## 128         C
-    ## 129         C
+    ## 128         F
+    ## 129         F
     ## 130         F
-    ## 131         C
+    ## 131         F
     ## 132         C
     ## 133         C
-    ## 134         C
-    ## 135         F
+    ## 134         F
+    ## 135         C
     ## 136         F
     ## 137         F
-    ## 138         F
+    ## 138         C
     ## 139         F
     ## 140         C
-    ## 141         F
-    ## 142         C
-    ## 143         F
+    ## 141         C
+    ## 142         F
+    ## 143         C
     ## 144         F
     ## 145         F
-    ## 146         C
-    ## 147         C
-    ## 148         F
+    ## 146         F
+    ## 147         F
+    ## 148         C
     ## 149         C
-    ## 150         C
+    ## 150         F
     ## 151         F
     ## 152         C
     ## 153         F
-    ## 154         F
-    ## 155         C
+    ## 154         C
+    ## 155         F
     ## 156         C
-    ## 157         C
-    ## 158         F
-    ## 159         C
+    ## 157         F
+    ## 158         C
+    ## 159         F
     ## 160         C
     ## 161         F
-    ## 162         F
-    ## 163         C
-    ## 164         F
+    ## 162         C
+    ## 163         F
+    ## 164         C
     ## 165         C
     ## 166         C
     ## 167         C
-    ## 168         C
-    ## 169         F
+    ## 168         F
+    ## 169         C
     ## 170         F
-    ## 171         F
-    ## 172         F
-    ## 173         F
+    ## 171         C
+    ## 172         C
+    ## 173         C
     ## 174         F
-    ## 175         F
+    ## 175         C
     ## 176         C
-    ## 177         F
-    ## 178         C
+    ## 177         C
+    ## 178         F
     ## 179         C
     ## 180         C
-    ## 181         F
+    ## 181         C
     ## 182         F
     ## 183         F
     ## 184         C
     ## 185         C
     ## 186         C
     ## 187         C
-    ## 188         F
+    ## 188         C
     ## 189         C
-    ## 190         C
+    ## 190         F
     ## 191         C
     ## 192         F
-    ## 193         C
+    ## 193         F
     ## 194         F
-    ## 195         C
+    ## 195         F
     ## 196         F
-    ## 197         F
-    ## 198         C
+    ## 197         C
+    ## 198         F
+    ## 199         F
 
 Now this is kind of a silly example because we already had the dataset
 joined how we wanted it and split it appart. But you can immagine if you
