@@ -56,14 +56,14 @@ Note the syntax. I listed all the column headers I wanted, but at the end I used
 
 this is a convenient function that allows you to subset data fairly easily. However, I'm not sure how its much easier than other subset function
 ```{r}
-filter(microbiome.fungi2, Class == "Sordariomycetes")
+head(filter(microbiome.fungi2, Class == "Sordariomycetes"))
 ```
 
 #### `mutate()`
 
 Mutate allows us to quickly create new columns. Say we wanted to transform the Abundance column into a percentage  by multiplying by 100.
 ```{r}
-mutate(microbiome.fungi2, Percent = Abundance*100)
+head(mutate(microbiome.fungi2, Percent = Abundance*100))
 ```
 
 #### the pipe `%>%`
@@ -77,7 +77,8 @@ When we do this we do not have to specify the data in each function. The data fr
 microbiome.fungi %>%
   select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
   filter(Class == "Sordariomycetes") %>%
-  mutate(Percent = Abundance*100)
+  mutate(Percent = Abundance*100) %>%
+  head()
 ```
 
 #### `summarise()`
@@ -87,7 +88,8 @@ microbiome.fungi %>%
   select(OTU, SampleID, Abundance, Crop, Compartment, DateSampled, GrowthStage, Treatment, Rep, Fungicide, Kingdom:Taxonomy) %>%
   filter(Class == "Sordariomycetes") %>%
   mutate(Percent = Abundance*100) %>%
-  summarise(Mean = mean(Percent))
+  summarise(Mean = mean(Percent)) %>%
+  head()
 ```
 So on average, Ascomycota makes up about 0.02% of the microbiome.
 
@@ -275,7 +277,8 @@ microbiome.fungi %>%
   mutate(Percent = Abundance*100) %>%
   summarise(Mean = mean(Percent)) %>%
   replace_na(list(Order = "unidentified")) %>%
-  pivot_wider(names_from = Fungicide, values_from = Mean) 
+  pivot_wider(names_from = Fungicide, values_from = Mean) %>%
+  head()
 ```
 
 Now we can easily calculate the difference between fungicide and control and plot it. 
