@@ -2,7 +2,10 @@
 title: "Stats"
 author: "Zachary Noel"
 date: "2023-03-16"
-output: html_document
+output:
+  md_document:
+    variant: markdown_github
+  html_document: default
 ---
 
 ```{r}
