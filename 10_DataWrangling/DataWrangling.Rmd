@@ -31,11 +31,11 @@ Lets demonstrate some of the most useful functionality of some tidyverse functio
     - summarise() 
     - group_by()
   - Joining & pivotting 
-  - Integration with plotting & statistics 
+  - Integration with plotting
 
 For this tutorial I will use the same microbiome dataset we used in previous classes for `ggplot`, except this dataset includes all fungi in the Phylum Ascomycota, not just one family. 
 ```{r}
-microbiome.fungi <- read.csv("Microbiome.csv")
+microbiome.fungi <- read.csv("10_DataWrangling/Microbiome.csv")
 ```
 
 If we look at the structure of the data we can see that the dataset is 1,353,422 rows. This is too large for excel to handle. So we literally cannot use it in excel. 
