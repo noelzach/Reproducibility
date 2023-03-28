@@ -26,3 +26,5 @@ The current directories here illustrate the topics covered.
 * [Introduction to data visualization](07_ggplot/ggplot_plotting.md)
 * [R Markdown](08_Rmarkdown/markdown_tutorial.md)
 * [Data Wrangling](10_DataWrangling/DataWrangling.md)
+* [Linear Modeling](11_linearmodels/11_linearmodels.md)
+* [Functions and Iterations](12_Functions_and_iterations/Iterations_and_Functions.md)
