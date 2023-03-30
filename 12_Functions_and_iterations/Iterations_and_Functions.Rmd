@@ -3,9 +3,9 @@ title: "Iterations and Functions"
 author: "Zachary Noel"
 date: "10/25/2022"
 output:
+  html_document: default
   md_document:
     variant: markdown_github
-  html_document: default
 ---
 
 This exercise is based partially on the data and iterations presented here:
@@ -101,16 +101,6 @@ Make sense?
 
 ```
 
-# More complicated function usage
-
-Lets use a function to return multiple R elements. We can do this to return different R objects such as a dataframe, a ggplot, and others. 
-
-In this example we are going to write a function to do perform a specific test on multiple variables within a dataset and generate a plot for them. 
-
-```{r}
-
-```
-
 # Iterations
 
 Iterations are something you do over and over again. They are useful for multiple reasons. In terms of reproducibility, it again, helps reduce copy and paste errors for something we would like to do over and over again. It can also helpful for sanity checks through data simulation. 
@@ -165,10 +155,20 @@ Describe in your own words what is happening.
 
 lets see a more complicated example where we subset a dataset based on isolate within our fungicide sensitivity dataset and we perform a function on it and extract some results. 
 
+We can also use our functions in a loop for example. 
+```{r}
+for (i in -30:100){
+  result <- F_to_C(i)
+  print(result)
+}
+```
+
+That was cool, but lets see a more practical example. 
+
 For this example we will use the package 'drc' and the dataset EC50.all.csv
 ```{r}
 # read in the data
-EC50.data <- read.csv("EC50.all.csv")
+EC50.data <- read.csv("EC50_all.csv")
 ```
 
 Within this dataset is a list of isolates and fungicide sensitivity data. 
