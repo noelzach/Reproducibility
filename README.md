@@ -28,3 +28,5 @@ The current directories here illustrate the topics covered.
 * [Data Wrangling](10_DataWrangling/DataWrangling.md)
 * [Linear Modeling](11_linearmodels/11_linearmodels.md)
 * [Functions and Iterations](12_Functions_and_iterations/Iterations_and_Functions.md)
+
+Updates for 2025. Most will stay similar, however, there will be some updates in 2025. 
