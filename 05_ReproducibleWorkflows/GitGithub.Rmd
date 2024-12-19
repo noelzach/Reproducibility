@@ -1,0 +1,41 @@
+---
+title: "Introduction to R"
+outoutput: github_document
+---
+
+# Git vs. Github
+
+What is the difference between git and github. The answer is actually quite simple.
+
+git is the version control "system" or software that is open source and enables the ability to keep track of what you changed to a document, project, code etc. It functions very similarly to Track Changes in a word document, for example.
+GitHub is a website where you can store your work, code, data, and collaborate with others. GitHub is free (for now) and runs git. GitHub works by creating repositories or "repos" for short. Think of these like folders on your computer. Any folder on your computer can turn into a repository on GitHub to track what has changed over time.
+Getting Started
+
+### Installing git
+You must have git installed on your computer. To install git, go to https://git-scm.com/ and follow the instructions for your operating system. If you are having trouble, there are so many tutorials out there. Google can be your friend.
+
+After you install git, shut down R and reopen it. You will now configure git to work with R-studio.
+
+### Configure git with RStudio
+
+You can do this through RStudio or through your Terminal (command prompt for windows). But through Rstudio you can enter the terminal via Tools > Terminal > New Terminal
+
+Then type these two lines into your terminal while replacing your name and email with the correct ones. 
+```{bash, eval=F}
+git config --global user.name 'your name'
+git config --global user.email 'youremail@email.com
+```
+
+Next, if you do not already have a GitHub account, you will need one so follow that and record your GitHub ID and password
+
+### Generate your personal access token
+
+Log into your github account with a web browser. Then click on your profile > settings > Developer settings > Personal access tokens > Tokens (classic)
+
+You will then be asked to generate a new token. A personal access token is kind of like a more secure password. It is a really long stretch of numbers and letters that is really hard to guess. You will use this to connect RStudio with your github account, because username and passwords are just not good enough anymore. When you ask to generate a new token, it will ask you what you want the token to be able to do. Just click all of them. Then once you generate a new token it will take you to a page where the token is written. This is the only time you will be viewing your token. copy it and paste it into a text file and save that for reference. If you lose your token you can always delete it and get and get a new one. But that is annoying so try not to lose it. 
+
+From now on, when you are working in RStudio and you are asked for a GitHub password you will enter this long token. 
+
+
+
+
